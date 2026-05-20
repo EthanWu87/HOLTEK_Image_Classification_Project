@@ -40,7 +40,7 @@
 #define I2C_TIMEOUT                      0x10000
 
 #define I2Cx_SPEED                       100000
-#define I2Cx_ADDRESS                     0x24
+#define I2Cx_ADDRESS                     (0x24 << 1)
 
 #define I2Cx_PORT                        I2C1
 #define I2Cx_CLK                         CRM_I2C1_PERIPH_CLOCK
@@ -149,6 +149,8 @@ int main(void)
   system_clock_config();
 
   ht32_board_init();
+
+  uart_print_init(115200);
 
   hi2cx.i2cx = I2Cx_PORT;
 
