@@ -438,15 +438,13 @@ i2c_status_type i2c_master_transmit(i2c_handle_type* hi2c, uint16_t address, uin
   i2c_master_receive_ack_set(hi2c->i2cx, I2C_MASTER_ACK_CURRENT);
 
   /* send slave address */
-  //if(i2c_master_write_addr(hi2c, address, timeout) != I2C_OK)
-  //{
+  if(i2c_master_write_addr(hi2c, address, timeout) != I2C_OK)
+  {
     /* generate stop condtion */
-    //i2c_stop_generate(hi2c->i2cx);
+    i2c_stop_generate(hi2c->i2cx);
 
-    //return I2C_ERR_STEP_2;
-  //}
-
-  printf("I2C transmission status: %d\n", i2c_master_write_addr(hi2c, address, timeout));
+    return I2C_ERR_STEP_2;
+  }
 
   /* clear addr flag */
   i2c_flag_clear(hi2c->i2cx, I2C_ADDR7F_FLAG);

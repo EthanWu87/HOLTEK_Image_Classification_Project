@@ -4,11 +4,11 @@
   ..\..\..\..\..\..\libraries\drivers\inc\ht32f493x5_crm.h \
   ..\..\..\..\..\..\libraries\cmsis\cm4\device_support\ht32f493x5.h \
   ..\..\..\..\..\..\libraries\cmsis\cm4\core_support\core_cm4.h \
-  D:\Keil_v5\ARM\ARMCLANG\bin\..\include\stdint.h \
-  ..\..\..\..\..\..\libraries\cmsis\cm4\core_support\cmsis_version.h \
-  ..\..\..\..\..\..\libraries\cmsis\cm4\core_support\cmsis_compiler.h \
-  ..\..\..\..\..\..\libraries\cmsis\cm4\core_support\cmsis_armclang.h \
-  ..\..\..\..\..\..\libraries\cmsis\cm4\core_support\mpu_armv7.h \
+  C:\Keil_v5\ARM\ARMCLANG\include\stdint.h \
+  d:\HOLTEK-TinyML-Project\template\HT32F493x5_FWLib_V1.2.2_184\libraries\cmsis\cm4\core_support\cmsis_version.h \
+  d:\HOLTEK-TinyML-Project\template\HT32F493x5_FWLib_V1.2.2_184\libraries\cmsis\cm4\core_support\cmsis_compiler.h \
+  d:\HOLTEK-TinyML-Project\template\HT32F493x5_FWLib_V1.2.2_184\libraries\cmsis\cm4\core_support\cmsis_armclang.h \
+  d:\HOLTEK-TinyML-Project\template\HT32F493x5_FWLib_V1.2.2_184\libraries\cmsis\cm4\core_support\mpu_armv7.h \
   ..\..\..\..\..\..\libraries\cmsis\cm4\device_support\system_ht32f493x5.h \
   ..\..\..\..\..\..\libraries\drivers\inc\ht32f493x5_def.h \
   ..\..\..\..\..\..\libraries\drivers\inc\ht32f493x5_tmr.h \
