@@ -1,0 +1,29 @@
+#! armclang --target=arm-arm-none-eabi -mcpu=cortex-m0plus -E -x c
+
+#include "../../config/app_cfg.h"
+
+LOAD_CODE RAM_CP_ADDR RAM_CP_SIZE_MAX
+{
+    CP_APP_CODE +0
+    {
+        *.o (RESET, +First)
+        *(InRoot$$Sections)
+    }
+
+    ER_CP_APP_CODE +0
+    {
+        .ANY (+RO)
+    }
+
+    CP_RAM_DATA +0
+    {
+        .ANY (+RW +ZI)
+    }
+
+    CP_STACK_HEAP RAM_CP_STACK_HEAP_ADDR UNINIT RAM_CP_STACK_HEAP_SIZE_MAX
+    {
+        .ANY(HEAP)
+        .ANY(STACK, +Last)
+    }
+}
+

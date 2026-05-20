@@ -1,0 +1,65 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: £gVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Wu user, NFU, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.43.0.0
+Toolchain Path:  D:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.24
+Assembler:       Armasm.exe V6.24
+Linker/Locator:  ArmLink.exe V6.24
+Library Manager: ArmAr.exe V6.24
+Hex Converter:   FromElf.exe V6.24
+CPU DLL:         SARMCM3.DLL V5.43.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      CMSIS_AGDI.dll V1.33.24.0
+Dialog DLL:      TCM.DLL V1.56.6.0
+ 
+<h2>Project:</h2>
+d:\HOLTEK-TinyML-Project\template\HT32F493x5_FWLib_V1.2.2_184\project\ht32f49395_sk\examples\gpio\led_toggle\mdk_v537\led_toggle.uvprojx
+Project File Date:  05/20/2026
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.24', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'led_toggle'
+compiling ht32f493x5_clock.c...
+../src/main.c(18): error: use of undeclared identifier 'hi2c'
+   18 |         i2c_master_transmit(&hi2c, 0x24, &data, sizeof(data), I2C_TIMEOUT);
+      |                              ^
+1 error generated.
+compiling main.c...
+compiling ht32f493x5_int.c...
+compiling system_ht32f493x5.c...
+compiling ht32f493x5_i2c.c...
+compiling ht32f493x5_misc.c...
+compiling ht32f493x5_dma.c...
+compiling ht32f493x5_crm.c...
+compiling ht32f493x5_gpio.c...
+compiling ht32f493x5_usart.c...
+compiling hm01b0.c...
+compiling ht32f493x5_board.c...
+assembling startup_ht32f493x5.s...
+compiling i2c_application.c...
+".\objects\led_toggle.axf" - 1 Error(s), 0 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Holtek
+                https://mcu.holtek.com.tw/pack/Holtek.HT32F493x5_DFP.1.0.6.pack
+                Holtek.HT32F493x5_DFP.1.0.6
+                Holtek HT32F493x5 Series Device Support
+
+<h2>Collection of Component include folders:</h2>
+  D:/Keil_v5/Packs/Holtek/HT32F493x5_DFP/1.0.6/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

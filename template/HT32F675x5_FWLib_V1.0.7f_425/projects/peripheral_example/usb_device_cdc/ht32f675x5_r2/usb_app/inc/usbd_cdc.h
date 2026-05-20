@@ -1,0 +1,72 @@
+/*************************************************************************************************************
+ * @file    usbd_cdc.h
+ * @version V1.0
+ * @date    2022-12-20
+ * @brief   
+ *************************************************************************************************************
+ * @attention
+ *
+ * Firmware Disclaimer Information
+ *
+ * 1. The customer hereby acknowledges and agrees that the program technical documentation, including the
+ *    code, which is supplied by Holtek Semiconductor Inc., (hereinafter referred to as "HOLTEK") is the
+ *    proprietary and confidential intellectual property of HOLTEK, and is protected by copyright law and
+ *    other intellectual property laws.
+ *
+ * 2. The customer hereby acknowledges and agrees that the program technical documentation, including the
+ *    code, is confidential information belonging to HOLTEK, and must not be disclosed to any third parties
+ *    other than HOLTEK and the customer.
+ *
+ * 3. The program technical documentation, including the code, is provided "as is" and for customer reference
+ *    only. After delivery by HOLTEK, the customer shall use the program technical documentation, including
+ *    the code, at their own risk. HOLTEK disclaims any expressed, implied or statutory warranties, including
+ *    the warranties of merchantability, satisfactory quality and fitness for a particular purpose.
+ *
+ * <h2><center>Copyright (C) Holtek Semiconductor Inc. All rights reserved</center></h2>
+ ************************************************************************************************************/
+
+
+#ifndef __USBD_CDC_H__
+#define __USBD_CDC_H__
+
+/**
+ * @brief  DEFINE
+ */
+#define CDC_CMD_GET_LINE_CODING        0xA121
+#define CDC_CMD_SET_LINE_CODING        0x2120
+#define CDC_CMD_SET_CONTROL_LINE_STATE 0x2122
+
+/**
+ * @brief  USB device endpiont reset.
+ */
+extern void usb_device_reset_endpoint(void);
+
+/**
+ * @brief  USB device cdc class request.
+ * @param  pu8Setup: Pointer to setup buffer.
+ */
+extern void usb_device_cdc_class_request(uint8_t *pu8Setup);
+
+/**
+ * @brief  Get USB device cdc status.
+ * @return USB CDC is open or not.
+ */
+extern uint8_t usb_device_get_cdc_status(void);
+
+/**
+ * @brief  USB device cdc recive data.
+ * @param  pu8Buf: Pointer to save received data.
+ * @param  pu32Len: Pointer to received data length.
+ * @return Error code, @ref USB_DEVICE_ERR_CODE.
+ */
+extern EN_USB_DEVICE_ERR_CODE usb_device_recive_cdc_data(uint8_t *pu8Buf, uint32_t *pu32Len);
+
+/**
+ * @brief  USB device cdc send data.
+ * @param  pu8Buf: Pointer to send buffer.
+ * @param  u32Len: Send data buffer length.
+ * @return Error code, @ref USB_DEVICE_ERR_CODE.
+ */
+extern EN_USB_DEVICE_ERR_CODE usb_device_send_cdc_data(uint8_t *pu8Buf, uint32_t u32Len);
+
+#endif /*__USBD_CDC_H__*/

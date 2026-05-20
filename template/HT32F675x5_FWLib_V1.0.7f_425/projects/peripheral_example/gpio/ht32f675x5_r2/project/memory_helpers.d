@@ -1,0 +1,34 @@
+memory_helpers.o: \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/micro/memory_helpers.cpp \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/micro/memory_helpers.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/c/common.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/core/c/common.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/core/c/c_api_types.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/schema/schema_generated.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/flatbuffers.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/fb_array.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/fb_base.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/fb_stl_emulation.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/fb_vector.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/fb_buffer.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/fb_buffer_ref.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/fb_verifier.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/fb_detached_buffer.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/fb_allocator.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/fb_default_allocator.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/fb_flatbuffer_builder.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/fb_string.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/fb_struct.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/fb_table.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/fb_vector_downward.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/schema/schema_generated_full.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/kernels/internal/tensor_ctypes.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/kernels/internal/types.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/kernels/internal/compatibility.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/kernels/op_macros.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/micro/debug_log.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/kernels/internal/runtime_shape.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/micro/flatbuffer_conversions_bridge.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/c/c_api_types.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/core/api/flatbuffer_conversions.h \
+ D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/core/api/error_reporter.h

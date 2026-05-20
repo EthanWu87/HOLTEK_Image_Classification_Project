@@ -1,0 +1,50 @@
+#! armclang --target=arm-arm-none-eabi -mcpu=cortex-m33 -E -x c
+
+#include "..\config\app_cfg.h"
+
+
+LOAD_BOOT2 FLASH_BASE_ADDR FLASH_2ND_BOOT_SIZE_MAX
+{
+    BOOT2_CODE +0
+    {
+        *(.boot2.code)
+    }
+}
+
+LOAD_APP FLASH_APP_CODE_ADDR FLASH_APP_CODE_SIZE_MAX
+{
+    INIT +0 FIXED
+    {
+        *.o (RESET, +First)
+        *(InRoot$$Sections)
+        startup_*.o(+RO)
+        system_*.o(+RO)
+    }
+
+    FLASH_CACHE_CODE +0
+    {
+        .ANY(+RO)
+    }
+
+    RAM_VECTOR RAM_VECTOR_ADDR UNINIT RAM_VECTOR_SIZE_MAX
+    {
+        .ANY(.bss.new_vector)
+    }
+
+    RAM_CODE RAM_CODE_ADDR RAM_CODE_SIZE_MAX
+    {
+        *(.ram.function)
+    }
+
+    RAM_DATA RAM_DATA_ADDR RAM_DATA_SIZE_MAX
+    {
+        .ANY(+RW +ZI)
+    }
+
+    RAM_STACK_HEAP RAM_STACK_HEAP_ADDR UNINIT RAM_STACK_HEAP_SIZE_MAX
+    {
+        .ANY(STACK)
+        .ANY(HEAP)
+    }
+}
+
