@@ -3,45 +3,45 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: £gVision V5.39.0.0
-Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: bbee chen, huwei, LIC=----
+IDE-Version: £gVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Wu user, NFU, LIC=----
  
 Tool Versions:
-Toolchain:       MDK-Lite  Version: 5.39.0.0
-Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
-C Compiler:      ArmClang.exe V6.21
-Assembler:       Armasm.exe V6.21
-Linker/Locator:  ArmLink.exe V6.21
-Library Manager: ArmAr.exe V6.21
-Hex Converter:   FromElf.exe V6.21
-CPU DLL:         SARMCM3.DLL V5.39.0.0
+Toolchain:       MDK-Lite  Version: 5.43.0.0
+Toolchain Path:  D:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.24
+Assembler:       Armasm.exe V6.24
+Linker/Locator:  ArmLink.exe V6.24
+Library Manager: ArmAr.exe V6.24
+Hex Converter:   FromElf.exe V6.24
+CPU DLL:         SARMCM3.DLL V5.43.0.0
 Dialog DLL:      DCM.DLL V1.17.5.0
-Target DLL:      CMSIS_AGDI.dll V1.33.16.0
-Dialog DLL:      TCM.DLL V1.56.4.0
+Target DLL:      CMSIS_AGDI.dll V1.33.24.0
+Dialog DLL:      TCM.DLL V1.56.6.0
  
 <h2>Project:</h2>
 d:\HOLTEK-TinyML-Project\template\HT32F493x5_FWLib_V1.2.2_184\project\ht32f49395_sk\examples\i2c\communication_poll\mdk_v537\communication_poll.uvprojx
-Project File Date:  05/21/2026
+Project File Date:  05/22/2026
 
 <h2>Output:</h2>
-*** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+*** Using Compiler 'V6.24', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'communication_poll'
-compiling ht32f493x5_int.c...
-compiling main.c...
-compiling ht32f493x5_misc.c...
 compiling ht32f493x5_clock.c...
-compiling ht32f493x5_i2c.c...
 compiling ht32f493x5_dma.c...
+assembling startup_ht32f493x5.s...
+compiling ht32f493x5_misc.c...
+compiling main.c...
+compiling system_ht32f493x5.c...
 compiling ht32f493x5_gpio.c...
+compiling ht32f493x5_int.c...
+compiling ht32f493x5_i2c.c...
+compiling ht32f493x5_crm.c...
 compiling ht32f493x5_usart.c...
 compiling ht32f493x5_board.c...
-compiling system_ht32f493x5.c...
-compiling ht32f493x5_crm.c...
-assembling startup_ht32f493x5.s...
 compiling i2c_application.c...
 linking...
-Program Size: Code=3736 RO-data=420 RW-data=36 ZI-data=1700  
+Program Size: Code=4000 RO-data=420 RW-data=36 ZI-data=1788  
 FromELF: creating hex file...
 ".\objects\communication_poll.axf" - 0 Error(s), 0 Warning(s).
 
@@ -49,11 +49,11 @@ FromELF: creating hex file...
 
 Package Vendor: Holtek
                 https://mcu.holtek.com.tw/pack/Holtek.HT32F493x5_DFP.1.0.6.pack
-                Holtek::HT32F493x5_DFP@1.0.6
+                Holtek.HT32F493x5_DFP.1.0.6
                 Holtek HT32F493x5 Series Device Support
 
 <h2>Collection of Component include folders:</h2>
-  C:/Users/user/AppData/Local/Arm/Packs/Holtek/HT32F493x5_DFP/1.0.6/Device/Include
+  D:/Keil_v5/Packs/Holtek/HT32F493x5_DFP/1.0.6/Device/Include
 
 <h2>Collection of Component Files used:</h2>
 Build Time Elapsed:  00:00:01

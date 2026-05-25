@@ -12,7 +12,7 @@
 #define I2C_TIMEOUT                      0xFFFFFFFF
 
 #define I2Cx_SPEED                       100000
-#define I2Cx_ADDRESS                     0xA0
+#define I2Cx_ADDRESS                     0x48
 
 #define I2Cx_PORT                        I2C1
 #define I2Cx_CLK                         CRM_I2C1_PERIPH_CLOCK

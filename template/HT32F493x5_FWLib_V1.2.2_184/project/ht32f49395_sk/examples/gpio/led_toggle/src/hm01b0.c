@@ -1,6 +1,6 @@
 #include "hm01b0.h"
 
-#define HM01B0_I2C_ADDRESS 0x24
+#define HM01B0_I2C_ADDRESS 0x48
 
 static void hm01b0_write_reg8(uint16_t address, uint8_t value);
 static void hm01b0_write_reg16(uint16_t address, uint16_t value);
