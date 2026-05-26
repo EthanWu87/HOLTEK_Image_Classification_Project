@@ -69,7 +69,10 @@ void hm01b0_init(i2c_handle_type* hi2c)
   hm01b0_write_reg16(hi2c, 0x0202, line_length_pclk_val / 2); // INTEGRATION_H
   hm01b0_write_reg8(hi2c, 0x0104, 0x01); // GRP_PARAM_HOLD
 
+  hm01b0_write_reg8(hi2c, 0x0104, 0x00); 
 
+  // 2. 將模式暫存器 (0x0100) 改為 0x01 (Streaming Mode / 連續傳輸模式)
+  hm01b0_write_reg8(hi2c, 0x0100, 0x01);
 }
 
 void hm01b0_write_reg8(i2c_handle_type* hi2c, uint16_t address, uint8_t value)
