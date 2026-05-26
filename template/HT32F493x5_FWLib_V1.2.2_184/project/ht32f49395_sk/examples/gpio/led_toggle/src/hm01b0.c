@@ -35,17 +35,26 @@ void hm01b0_init(i2c_handle_type* hi2c)
 
   i2c_enable(hi2c->i2cx, TRUE);
 
-  /* hm01b0 register initialization for 320x240, 8-bit mode (QVGA) */
-  uint8_t readout_x_val           = 0x01;
-  uint8_t readout_y_val           = 0x01;
-  uint8_t binning_mode_val        = 0x00;
+  /* HM01B0 register initialization for 160x120 */
+  uint8_t readout_x_val           = 0x03;
+  uint8_t readout_y_val           = 0x03;
+  uint8_t binning_mode_val        = 0x03;
   uint8_t qvga_win_en_val         = 0x01;
-  uint16_t frame_length_lines_val = 0x0104;
-  uint16_t line_length_pclk_val   = 0x0178;
-  uint8_t bit_control_val         = 0x02;
+  uint16_t frame_length_lines_val = 0x0080;
+  uint16_t line_length_pclk_val   = 0x00D7;
+  uint8_t bit_control_val         = 0x22;
 
-  // Software Reset
-  hm01b0_write_reg8(hi2c, 0x0103, 0x01);
+  /* Scan model id */
+  uint16_t model_id = hm01b0_read_reg16(hi2c, 0x0000);
+  if(model_id != 0x01b0)
+  {
+    printf("Invalid model id: 0x%04X\n", model_id);
+  }
+
+  if(hm01b0_reset(hi2c) != 0)
+  {
+    printf("Reset failed!\n");
+  }
 
   // Setup registers
   hm01b0_write_reg8(hi2c, 0x3059, bit_control_val);
@@ -59,6 +68,8 @@ void hm01b0_init(i2c_handle_type* hi2c)
   hm01b0_write_reg8(hi2c, 0x3060, 0x08 | 0); // OSC_CLK_DIV
   hm01b0_write_reg16(hi2c, 0x0202, line_length_pclk_val / 2); // INTEGRATION_H
   hm01b0_write_reg8(hi2c, 0x0104, 0x01); // GRP_PARAM_HOLD
+
+
 }
 
 void hm01b0_write_reg8(i2c_handle_type* hi2c, uint16_t address, uint8_t value)
@@ -79,4 +90,43 @@ void hm01b0_write_reg16(i2c_handle_type* hi2c, uint16_t address, uint16_t value)
   *((uint16_t*)data + 1) = __REV16(value);
   
   i2c_master_transmit(hi2c, HM01B0_I2C_ADDRESS, data, sizeof(data), HM01B0_I2C_TIMEOUT);
+}
+
+uint8_t hm01b0_read_reg8(i2c_handle_type* hi2c, uint16_t address)
+{
+  uint8_t result = 0xff;
+
+  i2c_memory_read(hi2c, I2C_MEM_ADDR_WIDIH_16, HM01B0_I2C_ADDRESS, address, &result, 1, HM01B0_I2C_TIMEOUT);
+  return result;
+}
+
+uint16_t hm01b0_read_reg16(i2c_handle_type* hi2c, uint16_t address)
+{
+  uint8_t data[2] = {0, 0};
+  uint16_t result = 0xffff;
+
+  if(i2c_memory_read(hi2c, I2C_MEM_ADDR_WIDIH_16, HM01B0_I2C_ADDRESS, address, data, 2, HM01B0_I2C_TIMEOUT) == I2C_OK)
+  {
+    // HM01B0 returns data in Big-Endian (High byte, then Low byte)
+    result = (uint16_t)(data[0] << 8) | data[1];
+  }
+  
+  return result;
+}
+
+int hm01b0_reset(i2c_handle_type* hi2c)
+{
+  hm01b0_write_reg8(hi2c, 0x0103, 0x01);
+
+  for(int retries = 0; retries < 10; retries++)
+  {
+    if(hm01b0_read_reg8(hi2c, 0x0100) == 0x00)
+    {
+      return 0;
+    }
+
+    delay_ms(100);
+  }
+
+  return -1;
 }

@@ -6,9 +6,6 @@
 #ifndef _PICO_HM01B0_H_
 #define _PICO_HM01B0_H_
 
-#include "hardware/i2c.h"
-#include "hardware/pio.h"
-
 struct hm01b0_config {
     i2c_inst_t* i2c;
     uint sda_pin;

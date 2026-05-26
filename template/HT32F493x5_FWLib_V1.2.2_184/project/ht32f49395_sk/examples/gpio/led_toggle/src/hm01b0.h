@@ -29,7 +29,10 @@
 #define HM01B0_I2C_ERR_IRQn           I2C1_ERR_IRQn
 
 void hm01b0_init(i2c_handle_type* hi2c);
+int  hm01b0_reset(i2c_handle_type* hi2c);
 void hm01b0_write_reg8(i2c_handle_type* hi2c, uint16_t address, uint8_t value);
 void hm01b0_write_reg16(i2c_handle_type* hi2c, uint16_t address, uint16_t value);
+uint8_t  hm01b0_read_reg8(i2c_handle_type* hi2c, uint16_t address);
+uint16_t hm01b0_read_reg16(i2c_handle_type* hi2c, uint16_t address);
 
 #endif
