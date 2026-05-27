@@ -1,7 +1,7 @@
 #include "ht32f493x5_board.h"
 #include "ht32f493x5_clock.h"
-#include "hm01b0.h"
 #include "i2c_application.h"
+#include "hm01b0.h"
 
 i2c_handle_type hm01b0_hi2c;
 
@@ -19,6 +19,6 @@ int main(void)
 
   while(1)
   {
-    delay_ms(1000);
+  
   }
 }

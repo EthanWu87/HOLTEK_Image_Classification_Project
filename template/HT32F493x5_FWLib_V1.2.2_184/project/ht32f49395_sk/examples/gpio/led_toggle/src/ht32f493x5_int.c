@@ -26,6 +26,7 @@
  ************************************************************************************************************/
 
 /* includes ------------------------------------------------------------------*/
+#include "ht32f493x5_board.h"
 #include "ht32f493x5_int.h"
 
 /** @addtogroup HT32F493x5_periph_examples
@@ -133,6 +134,16 @@ void SysTick_Handler(void)
 {
 }
 
+void EXINT0_IRQHandler(void)
+{
+  if(exint_interrupt_flag_get(EXINT_LINE_0) != RESET)
+  {
+    ht32_led_toggle(LED2);
+    ht32_led_toggle(LED3);
+    ht32_led_toggle(LED4);
+    exint_flag_clear(EXINT_LINE_0);
+  }
+}
 
 /**
   * @}

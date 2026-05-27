@@ -6,7 +6,7 @@
   <Header>### uVision Project, (C) Keil Software</Header>
 
   <PrjGuiSettings>
-    <LastAddFilePath>D:\HOLTEK-TinyML-Project\template\HT32F493x5_FWLib_V1.2.2_184\middlewares\i2c_application_library</LastAddFilePath>
+    <LastAddFilePath>D:\HOLTEK-TinyML-Project\template\HT32F493x5_FWLib_V1.2.2_184\libraries\drivers\src</LastAddFilePath>
   </PrjGuiSettings>
 
   <ViewPool/>
@@ -101,10 +101,10 @@
         <yPos>-1</yPos>
       </MaxPosition>
       <NormalPosition>
-        <Top>468</Top>
-        <Left>420</Left>
-        <Right>1860</Right>
-        <Bottom>1217</Bottom>
+        <Top>96</Top>
+        <Left>488</Left>
+        <Right>1928</Right>
+        <Bottom>749</Bottom>
       </NormalPosition>
     </WindowPosition>
     <MDIClientArea>
@@ -1874,9 +1874,9 @@
       </Doc>
       <Doc>
         <Name>..\src\main.c</Name>
-        <ColumnNumber>0</ColumnNumber>
+        <ColumnNumber>5</ColumnNumber>
         <TopLine>1</TopLine>
-        <CurrentLine>1</CurrentLine>
+        <CurrentLine>3</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>

@@ -8,6 +8,7 @@
 #include "ht32f493x5.h"
 #include "ht32f493x5_board.h"
 #include "i2c_application.h"
+#include "ht32f493x5_exint.h"
 
 #define HM01B0_I2C_TIMEOUT            0xFFFFFFFF
 
@@ -28,7 +29,14 @@
 #define HM01B0_I2C_EVT_IRQn           I2C1_EVT_IRQn
 #define HM01B0_I2C_ERR_IRQn           I2C1_ERR_IRQn
 
+#define HM01B0_PCLK_EXINT_PORT        GPIO_PORT_SOURCE_GPIOB
+#define HM01B0_PCLK_EXINT_PIN         GPIO_PINS_2
+#define HM01B0_PCLK_EXINT_CLK         CRM_GPIOA_PERIPH_CLOCK
+#define HM01B0_PCLK_EXINT_IRQn        EXINT0_IRQn
+
 void hm01b0_init(i2c_handle_type* hi2c);
+void hm01b0_i2c_init(i2c_handle_type* hi2c);
+void hm01b0_pclk_exint_init();
 int  hm01b0_reset(i2c_handle_type* hi2c);
 void hm01b0_write_reg8(i2c_handle_type* hi2c, uint16_t address, uint8_t value);
 void hm01b0_write_reg16(i2c_handle_type* hi2c, uint16_t address, uint16_t value);

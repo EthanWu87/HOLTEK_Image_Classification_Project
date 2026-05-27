@@ -2,38 +2,8 @@
 
 void hm01b0_init(i2c_handle_type* hi2c)
 {
-  /* I2C initialization */
-  i2c_reset(hi2c->i2cx);
-
-  gpio_init_type gpio_initstructure;
-
-  if(hi2c->i2cx == HM01B0_I2C_PORT)
-  {
-    crm_periph_clock_enable(CRM_IOMUX_PERIPH_CLOCK, TRUE);
-    crm_periph_clock_enable(HM01B0_I2C_CLK, TRUE);
-    crm_periph_clock_enable(HM01B0_I2C_SCL_GPIO_CLK, TRUE);
-    crm_periph_clock_enable(HM01B0_I2C_SDA_GPIO_CLK, TRUE);
-
-    //gpio_pin_remap_config(I2C1_MUX, FALSE);
-
-    gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_OPEN_DRAIN;
-    gpio_initstructure.gpio_pull           = GPIO_PULL_NONE;
-    gpio_initstructure.gpio_mode           = GPIO_MODE_MUX;
-    gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_MODERATE;
-        
-    gpio_initstructure.gpio_pins = HM01B0_I2C_SCL_PIN;
-    gpio_init(HM01B0_I2C_SCL_PORT, &gpio_initstructure);
-
-    gpio_initstructure.gpio_pins = HM01B0_I2C_SDA_PIN;
-    gpio_init(HM01B0_I2C_SDA_GPIO_PORT, &gpio_initstructure);
-
-    i2c_init(hi2c->i2cx, I2C_FSMODE_DUTY_2_1, HM01B0_I2C_SPEED);
-
-    nvic_irq_enable(HM01B0_I2C_EVT_IRQn, 0, 0);
-    nvic_irq_enable(HM01B0_I2C_ERR_IRQn, 0, 0);
-  }
-
-  i2c_enable(hi2c->i2cx, TRUE);
+  hm01b0_i2c_init(hi2c);
+  hm01b0_pclk_exint_init();
 
   /* HM01B0 register initialization for 160x120 */
   uint8_t readout_x_val           = 0x03;
@@ -71,8 +41,78 @@ void hm01b0_init(i2c_handle_type* hi2c)
 
   hm01b0_write_reg8(hi2c, 0x0104, 0x00); 
 
-  // 2. 將模式暫存器 (0x0100) 改為 0x01 (Streaming Mode / 連續傳輸模式)
   hm01b0_write_reg8(hi2c, 0x0100, 0x01);
+}
+
+int hm01b0_reset(i2c_handle_type* hi2c)
+{
+  hm01b0_write_reg8(hi2c, 0x0103, 0x01);
+
+  for(int retries = 0; retries < 10; retries++)
+  {
+    if(hm01b0_read_reg8(hi2c, 0x0100) == 0x00)
+    {
+      return 0;
+    }
+
+    delay_ms(100);
+  }
+
+  return -1;
+}
+
+void hm01b0_i2c_init(i2c_handle_type* hi2c)
+{
+  i2c_reset(hi2c->i2cx);
+
+  gpio_init_type gpio_initstructure;
+
+  if(hi2c->i2cx == HM01B0_I2C_PORT)
+  {
+    crm_periph_clock_enable(CRM_IOMUX_PERIPH_CLOCK, TRUE);
+    crm_periph_clock_enable(HM01B0_I2C_CLK, TRUE);
+    crm_periph_clock_enable(HM01B0_I2C_SCL_GPIO_CLK, TRUE);
+    crm_periph_clock_enable(HM01B0_I2C_SDA_GPIO_CLK, TRUE);
+
+    //gpio_pin_remap_config(I2C1_MUX, FALSE);
+
+    gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_OPEN_DRAIN;
+    gpio_initstructure.gpio_pull           = GPIO_PULL_NONE;
+    gpio_initstructure.gpio_mode           = GPIO_MODE_MUX;
+    gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_MODERATE;
+        
+    gpio_initstructure.gpio_pins = HM01B0_I2C_SCL_PIN;
+    gpio_init(HM01B0_I2C_SCL_PORT, &gpio_initstructure);
+
+    gpio_initstructure.gpio_pins = HM01B0_I2C_SDA_PIN;
+    gpio_init(HM01B0_I2C_SDA_GPIO_PORT, &gpio_initstructure);
+
+    i2c_init(hi2c->i2cx, I2C_FSMODE_DUTY_2_1, HM01B0_I2C_SPEED);
+
+    nvic_irq_enable(HM01B0_I2C_EVT_IRQn, 1, 0);
+    nvic_irq_enable(HM01B0_I2C_ERR_IRQn, 1, 0);
+  }
+
+  i2c_enable(hi2c->i2cx, TRUE);
+}
+
+void hm01b0_pclk_exint_init()
+{
+  exint_init_type exint_init_struct;
+
+  crm_periph_clock_enable(CRM_IOMUX_PERIPH_CLOCK, TRUE);
+  crm_periph_clock_enable(HM01B0_PCLK_EXINT_CLK, TRUE);
+
+  gpio_exint_line_config(HM01B0_PCLK_EXINT_PORT, HM01B0_PCLK_EXINT_PIN);
+
+  exint_default_para_init(&exint_init_struct);
+  exint_init_struct.line_enable = TRUE;
+  exint_init_struct.line_mode = EXINT_LINE_INTERRUPT;
+  exint_init_struct.line_select = EXINT_LINE_0;
+  exint_init_struct.line_polarity = EXINT_TRIGGER_RISING_EDGE;
+  exint_init(&exint_init_struct);
+
+  nvic_irq_enable(HM01B0_PCLK_EXINT_IRQn, 0, 0);
 }
 
 void hm01b0_write_reg8(i2c_handle_type* hi2c, uint16_t address, uint8_t value)
@@ -115,21 +155,4 @@ uint16_t hm01b0_read_reg16(i2c_handle_type* hi2c, uint16_t address)
   }
   
   return result;
-}
-
-int hm01b0_reset(i2c_handle_type* hi2c)
-{
-  hm01b0_write_reg8(hi2c, 0x0103, 0x01);
-
-  for(int retries = 0; retries < 10; retries++)
-  {
-    if(hm01b0_read_reg8(hi2c, 0x0100) == 0x00)
-    {
-      return 0;
-    }
-
-    delay_ms(100);
-  }
-
-  return -1;
 }
