@@ -459,6 +459,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\..\..\..\libraries\drivers\src\ht32f493x5_exint.c</FilePath>
             </File>
+            <File>
+              <FileName>ht32f493x5_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\..\libraries\drivers\src\ht32f493x5_spi.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

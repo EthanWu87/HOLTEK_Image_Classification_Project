@@ -35,6 +35,6 @@
   ..\..\..\..\..\..\libraries\drivers\inc\ht32f493x5_acc.h \
   ..\..\..\..\..\..\libraries\drivers\inc\ht32f493x5_misc.h \
   ..\..\..\..\..\..\libraries\drivers\inc\ht32f493x5_usb.h \
-  ..\inc\ht32f493x5_clock.h ..\src\hm01b0.h \
-  D:\Keil_v5\ARM\ARMCLANG\bin\..\include\string.h \
-  ..\..\..\..\..\..\middlewares\i2c_application_library\i2c_application.h
+  ..\inc\ht32f493x5_clock.h \
+  ..\..\..\..\..\..\middlewares\i2c_application_library\i2c_application.h \
+  ..\src\hm01b0.h D:\Keil_v5\ARM\ARMCLANG\bin\..\include\string.h

@@ -12,6 +12,7 @@
 ".\objects\ht32f493x5_dma.o"
 ".\objects\i2c_application.o"
 ".\objects\ht32f493x5_exint.o"
+".\objects\ht32f493x5_spi.o"
 ".\objects\system_ht32f493x5.o"
 ".\objects\startup_ht32f493x5.o"
 --strict --scatter ".\objects\led_toggle.sct"

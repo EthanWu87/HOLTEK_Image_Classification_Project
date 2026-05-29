@@ -134,14 +134,74 @@ void SysTick_Handler(void)
 {
 }
 
+#include "hm01b0.h"
+
+/**
+  * @brief  this function handles VSYNC interrupt on EXINT LINE 0 (PB0).
+  */
 void EXINT0_IRQHandler(void)
 {
-  if(exint_interrupt_flag_get(EXINT_LINE_0) != RESET)
+  if(exint_interrupt_flag_get(HM01B0_VSYNC_EXINT_LINE) != RESET)
   {
-    ht32_led_toggle(LED2);
-    ht32_led_toggle(LED3);
-    ht32_led_toggle(LED4);
-    exint_flag_clear(EXINT_LINE_0);
+    /* VSYNC Triggered: 新的一幀開始 */
+    
+    // 1. 先關閉 DMA 與 SPI 徹底重置
+    dma_channel_enable(HM01B0_DMA_CHANNEL, FALSE);
+    spi_enable(HM01B0_SPI_PORT, FALSE); 
+    
+    // 2. 清除 SPI 的任何錯誤旗標與殘留數據
+    (void)HM01B0_SPI_PORT->sts;
+    (void)HM01B0_SPI_PORT->dt;
+    
+    // 3. 重新設定 DMA 傳輸數量
+    dma_data_number_set(HM01B0_DMA_CHANNEL, 19440); /* 162 * 120 */
+    
+    // 4. 重啟 SPI 與 DMA
+    spi_enable(HM01B0_SPI_PORT, TRUE);
+    dma_channel_enable(HM01B0_DMA_CHANNEL, TRUE);
+    
+    // 移除 g_frame_ready = 1; 因為現在採樣才剛開始
+    
+    ht32_led_on(LED2);
+    exint_flag_clear(HM01B0_VSYNC_EXINT_LINE);
+  }
+}
+
+/**
+  * @brief  this function handles HREF interrupt on EXINT LINE 4 (PA4).
+  *         It simulates "Hardware Trigger" by toggling SPI Software NSS.
+  */
+void EXINT4_IRQHandler(void)
+{
+  if(exint_interrupt_flag_get(EXINT_LINE_4) != RESET)
+  {
+    /* HREF 狀態改變 (PA4) */
+    if(gpio_input_data_bit_read(HM01B0_HREF_PORT, HM01B0_HREF_PIN) != RESET)
+    {
+       /* HREF High -> Line Start -> SPI NSS Low (Selected) */
+       spi_software_cs_internal_level_set(HM01B0_SPI_PORT, SPI_SWCS_INTERNAL_LEVEL_LOW);
+    }
+    else
+    {
+       /* HREF Low -> Line End -> SPI NSS High (Deselected) */
+       spi_software_cs_internal_level_set(HM01B0_SPI_PORT, SPI_SWCS_INTERNAL_LEVEL_HIGHT);
+    }
+    
+    exint_flag_clear(EXINT_LINE_4);
+  }
+}
+
+/**
+  * @brief  this function handles DMA1 Channel 2 interrupt (SPI RX Done).
+  */
+void DMA1_Channel2_IRQHandler(void)
+{
+  if(dma_interrupt_flag_get(DMA1_FDT2_FLAG) != RESET)
+  {
+    /* 數據搬移完成：此時 buffer 才是滿的 */
+    g_frame_ready = 1;
+    
+    dma_flag_clear(DMA1_FDT2_FLAG);
   }
 }
 

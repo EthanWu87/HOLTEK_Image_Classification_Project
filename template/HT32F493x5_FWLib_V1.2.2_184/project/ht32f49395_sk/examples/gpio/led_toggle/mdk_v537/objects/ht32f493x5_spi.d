@@ -1,6 +1,7 @@
-./objects/ht32f493x5_int.o: ..\src\ht32f493x5_int.c \
-  ..\..\..\..\..\ht32f493x5_board\ht32f493x5_board.h \
-  D:\Keil_v5\ARM\ARMCLANG\bin\..\include\stdio.h \
+./objects/ht32f493x5_spi.o: \
+  ..\..\..\..\..\..\libraries\drivers\src\ht32f493x5_spi.c \
+  ..\inc\ht32f493x5_conf.h \
+  ..\..\..\..\..\..\libraries\drivers\inc\ht32f493x5_crm.h \
   ..\..\..\..\..\..\libraries\cmsis\cm4\device_support\ht32f493x5.h \
   ..\..\..\..\..\..\libraries\cmsis\cm4\core_support\core_cm4.h \
   D:\Keil_v5\ARM\ARMCLANG\bin\..\include\stdint.h \
@@ -10,8 +11,6 @@
   ..\..\..\..\..\..\libraries\cmsis\cm4\core_support\mpu_armv7.h \
   ..\..\..\..\..\..\libraries\cmsis\cm4\device_support\system_ht32f493x5.h \
   ..\..\..\..\..\..\libraries\drivers\inc\ht32f493x5_def.h \
-  ..\inc\ht32f493x5_conf.h \
-  ..\..\..\..\..\..\libraries\drivers\inc\ht32f493x5_crm.h \
   ..\..\..\..\..\..\libraries\drivers\inc\ht32f493x5_tmr.h \
   ..\..\..\..\..\..\libraries\drivers\inc\ht32f493x5_rtc.h \
   ..\..\..\..\..\..\libraries\drivers\inc\ht32f493x5_bpr.h \
@@ -34,7 +33,4 @@
   ..\..\..\..\..\..\libraries\drivers\inc\ht32f493x5_xmc.h \
   ..\..\..\..\..\..\libraries\drivers\inc\ht32f493x5_acc.h \
   ..\..\..\..\..\..\libraries\drivers\inc\ht32f493x5_misc.h \
-  ..\..\..\..\..\..\libraries\drivers\inc\ht32f493x5_usb.h \
-  ..\inc\ht32f493x5_int.h ..\src\hm01b0.h \
-  D:\Keil_v5\ARM\ARMCLANG\bin\..\include\string.h \
-  ..\..\..\..\..\..\middlewares\i2c_application_library\i2c_application.h
+  ..\..\..\..\..\..\libraries\drivers\inc\ht32f493x5_usb.h

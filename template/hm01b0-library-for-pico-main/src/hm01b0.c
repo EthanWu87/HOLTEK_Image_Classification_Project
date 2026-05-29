@@ -138,7 +138,6 @@ int hm01b0_init(const struct hm01b0_config* config)
     hm01b0_write_reg16(0x0340, frame_length_lines_val);
     hm01b0_write_reg16(0x0342, line_length_pclk_val);
     
-
     hm01b0_write_reg8(0x3060, 0x08 | 0); // OSC_CLK_DIV
 
     hm01b0_write_reg16(0x0202, line_length_pclk_val / 2); // INTEGRATION_H
