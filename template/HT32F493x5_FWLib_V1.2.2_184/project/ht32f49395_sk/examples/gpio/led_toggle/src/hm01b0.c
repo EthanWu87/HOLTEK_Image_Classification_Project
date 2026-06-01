@@ -34,14 +34,26 @@ void hm01b0_init(i2c_handle_type* hi2c)
   hm01b0_write_reg16(hi2c, 0x0340, frame_length_lines_val);
   hm01b0_write_reg16(hi2c, 0x0342, line_length_pclk_val);
 
-  // hm01b0_write_reg8(hi2c, 0x3060, 0x08 | 0);
-  hm01b0_write_reg8(hi2c, 0x3060, 0x20); 
+  hm01b0_write_reg8(hi2c, 0x3060, 0x0C); // 增大分頻值以降低 PCLK 頻率，確保在高解析度下仍能穩定傳輸
+  hm01b0_write_reg16(hi2c, 0x0202, frame_length_lines_val / 2);
 
-  hm01b0_write_reg16(hi2c, 0x0202, frame_length_lines_val / 2); 
+  // 微調中
+  hm01b0_write_reg8(hi2c,  0x2100, 0x00); // 0x00 代表完全關閉 AE/AG
+
+  // 【2. 固定類比增益在最純淨的 1.0 倍】 -> 零雜訊基線
+  hm01b0_write_reg8(hi2c,  0x2108, 0x08); // 類比增益固定為 1x (0x08)
+  hm01b0_write_reg8(hi2c,  0x2109, 0x08); // 數位增益固定為 1x (0x08)
+
+  // 【3. 開啟黑準位校正 (BLC)】 -> 確保黑色背景是純黑
+  hm01b0_write_reg8(hi2c,  0x1000, 0x01); // 啟用 BLC
+  hm01b0_write_reg8(hi2c,  0x1001, 0x08); // 標定目標值
+
+  hm01b0_write_reg16(hi2c, 0x0202, 0x0060); // INTEGRATION_H (手動快門)
   
   hm01b0_write_reg8(hi2c, 0x0104, 0x01);
   hm01b0_write_reg8(hi2c, 0x0104, 0x00); 
 
+  // hm01b0_write_reg8(hi2c, 0x0601, 0x01); // enable color bar test
   /* turn on pclk、href、vsync */
   hm01b0_write_reg8(hi2c, 0x0100, 0x01);
 }
@@ -137,8 +149,8 @@ void hm01b0_spi_dma_init(void* buffer, uint32_t size)
   spi_init_struct.mclk_freq_division = SPI_MCLK_DIV_8;
   spi_init_struct.first_bit_transmission = SPI_FIRST_BIT_MSB;
   spi_init_struct.frame_bit_num = SPI_FRAME_8BIT;
-  spi_init_struct.clock_polarity = SPI_CLOCK_POLARITY_LOW; 
-  spi_init_struct.clock_phase = SPI_CLOCK_PHASE_1EDGE;    
+  spi_init_struct.clock_polarity = SPI_CLOCK_POLARITY_HIGH; 
+  spi_init_struct.clock_phase = SPI_CLOCK_PHASE_2EDGE;
   
   /* 使用軟體 NSS 模式。我們將在 EXINT4 中偵測 HREF 的電位來手動模擬極性反向的硬體觸發 */
   spi_init_struct.cs_mode_selection = SPI_CS_SOFTWARE_MODE;
