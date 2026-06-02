@@ -1,14 +1,16 @@
 import serial
 import numpy as np
 import cv2
+import time
 
 # 設定序列埠參數
 SERIAL_PORT = 'COM15'
-BAUD_RATE = 921600
+BAUD_RATE = 2000000
+
 WIDTH = 160
 HEIGHT = 120
-# 重大修正：現在接收的是 8-bit 灰階資料流 (序列化傳輸)
-FRAME_SIZE = WIDTH * HEIGHT  # 19200 Byteqs
+FRAME_SIZE = WIDTH * HEIGHT
+
 
 def main():
     try:
@@ -18,31 +20,66 @@ def main():
         print(f"Error: {e}")
         return
 
-    buffer = b''
+    target_header = b"---FRAME_START---"
+    header_index = 0
+    is_reading_frame = False
+
+    frame_buffer = bytearray(FRAME_SIZE)
+    frame_byte_count = 0
+
+    last_time = time.time()
+    fps = 0.0
+
     while True:
-        data = ser.read(ser.in_waiting or 1)
-        buffer += data
+        if ser.in_waiting > 0:
+            data_chunk = ser.read(ser.in_waiting)
+        else:
+            data_chunk = ser.read(1)
 
-        header = b'---FRAME_START---'
-        if header in buffer:
-            start_pos = buffer.find(header) + len(header)
-            # 檢查 buffer 長度是否足夠 (19200 資料 + 可能是 \r\n 的位置)
-            if len(buffer) >= start_pos + FRAME_SIZE + 2:
-                # 測試：如果發現開頭是 \r\n，手動略過這 2 bytes
-                # 或者直接從 header 後面尋找第一個真正的影像起始點
-                frame_data = buffer[start_pos: start_pos + FRAME_SIZE]
+        for in_byte in data_chunk:
+            if not is_reading_frame:
+                # 狀態機階段 A：尋找標頭
+                if in_byte == target_header[header_index]:
+                    header_index += 1
+                    if header_index == len(target_header):
+                        is_reading_frame = True
+                        frame_byte_count = 0
+                        header_index = 0
+                else:
+                    header_index = 0
+                    if in_byte == target_header[0]:
+                        header_index = 1
+            else:
+                # 狀態機階段 B：填寫影格緩衝區
+                frame_buffer[frame_byte_count] = in_byte
+                frame_byte_count += 1
 
-                # 如果畫面依然偏移，試著調整 start_pos，例如 start_pos + 1 或 + 2
-                frame = np.frombuffer(frame_data, dtype=np.uint8).reshape((HEIGHT, WIDTH))
-                cv2.imshow('HM01B0 Raw Grayscale', frame)
-                buffer = buffer[start_pos + FRAME_SIZE:]
+                # 當收滿一張圖後，立刻解碼成像並計算 FPS
+                if frame_byte_count == FRAME_SIZE:
+                    frame_raw = np.frombuffer(frame_buffer, dtype=np.uint8).reshape((HEIGHT, WIDTH))
 
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+                    frame_zoomed = cv2.resize(frame_raw, (160 * 4, 120 * 4), interpolation=cv2.INTER_NEAREST)
 
-    ser.close()
-    cv2.destroyAllWindows()
+                    current_time = time.time()
+                    time_diff = current_time - last_time
+
+                    if time_diff > 0:
+                        fps = 1.0 / time_diff
+
+                    last_time = current_time
+
+                    print(f"當前畫面更新率: {fps:.2f} FPS")
+                    window_title = f"HM01B0 Pure 160x120 - FPS: {fps:.2f}"
+                    cv2.imshow('HM01B0 Python State-Machine Grayscale', frame_zoomed)
+                    cv2.setWindowTitle('HM01B0 Python State-Machine Grayscale', window_title)
+
+                    is_reading_frame = False
+
+                    if cv2.waitKey(1) & 0xFF == ord('q'):
+                        ser.close()
+                        cv2.destroyAllWindows()
+                        return
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

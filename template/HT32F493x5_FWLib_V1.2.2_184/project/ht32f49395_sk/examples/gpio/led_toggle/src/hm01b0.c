@@ -34,10 +34,10 @@ void hm01b0_init(i2c_handle_type* hi2c)
   hm01b0_write_reg16(hi2c, 0x0340, frame_length_lines_val);
   hm01b0_write_reg16(hi2c, 0x0342, line_length_pclk_val);
 
-  hm01b0_write_reg8(hi2c, 0x3060, 0x0C); // 增大分頻值以降低 PCLK 頻率，確保在高解析度下仍能穩定傳輸
+  hm01b0_write_reg8(hi2c, 0x3060, 0x08 | 0); 
   hm01b0_write_reg16(hi2c, 0x0202, frame_length_lines_val / 2);
 
-  // 微調中
+  // // 微調中
   hm01b0_write_reg8(hi2c,  0x2100, 0x00); // 0x00 代表完全關閉 AE/AG
 
   // 【2. 固定類比增益在最純淨的 1.0 倍】 -> 零雜訊基線
@@ -53,7 +53,7 @@ void hm01b0_init(i2c_handle_type* hi2c)
   hm01b0_write_reg8(hi2c, 0x0104, 0x01);
   hm01b0_write_reg8(hi2c, 0x0104, 0x00); 
 
-  // hm01b0_write_reg8(hi2c, 0x0601, 0x01); // enable color bar test
+  // hm01b0_write_reg8(hi2c, 0x0601, 0x11); // enable color bar test
   /* turn on pclk、href、vsync */
   hm01b0_write_reg8(hi2c, 0x0100, 0x01);
 }
