@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\objects\led_toggle.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\objects\led_toggle.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Tue Jun  2 16:54:16 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Thu Jun  4 16:23:34 2026
 <BR><P>
-<H3>Maximum Stack Usage =        208 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        200 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; hm01b0_init &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 <P>
@@ -252,7 +252,7 @@ Global Symbols
 <P><STRONG><a name="[e6]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[65]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 208 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 200 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; hm01b0_init &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
@@ -893,7 +893,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hm01b0_init
 </UL>
 
-<P><STRONG><a name="[8f]"></a>hm01b0_init</STRONG> (Thumb, 684 bytes, Stack size 56 bytes, hm01b0.o(.text.hm01b0_init))
+<P><STRONG><a name="[8f]"></a>hm01b0_init</STRONG> (Thumb, 532 bytes, Stack size 56 bytes, hm01b0.o(.text.hm01b0_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 200 + Unknown Stack Size
 <LI>Call Chain = hm01b0_init &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -1102,8 +1102,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_memory_read
 </UL>
 
-<P><STRONG><a name="[66]"></a>main</STRONG> (Thumb, 256 bytes, Stack size 8 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 208 + Unknown Stack Size
+<P><STRONG><a name="[66]"></a>main</STRONG> (Thumb, 252 bytes, Stack size 0 bytes, main.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 200 + Unknown Stack Size
 <LI>Call Chain = main &rArr; hm01b0_init &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy

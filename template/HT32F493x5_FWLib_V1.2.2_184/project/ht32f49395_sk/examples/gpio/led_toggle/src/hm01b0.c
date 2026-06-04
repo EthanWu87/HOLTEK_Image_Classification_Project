@@ -37,19 +37,6 @@ void hm01b0_init(i2c_handle_type* hi2c)
   hm01b0_write_reg8(hi2c, 0x3060, 0x08 | 0); 
   hm01b0_write_reg16(hi2c, 0x0202, frame_length_lines_val / 2);
 
-  // // 微調中
-  hm01b0_write_reg8(hi2c,  0x2100, 0x00); // 0x00 代表完全關閉 AE/AG
-
-  // 【2. 固定類比增益在最純淨的 1.0 倍】 -> 零雜訊基線
-  hm01b0_write_reg8(hi2c,  0x2108, 0x08); // 類比增益固定為 1x (0x08)
-  hm01b0_write_reg8(hi2c,  0x2109, 0x08); // 數位增益固定為 1x (0x08)
-
-  // 【3. 開啟黑準位校正 (BLC)】 -> 確保黑色背景是純黑
-  hm01b0_write_reg8(hi2c,  0x1000, 0x01); // 啟用 BLC
-  hm01b0_write_reg8(hi2c,  0x1001, 0x08); // 標定目標值
-
-  hm01b0_write_reg16(hi2c, 0x0202, 0x0060); // INTEGRATION_H (手動快門)
-  
   hm01b0_write_reg8(hi2c, 0x0104, 0x01);
   hm01b0_write_reg8(hi2c, 0x0104, 0x00); 
 
