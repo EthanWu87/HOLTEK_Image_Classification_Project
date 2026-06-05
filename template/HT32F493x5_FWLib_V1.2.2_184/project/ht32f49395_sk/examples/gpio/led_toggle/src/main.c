@@ -42,7 +42,7 @@ int main(void)
 
       uint32_t pixel_idx = 0;
 
-      for(int r = 2; r <= 120; r++)
+      for(int r = 0; r < 120; r++)
       {
         // 每一行精準跳過開頭的 2 個垃圾 Byte
         uint8_t *line_ptr = &hm01b0_frame_buffer[r * 164 + 2]; 
