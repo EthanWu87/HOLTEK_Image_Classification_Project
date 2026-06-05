@@ -12,7 +12,7 @@
 #include "ht32f493x5_spi.h"
 #include "ht32f493x5_dma.h"
 
-#define HM01B0_IMAGE_WIDTH            162 /* 160 + 2 border pixels */
+#define HM01B0_IMAGE_WIDTH            164 /* 160 + 2 border pixels */
 #define HM01B0_IMAGE_HEIGHT           120
 #define HM01B0_IMAGE_SIZE_BYTES       (HM01B0_IMAGE_WIDTH * HM01B0_IMAGE_HEIGHT) 
 
@@ -44,8 +44,10 @@
 #define HM01B0_PCLK_PORT              GPIOA
 #define HM01B0_D0_PIN                 GPIO_PINS_7  /* SPI1_MOSI */
 #define HM01B0_D0_PORT                GPIOA
+
 #define HM01B0_HREF_PIN               GPIO_PINS_4  /* SPI1_NSS  */
 #define HM01B0_HREF_PORT              GPIOA
+#define HM01B0_HREF_IRQn              EXINT4_IRQn
 
 /* Frame Sync */
 #define HM01B0_VSYNC_PIN              GPIO_PINS_0

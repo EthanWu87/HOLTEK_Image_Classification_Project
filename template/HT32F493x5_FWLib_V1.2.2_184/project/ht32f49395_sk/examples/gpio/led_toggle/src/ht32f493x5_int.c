@@ -154,7 +154,7 @@ void EXINT0_IRQHandler(void)
     (void)HM01B0_SPI_PORT->dt;
     
     // 3. 重新設定 DMA 傳輸數量
-    dma_data_number_set(HM01B0_DMA_CHANNEL, 19680);
+    dma_data_number_set(HM01B0_DMA_CHANNEL, HM01B0_IMAGE_SIZE_BYTES);
     // 4. 重啟 SPI 與 DMA
     spi_enable(HM01B0_SPI_PORT, TRUE);
     dma_channel_enable(HM01B0_DMA_CHANNEL, TRUE);

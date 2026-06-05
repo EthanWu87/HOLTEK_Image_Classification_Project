@@ -5,7 +5,7 @@
 
 i2c_handle_type hm01b0_hi2c;
 uint8_t hm01b0_frame_buffer[HM01B0_IMAGE_SIZE_BYTES];
-uint8_t edge_impulse_clean_buffer[160 * 120];
+uint8_t edge_impulse_clean_buffer[(HM01B0_IMAGE_WIDTH - 4) * HM01B0_IMAGE_HEIGHT];
 volatile uint8_t g_frame_ready = 0;
 
 int main(void)
@@ -31,42 +31,40 @@ int main(void)
   {
     if(g_frame_ready)
     {
-        nvic_irq_disable(HM01B0_VSYNC_IRQn);
-        nvic_irq_disable(EXINT4_IRQn);
-        
-        g_frame_ready = 0; 
-        
-        // 傳送幀標頭
-        printf("---FRAME_START---");
-        while(usart_flag_get(USART1, USART_TDBE_FLAG) == RESET); 
+      nvic_irq_disable(HM01B0_VSYNC_IRQn);
+      nvic_irq_disable(EXINT4_IRQn);
+      
+      g_frame_ready = 0; 
+      
+      // 傳送幀標頭
+      printf("---FRAME_START---");
+      while(usart_flag_get(USART1, USART_TDBE_FLAG) == RESET); 
 
-        uint32_t pixel_idx = 0;
-        
-        for(int r = 0; r < 120; r++)
-        {
-            // 每一行精準跳過開頭的 2 個垃圾 Byte
-            uint8_t *line_ptr = &hm01b0_frame_buffer[r * 164 + 2]; 
-            
-            for(int c = 0; c < 160; c++) 
-            {
-                // 核心修正：SPI 收到的 Byte 本身就是該像素的灰階值！
-                // 將其存入乾淨的 Buffer 之中
-                edge_impulse_clean_buffer[pixel_idx++] = line_ptr[c];
-            }
-        }
+      uint32_t pixel_idx = 0;
 
-        // 精準傳送 160x120 = 19200 位元組給 Python
-        for(uint32_t i = 0; i < 19200; i++)
+      for(int r = 2; r <= 120; r++)
+      {
+        // 每一行精準跳過開頭的 2 個垃圾 Byte
+        uint8_t *line_ptr = &hm01b0_frame_buffer[r * 164 + 2]; 
+        
+        for(int c = 0; c < 160; c++) 
         {
-            while(usart_flag_get(USART1, USART_TDBE_FLAG) == RESET);
-            usart_data_transmit(USART1, edge_impulse_clean_buffer[i]);
+          edge_impulse_clean_buffer[pixel_idx++] = line_ptr[c];
         }
-        
-        exint_flag_clear(HM01B0_VSYNC_EXINT_LINE);
-        exint_flag_clear(EXINT_LINE_4);
-        
-        nvic_irq_enable(HM01B0_VSYNC_IRQn, 0, 0);
-        nvic_irq_enable(EXINT4_IRQn, 0, 0);
+      }
+
+      // 精準傳送 160x120 = 19200 位元組給 Python
+      for(uint32_t i = 0; i < (HM01B0_IMAGE_WIDTH - 4) * HM01B0_IMAGE_HEIGHT; i++)
+      {
+          while(usart_flag_get(USART1, USART_TDBE_FLAG) == RESET);
+          usart_data_transmit(USART1, edge_impulse_clean_buffer[i]);
+      }
+      
+      exint_flag_clear(HM01B0_VSYNC_EXINT_LINE);
+      exint_flag_clear(EXINT_LINE_4);
+      
+      nvic_irq_enable(HM01B0_VSYNC_IRQn, 0, 0);
+      nvic_irq_enable(EXINT4_IRQn, 0, 0);
     }
   }
 }
