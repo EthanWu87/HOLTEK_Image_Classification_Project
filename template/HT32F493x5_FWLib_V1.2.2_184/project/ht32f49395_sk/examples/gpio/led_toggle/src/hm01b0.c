@@ -128,7 +128,7 @@ void hm01b0_spi_dma_init(void* buffer, uint32_t size)
   gpio_init_struct.gpio_mode = GPIO_MODE_INPUT;
   gpio_init_struct.gpio_pins = HM01B0_VSYNC_PIN;
   gpio_init(HM01B0_VSYNC_PORT, &gpio_init_struct);
-  
+
   gpio_exint_line_config(GPIO_PORT_SOURCE_GPIOB, GPIO_PINS_SOURCE0);
   exint_default_para_init(&exint_init_struct);
   exint_init_struct.line_enable = TRUE;
@@ -140,16 +140,16 @@ void hm01b0_spi_dma_init(void* buffer, uint32_t size)
   nvic_irq_enable(HM01B0_VSYNC_IRQn, 0, 0);
 
   /* HREF (PA4) */
-  gpio_init_struct.gpio_mode = GPIO_MODE_INPUT;
-  gpio_init_struct.gpio_pins = HM01B0_HREF_PIN;
-  gpio_init(HM01B0_HREF_PORT, &gpio_init_struct);
+  // gpio_init_struct.gpio_mode = GPIO_MODE_INPUT;
+  // gpio_init_struct.gpio_pins = HM01B0_HREF_PIN;
+  // gpio_init(HM01B0_HREF_PORT, &gpio_init_struct);
 
-  gpio_exint_line_config(GPIO_PORT_SOURCE_GPIOA, GPIO_PINS_SOURCE4);
-  exint_init_struct.line_select = EXINT_LINE_4;
-  exint_init_struct.line_polarity = EXINT_TRIGGER_BOTH_EDGE;
+  // gpio_exint_line_config(GPIO_PORT_SOURCE_GPIOA, GPIO_PINS_SOURCE4);
+  // exint_init_struct.line_select = EXINT_LINE_4;
+  // exint_init_struct.line_polarity = EXINT_TRIGGER_RISING_EDGE;
 
-  exint_init(&exint_init_struct);
-  nvic_irq_enable(HM01B0_HREF_IRQn, 0, 0);
+  // exint_init(&exint_init_struct);
+  // nvic_irq_enable(HM01B0_HREF_IRQn, 0, 0);
 
   /* SPI configuration (Slave Mode) */
   spi_default_para_init(&spi_init_struct);
@@ -166,7 +166,7 @@ void hm01b0_spi_dma_init(void* buffer, uint32_t size)
   spi_init(HM01B0_SPI_PORT, &spi_init_struct);
   
   spi_software_cs_internal_level_set(HM01B0_SPI_PORT, SPI_SWCS_INTERNAL_LEVEL_HIGHT);
-  
+
   spi_i2s_dma_receiver_enable(HM01B0_SPI_PORT, TRUE);
   spi_enable(HM01B0_SPI_PORT, TRUE);
 

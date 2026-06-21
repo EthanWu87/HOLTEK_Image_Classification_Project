@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="654de133-9634-4b3d-8eb9-d3fbccbf120d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/CamView.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CamView.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HT32F493x5_FWLib_V1.2.2_184/project/ht32f49395_sk/examples/gpio/led_toggle/mdk_v537/.vscode/c_cpp_properties.json" beforeDir="false" afterPath="$PROJECT_DIR$/../HT32F493x5_FWLib_V1.2.2_184/project/ht32f49395_sk/examples/gpio/led_toggle/mdk_v537/.vscode/c_cpp_properties.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HT32F493x5_FWLib_V1.2.2_184/project/ht32f49395_sk/examples/gpio/led_toggle/mdk_v537/.vscode/uv4.log" beforeDir="false" afterPath="$PROJECT_DIR$/../HT32F493x5_FWLib_V1.2.2_184/project/ht32f49395_sk/examples/gpio/led_toggle/mdk_v537/.vscode/uv4.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HT32F493x5_FWLib_V1.2.2_184/project/ht32f49395_sk/examples/gpio/led_toggle/mdk_v537/.vscode/uv4.log.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../HT32F493x5_FWLib_V1.2.2_184/project/ht32f49395_sk/examples/gpio/led_toggle/mdk_v537/.vscode/uv4.log.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HT32F493x5_FWLib_V1.2.2_184/project/ht32f49395_sk/examples/gpio/led_toggle/mdk_v537/listings/led_toggle.map" beforeDir="false" afterPath="$PROJECT_DIR$/../HT32F493x5_FWLib_V1.2.2_184/project/ht32f49395_sk/examples/gpio/led_toggle/mdk_v537/listings/led_toggle.map" afterDir="false" />
@@ -65,7 +63,7 @@
       <workItem from="1780562145498" duration="1650000" />
       <workItem from="1780564338762" duration="4500000" />
       <workItem from="1782060754012" duration="191000" />
-      <workItem from="1782060952864" duration="916000" />
+      <workItem from="1782060952864" duration="3004000" />
     </task>
     <servers />
   </component>
@@ -74,6 +72,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CamView$main.coverage" NAME="main Coverage Results" MODIFIED="1780647126304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/main_py$main.coverage" NAME="main Coverage Results" MODIFIED="1782061850368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/main_py$main.coverage" NAME="main Coverage Results" MODIFIED="1782062775375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
