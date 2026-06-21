@@ -16,7 +16,7 @@
 #define HM01B0_IMAGE_HEIGHT           120
 #define HM01B0_IMAGE_SIZE_BYTES       (HM01B0_IMAGE_WIDTH * HM01B0_IMAGE_HEIGHT) 
 
-#define HM01B0_I2C_TIMEOUT            0xFFFFFFFF
+#define HM01B0_I2C_TIMEOUT            0x10000
 
 #define HM01B0_I2C_SPEED              100000
 #define HM01B0_I2C_ADDRESS            0x48
@@ -25,7 +25,7 @@
 #define HM01B0_I2C_CLK                CRM_I2C1_PERIPH_CLOCK
 
 #define HM01B0_I2C_SCL_PIN            GPIO_PINS_6
-#define HM01B0_I2C_SCL_PORT           GPIOB
+#define HM01B0_I2C_SCL_GPIO_PORT           GPIOB
 #define HM01B0_I2C_SCL_GPIO_CLK       CRM_GPIOB_PERIPH_CLOCK
 
 #define HM01B0_I2C_SDA_PIN            GPIO_PINS_7

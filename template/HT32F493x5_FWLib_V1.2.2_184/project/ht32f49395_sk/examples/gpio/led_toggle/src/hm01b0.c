@@ -14,16 +14,16 @@ void hm01b0_init(i2c_handle_type* hi2c)
 
   uint8_t bit_control_val         = 0x22; 
 
+  if(hm01b0_reset(hi2c) != 0)
+  {
+    printf("Reset failed!\n");
+  }
+
   /* Scan model id */
   uint16_t model_id = hm01b0_read_reg16(hi2c, 0x0000);
   if(model_id != 0x01b0)
   {
     printf("Invalid model id: 0x%04X\n", model_id);
-  }
-
-  if(hm01b0_reset(hi2c) != 0)
-  {
-    printf("Reset failed!\n");
   }
 
   /* Setup registers */
@@ -77,15 +77,19 @@ void hm01b0_i2c_init(i2c_handle_type* hi2c)
     crm_periph_clock_enable(HM01B0_I2C_SDA_GPIO_CLK, TRUE);
 
     gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_OPEN_DRAIN;
-    gpio_initstructure.gpio_pull           = GPIO_PULL_NONE;
+    gpio_initstructure.gpio_pull           = GPIO_PULL_UP;
     gpio_initstructure.gpio_mode           = GPIO_MODE_MUX;
     gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_MODERATE;
         
     gpio_initstructure.gpio_pins = HM01B0_I2C_SCL_PIN;
-    gpio_init(HM01B0_I2C_SCL_PORT, &gpio_initstructure);
+    gpio_init(HM01B0_I2C_SCL_GPIO_PORT, &gpio_initstructure);
 
     gpio_initstructure.gpio_pins = HM01B0_I2C_SDA_PIN;
     gpio_init(HM01B0_I2C_SDA_GPIO_PORT, &gpio_initstructure);
+
+    /* Reset SCL、SDA line */
+    gpio_bits_set(HM01B0_I2C_SCL_GPIO_PORT, HM01B0_I2C_SCL_PIN);
+    gpio_bits_set(HM01B0_I2C_SDA_GPIO_PORT, HM01B0_I2C_SDA_PIN);
 
     i2c_init(hi2c->i2cx, I2C_FSMODE_DUTY_2_1, HM01B0_I2C_SPEED);
 
@@ -119,7 +123,6 @@ void hm01b0_spi_dma_init(void* buffer, uint32_t size)
   
   gpio_init_struct.gpio_pins = HM01B0_PCLK_PIN | HM01B0_D0_PIN;
   gpio_init(HM01B0_PCLK_PORT, &gpio_init_struct);
-
 
   /* VSYNC (PB0) */
   gpio_init_struct.gpio_mode = GPIO_MODE_INPUT;
