@@ -163,25 +163,15 @@ void EXINT0_IRQHandler(void)
   * @brief  this function handles HREF interrupt on EXINT LINE 4 (PA4).
   *         It simulates "Hardware Trigger" by toggling SPI Software NSS.
   */
-// void EXINT4_IRQHandler(void)
-// {
-//   if(exint_interrupt_flag_get(EXINT_LINE_4) != RESET)
-//   {
-//     /* HREF 狀態改變 (PA4) */
-//     if(gpio_input_data_bit_read(HM01B0_HREF_PORT, HM01B0_HREF_PIN) != RESET)
-//     {
-//        /* HREF High -> Line Start -> SPI NSS Low (Selected) */
-//        spi_software_cs_internal_level_set(HM01B0_SPI_PORT, SPI_SWCS_INTERNAL_LEVEL_LOW);
-//     }
-//     else
-//     {
-//        /* HREF Low -> Line End -> SPI NSS High (Deselected) */
-//        spi_software_cs_internal_level_set(HM01B0_SPI_PORT, SPI_SWCS_INTERNAL_LEVEL_HIGHT);
-//     }
-    
-//     exint_flag_clear(EXINT_LINE_4);
-//   }
-// }
+void EXINT4_IRQHandler(void)
+{
+  if(exint_interrupt_flag_get(EXINT_LINE_4) != RESET)
+  {
+    spi_software_cs_internal_level_set(HM01B0_SPI_PORT, SPI_SWCS_INTERNAL_LEVEL_LOW);
+
+    exint_flag_clear(EXINT_LINE_4);
+  }
+}
 
 /**
   * @brief  this function handles DMA1 Channel 2 interrupt (SPI RX Done).
@@ -190,6 +180,8 @@ void DMA1_Channel2_IRQHandler(void)
 {
   if(dma_interrupt_flag_get(DMA1_FDT2_FLAG) != RESET)
   {
+    spi_software_cs_internal_level_set(HM01B0_SPI_PORT, SPI_SWCS_INTERNAL_LEVEL_HIGHT);
+
     g_frame_ready = 1;
   
     dma_flag_clear(DMA1_FDT2_FLAG);
