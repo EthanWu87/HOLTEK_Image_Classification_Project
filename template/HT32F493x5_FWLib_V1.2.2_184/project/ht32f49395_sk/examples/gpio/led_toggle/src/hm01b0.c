@@ -10,8 +10,7 @@ void hm01b0_init(i2c_handle_type* hi2c)
   uint8_t binning_mode_val        = 0x03;
   uint8_t qvga_win_en_val         = 0x01;
   uint16_t frame_length_lines_val = 0x0080; 
-  uint16_t line_length_pclk_val   = 0x00D7; 
-
+  uint16_t line_length_pclk_val   = 0x00D7;
   uint8_t bit_control_val         = 0x22; 
 
   if(hm01b0_reset(hi2c) != 0)
@@ -132,7 +131,6 @@ void hm01b0_spi_dma_init(void* buffer, uint32_t size)
   gpio_init(HM01B0_VSYNC_PORT, &gpio_init_struct);
 
   gpio_exint_line_config(GPIO_PORT_SOURCE_GPIOB, GPIO_PINS_SOURCE0);
-  exint_default_para_init(&exint_init_struct);
   exint_init_struct.line_enable = TRUE;
   exint_init_struct.line_mode = EXINT_LINE_INTERRUPT;
   exint_init_struct.line_select = HM01B0_VSYNC_EXINT_LINE;
@@ -142,16 +140,16 @@ void hm01b0_spi_dma_init(void* buffer, uint32_t size)
   nvic_irq_enable(HM01B0_VSYNC_IRQn, 0, 0);
 
   /* HREF (PA4) */
-  gpio_init_struct.gpio_mode = GPIO_MODE_INPUT;
-  gpio_init_struct.gpio_pins = HM01B0_HREF_PIN;
-  gpio_init(HM01B0_HREF_PORT, &gpio_init_struct);
+  // gpio_init_struct.gpio_mode = GPIO_MODE_INPUT;
+  // gpio_init_struct.gpio_pins = HM01B0_HREF_PIN;
+  // gpio_init(HM01B0_HREF_PORT, &gpio_init_struct);
 
-  gpio_exint_line_config(GPIO_PORT_SOURCE_GPIOA, GPIO_PINS_SOURCE4);
-  exint_init_struct.line_select = EXINT_LINE_4;
-  exint_init_struct.line_polarity = EXINT_TRIGGER_BOTH_EDGE;
+  // gpio_exint_line_config(GPIO_PORT_SOURCE_GPIOA, GPIO_PINS_SOURCE4);
+  // exint_init_struct.line_select = EXINT_LINE_4;
+  // exint_init_struct.line_polarity = EXINT_TRIGGER_BOTH_EDGE;
 
-  exint_init(&exint_init_struct);
-  nvic_irq_enable(HM01B0_HREF_IRQn, 0, 0);
+  // exint_init(&exint_init_struct);
+  // nvic_irq_enable(HM01B0_HREF_IRQn, 0, 0);
 
   /* SPI configuration (Slave Mode) */
   spi_init_struct.transmission_mode = SPI_TRANSMIT_SIMPLEX_RX;
@@ -166,7 +164,7 @@ void hm01b0_spi_dma_init(void* buffer, uint32_t size)
   spi_init_struct.cs_mode_selection = SPI_CS_SOFTWARE_MODE;
   spi_init(HM01B0_SPI_PORT, &spi_init_struct);
   
-  spi_software_cs_internal_level_set(HM01B0_SPI_PORT, SPI_SWCS_INTERNAL_LEVEL_HIGHT);
+  spi_software_cs_internal_level_set(HM01B0_SPI_PORT, SPI_SWCS_INTERNAL_LEVEL_LOW);
 
   spi_i2s_dma_receiver_enable(HM01B0_SPI_PORT, TRUE);
   spi_enable(HM01B0_SPI_PORT, TRUE);

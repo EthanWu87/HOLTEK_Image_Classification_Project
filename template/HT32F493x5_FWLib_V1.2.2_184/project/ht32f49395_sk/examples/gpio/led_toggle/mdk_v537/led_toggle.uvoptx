@@ -23,10 +23,10 @@
 
   <Target>
     <TargetName>led_toggle</TargetName>
-    <ToolsetNumber>0x4</ToolsetNumber>
-    <ToolsetName>ARM-ADS</ToolsetName>
+    <ToolsetNumber>0x3</ToolsetNumber>
+    <ToolsetName>ARM-GNU</ToolsetName>
     <TargetOption>
-      <CLKADS>12000000</CLKADS>
+      <CLKARM>12000000</CLKARM>
       <OPTTT>
         <gFlags>1</gFlags>
         <BeepAtEnd>1</BeepAtEnd>
@@ -42,8 +42,8 @@
         <HexOffset>0</HexOffset>
       </OPTHX>
       <OPTLEX>
-        <PageWidth>79</PageWidth>
-        <PageLength>66</PageLength>
+        <PageWidth>120</PageWidth>
+        <PageLength>65</PageLength>
         <TabStop>8</TabStop>
         <ListingPath>.\listings\</ListingPath>
       </OPTLEX>
@@ -117,11 +117,6 @@
         <pMon>BIN\CMSIS_AGDI.dll</pMon>
       </DebugOpt>
       <TargetDriverDllRegistry>
-        <SetRegEntry>
-          <Number>0</Number>
-          <Key>CMSIS_AGDI</Key>
-          <Name>-X"Any" -UAny -O206 -S0 -C0 -P00000000 -N00("ARM CoreSight SW-DP") -D00(2BA01477) -L00(0) -TO65554 -TC10000000 -TT10000000 -TP20 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO15 -FD20000000 -FC1000 -FN1 -FF0HT32F493x5_1024.FLM -FS08000000 -FL0100000 -FP0($$Device:HT32F49395_100LQFP$Flash\HT32F493x5_1024.FLM)</Name>
-        </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
           <Key>UL2CM3</Key>
@@ -232,7 +227,7 @@
 
   <Group>
     <GroupName>bsp</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -376,7 +371,7 @@
       <GroupNumber>4</GroupNumber>
       <FileNumber>15</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\..\..\..\..\libraries\cmsis\cm4\device_support\system_ht32f493x5.c</PathWithFileName>
@@ -391,7 +386,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\libraries\cmsis\cm4\device_support\startup\mdk\startup_ht32f493x5.s</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\libraries\cmsis\cm4\device_support\startup\gcc\startup_ht32f493x5.s</PathWithFileName>
       <FilenameWithoutPath>startup_ht32f493x5.s</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -416,6 +411,22 @@
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
+  </Group>
+
+  <Group>
+    <GroupName>::CMSIS</GroupName>
+    <tvExp>0</tvExp>
+    <tvExpOptDlg>0</tvExpOptDlg>
+    <cbSel>0</cbSel>
+    <RteFlg>1</RteFlg>
+  </Group>
+
+  <Group>
+    <GroupName>::EdgeImpulse</GroupName>
+    <tvExp>0</tvExp>
+    <tvExpOptDlg>0</tvExpOptDlg>
+    <cbSel>0</cbSel>
+    <RteFlg>1</RteFlg>
   </Group>
 
 </ProjectOpt>
