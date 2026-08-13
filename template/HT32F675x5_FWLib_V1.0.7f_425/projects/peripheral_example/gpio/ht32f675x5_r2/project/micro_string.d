@@ -1,3 +1,0 @@
-micro_string.o: \
- D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/micro/micro_string.cpp \
- D:/Keil_v5/Packs/EdgeImpulse/EI-SDK/1.89.0/edgeimpulse/edge-impulse-sdk/tensorflow/lite/micro/micro_string.h

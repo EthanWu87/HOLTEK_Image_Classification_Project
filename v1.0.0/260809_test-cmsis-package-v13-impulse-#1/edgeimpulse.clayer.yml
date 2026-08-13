@@ -1,0 +1,11 @@
+layer:
+  type: Edge Impulse layer
+  description: Edge Impulse SDK and model
+
+  packs:
+    - pack: EdgeImpulse::EI-SDK@1.95.1
+    - pack: EdgeImpulse::260809_test@13.0.0
+
+  components:
+    - component: EdgeImpulse::EdgeImpulse:SDK@1.95.1
+    - component: EdgeImpulse:model:260809_test@13.0.0
