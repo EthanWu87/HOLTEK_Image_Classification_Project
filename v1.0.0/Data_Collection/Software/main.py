@@ -4,7 +4,7 @@ import cv2
 import time
 
 SERIAL_PORT = 'COM5'
-BAUD_RATE = 2000000
+BAUD_RATE = 2250000
 
 WIDTH = 96
 HEIGHT = 96
@@ -89,7 +89,7 @@ def main():
 
                         # 按 's' 儲存影像
                         elif key == ord('s'):
-                            filename = f"stone_{int(time.time())}.jpg"
+                            filename = f"unknown_{int(time.time())}.jpg"
                             cv2.imwrite(filename, frame_zoomed)
                             print(f"Image saved: {filename}")
 

@@ -15,29 +15,20 @@
 extern uint8_t hm01b0_frame_buffer[HM01B0_IMAGE_SIZE_BYTES];
 extern volatile uint8_t g_frame_ready;
 
-uint8_t edge_impulse_clean_buffer[EI_BUFFER_SIZE];
-
-void usart_send_string(usart_type* usart_x, const char *s)
-{
-  while(*s)
-  {
-    while(usart_flag_get(usart_x, USART_TDBE_FLAG) == RESET);
-    usart_data_transmit(usart_x, (uint16_t)(*s++));
-  }
-	
-  while(usart_flag_get(usart_x, USART_TDC_FLAG) == RESET);
-}
+uint8_t ei_img_crop_buffer[EI_BUFFER_SIZE];   // crop img form 160*120 to 96*96 (center crop) 
 
 void read_hm01b0_data()
 {
-	int start_row = (120 - EI_TARGET_HEIGHT) / 2;
-	int start_col = (160 - EI_TARGET_WIDTH) / 2;
+	uint8_t width_offset  = HM01B0_IMAGE_WIDTH_DUMMY / 2;
+	uint8_t height_offset = HM01B0_IMAGE_HEIGHT_DUMMY / 2;
+	uint8_t start_col     = ((HM01B0_IMGAE_WIDTH_EFFECTIVE - EI_TARGET_WIDTH) / 2) + width_offset;
+	uint8_t start_row     = ((HM01B0_IMGAE_HEIGHT_EFFECTIVE - EI_TARGET_HEIGHT) / 2) + height_offset;
 	
-	printf("IMG_S");
+	printf("IMG_S");   // image start header 
   for(int r = 0; r < EI_TARGET_HEIGHT; r++)
   {
-		uint8_t *src_ptr = &hm01b0_frame_buffer[(start_row + r) * 164 + 2 + start_col];
-		uint8_t *dest_ptr = &edge_impulse_clean_buffer[r * EI_TARGET_WIDTH];
+		uint8_t *src_ptr = &hm01b0_frame_buffer[(start_row + r) * HM01B0_IMAGE_WIDTH_ACTIVE + start_col];
+		uint8_t *dest_ptr = &ei_img_crop_buffer[r * EI_TARGET_WIDTH];
 		
 		memcpy(dest_ptr, src_ptr, EI_TARGET_WIDTH);
 		
@@ -50,9 +41,14 @@ void read_hm01b0_data()
 	printf("IMG_E\r\n");
 }
 
+/**
+  * @brief  config systick and enable interrupt.
+  * @param  none
+  * @retval none
+  */
 int raw_feature_get_data(size_t offset, size_t length, float *out_ptr)
 {
-	uint8_t *src = &edge_impulse_clean_buffer[offset];
+	uint8_t *src = &ei_img_crop_buffer[offset];
 	
 	for(size_t i = 0; i < length; i++)
 	{
@@ -70,18 +66,18 @@ int ei_main(void)
 
 	while(1)
 	{
-		//ei_printf("Edge Impulse standalone inferencing (ht32f493x5)\n");
+		ei_printf("Edge Impulse standalone inferencing (ht32f493x5)\n");
 
-		if(sizeof(edge_impulse_clean_buffer) != EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE)
+		if(sizeof(ei_img_crop_buffer) != EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE)
 		{
 			ei_printf("The size of your buffer is not correct. Expected %d items, but had %u\n",
-											EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE, sizeof(edge_impulse_clean_buffer));
+											EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE, sizeof(ei_img_crop_buffer));
 			return 1;          
 		}
 
 		while(1)
 		{
-			//ei_printf("\nStarting inferencing\r\n");
+			ei_printf("\nStarting inferencing\r\n");
 
 			if(g_frame_ready)
 			{
@@ -96,7 +92,8 @@ int ei_main(void)
 				signal_t features_signal;
 				features_signal.total_length = EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE;
 				features_signal.get_data = &raw_feature_get_data;
-
+	
+				/* run classifier */
 				EI_IMPULSE_ERROR res = run_classifier(&features_signal, &result, false);
 				printf("Run classifier success\n");
 				
@@ -105,7 +102,7 @@ int ei_main(void)
 					return 1;
 				}
 				
-				printf("AI_S");
+				printf("INF_S");   // inference results start header 
 				ei_printf("Predictions (DSP: %d ms., Classification: %d ms., Anomaly: %d ms.): \n",
 						result.timing.dsp, result.timing.classification, result.timing.anomaly);
 
@@ -122,7 +119,6 @@ int ei_main(void)
 							bb.height);
 					}
 
-				// Print the prediction results (classification)
 				#else
 					for (uint16_t i = 0; i < EI_CLASSIFIER_LABEL_COUNT; i++) {
 						ei_printf("  %s: ", result.classification[i].label);
@@ -130,7 +126,7 @@ int ei_main(void)
 						ei_printf("\r\n");
 					}
 				#endif
-				printf("AI_E\r\n");
+				printf("INF_E\r\n");
 			}
 		}
 	}

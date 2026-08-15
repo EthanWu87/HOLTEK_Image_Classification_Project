@@ -12,9 +12,23 @@
 #include "ht32f493x5_spi.h"
 #include "ht32f493x5_dma.h"
 
-#define HM01B0_IMAGE_WIDTH            164 /* 160 + 2 border pixels */
-#define HM01B0_IMAGE_HEIGHT           120
-#define HM01B0_IMAGE_SIZE_BYTES       (HM01B0_IMAGE_WIDTH * HM01B0_IMAGE_HEIGHT) 
+/**
+  * HM01B0 QQVGA Timing & Frame Structure:
+	* - 1 VSYNC Frame = 122 HREF Pulses (Vertical Height)
+	*   -> 1 Top Border Row + 120 Active Rows + 1 Bottom Border Row
+	*
+	* - 1 HREF Line   = 164 PCLK Cycles (Horizontal Width)
+	*   -> 2 Left Border Bytes + 160 Active Bytes + 2 Right Border Bytes
+  */
+#define HM01B0_IMAGE_WIDTH_ACTIVE     164   // 164 PCLKs per HREF (2 dummy bytes + 160 Valid + 2 dummy bytes)
+#define HM01B0_IMAGE_WIDTH_DUMMY      4
+#define HM01B0_IMGAE_WIDTH_EFFECTIVE  HM01B0_IMAGE_WIDTH_ACTIVE - HM01B0_IMAGE_WIDTH_DUMMY 
+
+#define HM01B0_IMAGE_HEIGHT_ACTIVE    122   // 122 HREFs per VSYNC (1 dummy byte + 120 Valid + 1 dummy byte)
+#define HM01B0_IMAGE_HEIGHT_DUMMY     2
+#define HM01B0_IMGAE_HEIGHT_EFFECTIVE  HM01B0_IMAGE_HEIGHT_ACTIVE - HM01B0_IMAGE_HEIGHT_DUMMY 
+
+#define HM01B0_IMAGE_SIZE_BYTES       (HM01B0_IMAGE_WIDTH_ACTIVE * HM01B0_IMAGE_HEIGHT_ACTIVE) 
 
 #define HM01B0_I2C_TIMEOUT            0x10000
 

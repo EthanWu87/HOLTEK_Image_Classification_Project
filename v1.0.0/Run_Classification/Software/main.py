@@ -5,7 +5,7 @@ import time
 import re
 
 SERIAL_PORT = 'COM5'
-BAUD_RATE = 2000000
+BAUD_RATE = 2250000
 
 WIDTH = 96
 HEIGHT = 96
@@ -56,10 +56,6 @@ def draw_prediction_panel(
     labels,
     fps
 ):
-    """
-    在影像右側顯示 AI inference 結果
-    """
-
     scale = 4
 
     frame_zoomed = cv2.resize(
@@ -82,14 +78,11 @@ def draw_prediction_panel(
         dtype=np.uint8
     )
 
-    # -----------------------------
-    # 標題
-    # -----------------------------
     y = 35
 
     cv2.putText(
         panel,
-        "Edge Impulse",
+        "Classification Result",
         (20, y),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.8,
@@ -289,8 +282,8 @@ def main():
 
     target_header = b"IMG_S"
     target_end = b"IMG_E"
-    ai_header = b"AI_S"
-    ai_end = b"AI_E"
+    ai_header = b"INF_S"
+    ai_end = b"INF_E"
 
     img_s_idx = 0
     img_e_idx = 0
@@ -300,7 +293,6 @@ def main():
     frame_buffer = bytearray(FRAME_SIZE)
     frame_byte_count = 0
     
-    # 用來接收 AI prediction 的緩衝區
     prediction_buffer = bytearray()
 
     last_time = time.time()

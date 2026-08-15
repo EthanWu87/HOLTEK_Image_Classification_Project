@@ -427,12 +427,12 @@
           <targetInfo name="led_toggle" versionMatchMode="fixed"/>
         </targetInfos>
       </package>
-      <package name="260809_test" vendor="EdgeImpulse" version="13.0.0">
+      <package name="EI-SDK" vendor="EdgeImpulse" version="1.95.2">
         <targetInfos>
           <targetInfo name="led_toggle" versionMatchMode="fixed"/>
         </targetInfos>
       </package>
-      <package name="EI-SDK" vendor="EdgeImpulse" version="1.95.1">
+      <package name="HOLTEK_Image_Classification" vendor="EdgeImpulse" version="14.0.0">
         <targetInfos>
           <targetInfo name="led_toggle" versionMatchMode="fixed"/>
         </targetInfos>
@@ -457,14 +457,14 @@
           <targetInfo name="led_toggle"/>
         </targetInfos>
       </component>
-      <component Cclass="EdgeImpulse" Cgroup="SDK" Cvendor="EdgeImpulse" Cversion="1.95.1" condition="CMSIS packages" ymlID="EdgeImpulse:SDK">
-        <package name="EI-SDK" schemaVersion="1.7.7" url="" vendor="EdgeImpulse" version="1.95.1"/>
+      <component Cclass="EdgeImpulse" Cgroup="SDK" Cvendor="EdgeImpulse" Cversion="1.95.2" condition="CMSIS packages" ymlID="EdgeImpulse:SDK">
+        <package name="EI-SDK" schemaVersion="1.7.7" url="" vendor="EdgeImpulse" version="1.95.2"/>
         <targetInfos>
           <targetInfo name="led_toggle"/>
         </targetInfos>
       </component>
-      <component Cclass="EdgeImpulse" Cgroup="model" Csub="260809_test" Cvendor="EdgeImpulse" Cversion="13.0.0" condition="CMSIS packages" ymlID="EdgeImpulse:model:260809_test">
-        <package name="260809_test" schemaVersion="1.7.7" url="" vendor="EdgeImpulse" version="13.0.0"/>
+      <component Cclass="EdgeImpulse" Cgroup="model" Csub="HOLTEK_Image_Classification" Cvendor="EdgeImpulse" Cversion="14.0.0" condition="CMSIS packages" ymlID="EdgeImpulse:model:HOLTEK_Image_Classification">
+        <package name="HOLTEK_Image_Classification" schemaVersion="1.7.7" url="" vendor="EdgeImpulse" version="14.0.0"/>
         <targetInfos>
           <targetInfo name="led_toggle"/>
         </targetInfos>

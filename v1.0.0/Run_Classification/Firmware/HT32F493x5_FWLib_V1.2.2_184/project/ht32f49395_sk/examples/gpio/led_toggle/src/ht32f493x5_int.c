@@ -156,18 +156,14 @@ void EXINT0_IRQHandler(void)
 {
   if(exint_interrupt_flag_get(HM01B0_VSYNC_EXINT_LINE) != RESET)
   {
-    dma_channel_enable(HM01B0_DMA_CHANNEL, FALSE);
-    spi_enable(HM01B0_SPI_PORT, FALSE); 
-    
-    (void)HM01B0_SPI_PORT->sts;
-    (void)HM01B0_SPI_PORT->dt;
-    
+		spi_enable(HM01B0_SPI_PORT, FALSE); 
+		dma_channel_enable(HM01B0_DMA_CHANNEL, FALSE);
+		
     dma_data_number_set(HM01B0_DMA_CHANNEL, HM01B0_IMAGE_SIZE_BYTES);
 
-    spi_enable(HM01B0_SPI_PORT, TRUE);
+		spi_enable(HM01B0_SPI_PORT, TRUE);
     dma_channel_enable(HM01B0_DMA_CHANNEL, TRUE);
         
-    // ht32_led_on(LED2);
     exint_flag_clear(HM01B0_VSYNC_EXINT_LINE);
   }
 }

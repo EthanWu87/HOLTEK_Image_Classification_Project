@@ -3,14 +3,15 @@
 #include "i2c_application.h"
 #include "hm01b0.h"
 
-#define MS_TICK                          (system_core_clock / 1000U)
+#define MS_TICK   (system_core_clock / 1000U)
 
 extern int ei_main(void);
 
-i2c_handle_type hm01b0_hi2c;
+volatile uint8_t g_frame_ready = 0;
 
 uint8_t hm01b0_frame_buffer[HM01B0_IMAGE_SIZE_BYTES];
-volatile uint8_t g_frame_ready = 0;
+
+i2c_handle_type hm01b0_hi2c;
 
 /**
   * @brief  config systick and enable interrupt.
@@ -19,7 +20,7 @@ volatile uint8_t g_frame_ready = 0;
   */
 static uint32_t systick_interrupt_config(uint32_t ticks)
 {
-  if ((ticks - 1UL) > SysTick_LOAD_RELOAD_Msk)
+  if((ticks - 1UL) > SysTick_LOAD_RELOAD_Msk)
   {
     return (1UL);
   }
@@ -27,56 +28,23 @@ static uint32_t systick_interrupt_config(uint32_t ticks)
   SysTick->LOAD  = (uint32_t)(ticks - 1UL);
   NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL);
   SysTick->VAL   = 0UL;
-  SysTick->CTRL |= SysTick_CTRL_TICKINT_Msk |
-                   SysTick_CTRL_ENABLE_Msk;
+  SysTick->CTRL |= SysTick_CTRL_TICKINT_Msk | SysTick_CTRL_ENABLE_Msk;
+
   return (0UL);
-}
-
-
-void cam_view_uart_init()
-{
-	gpio_init_type gpio_init_struct;
-
-	crm_periph_clock_enable(CRM_USART2_PERIPH_CLOCK, TRUE);
-  crm_periph_clock_enable(CRM_GPIOA_PERIPH_CLOCK, TRUE);
-	crm_periph_clock_enable(CRM_GPIOA_PERIPH_CLOCK, TRUE);
-
-	gpio_default_para_init(&gpio_init_struct);
-
-  gpio_init_struct.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
-  gpio_init_struct.gpio_out_type  = GPIO_OUTPUT_PUSH_PULL;
-  gpio_init_struct.gpio_mode = GPIO_MODE_MUX;
-  gpio_init_struct.gpio_pins = GPIO_PINS_2;
-  gpio_init_struct.gpio_pull = GPIO_PULL_NONE;
-  gpio_init(PRINT_UART_TX_GPIO, &gpio_init_struct);	
-	
-	gpio_init_struct.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
-  gpio_init_struct.gpio_out_type  = GPIO_OUTPUT_PUSH_PULL;
-  gpio_init_struct.gpio_mode = GPIO_MODE_MUX;
-  gpio_init_struct.gpio_pins = GPIO_PINS_3;
-  gpio_init_struct.gpio_pull = GPIO_PULL_UP;
-  gpio_init(PRINT_UART_RX_GPIO, &gpio_init_struct);
-	
-	usart_init(USART2, 921600, USART_DATA_8BITS, USART_STOP_1_BIT);
-  usart_transmitter_enable(USART2, TRUE);
-	usart_receiver_enable(USART2, TRUE);
-  usart_enable(USART2, TRUE);
 }
 
 int main(void)
 {
 	system_clock_config();
 
-	/* config systick reload value and enable interrupt */
+	/* Config systick reload value and enable interrupt */
 	systick_clock_source_config(SYSTICK_CLOCK_SOURCE_AHBCLK_NODIV);
 	systick_interrupt_config(MS_TICK);
 	
 	ht32_board_init();
 	
-	uart_print_init(2000000);
-	
-	//cam_view_uart_init();
-	
+	uart_print_init(2250000);
+		
 	i2c_handle_type hm01b0_hi2c;
 	hm01b0_hi2c.i2cx = HM01B0_I2C_PORT;
 	hm01b0_init(&hm01b0_hi2c);

@@ -28,6 +28,9 @@
 /* includes ------------------------------------------------------------------*/
 #include "ht32f493x5_board.h"
 #include "ht32f493x5_int.h"
+#include "hm01b0.h"
+
+__IO uint32_t uwTick = 0; 
 
 /** @addtogroup HT32F493x5_periph_examples
   * @{
@@ -132,9 +135,19 @@ void PendSV_Handler(void)
   */
 void SysTick_Handler(void)
 {
+	uwTick++;             
+	
+	/* toggle led */
+  if((uwTick % 200) == 0)
+  {
+    ht32_led_toggle(LED2);
+  }
 }
 
-#include "hm01b0.h"
+uint32_t SysTick_GetTick(void)
+{
+	return uwTick;   
+}
 
 /**
   * @brief  this function handles VSYNC interrupt on EXINT LINE 0 (PB0).
@@ -143,18 +156,14 @@ void EXINT0_IRQHandler(void)
 {
   if(exint_interrupt_flag_get(HM01B0_VSYNC_EXINT_LINE) != RESET)
   {
-    dma_channel_enable(HM01B0_DMA_CHANNEL, FALSE);
-    spi_enable(HM01B0_SPI_PORT, FALSE); 
-    
-    (void)HM01B0_SPI_PORT->sts;
-    (void)HM01B0_SPI_PORT->dt;
-    
+		spi_enable(HM01B0_SPI_PORT, FALSE); 
+		dma_channel_enable(HM01B0_DMA_CHANNEL, FALSE);
+		
     dma_data_number_set(HM01B0_DMA_CHANNEL, HM01B0_IMAGE_SIZE_BYTES);
 
-    spi_enable(HM01B0_SPI_PORT, TRUE);
+		spi_enable(HM01B0_SPI_PORT, TRUE);
     dma_channel_enable(HM01B0_DMA_CHANNEL, TRUE);
         
-    ht32_led_on(LED2);
     exint_flag_clear(HM01B0_VSYNC_EXINT_LINE);
   }
 }
@@ -163,15 +172,22 @@ void EXINT0_IRQHandler(void)
   * @brief  this function handles HREF interrupt on EXINT LINE 4 (PA4).
   *         It simulates "Hardware Trigger" by toggling SPI Software NSS.
   */
-void EXINT4_IRQHandler(void)
-{
-  if(exint_interrupt_flag_get(EXINT_LINE_4) != RESET)
-  {
-    spi_software_cs_internal_level_set(HM01B0_SPI_PORT, SPI_SWCS_INTERNAL_LEVEL_LOW);
+// void EXINT4_IRQHandler(void)
+// {
+//   if(exint_interrupt_flag_get(EXINT_LINE_4) != RESET)
+//   {
+//     if(gpio_input_data_bit_read(HM01B0_HREF_PORT, HM01B0_HREF_PIN) != RESET)
+//     {
+//       spi_software_cs_internal_level_set(HM01B0_SPI_PORT, SPI_SWCS_INTERNAL_LEVEL_LOW);
+//     }
+//     else
+//     {
+//       spi_software_cs_internal_level_set(HM01B0_SPI_PORT, SPI_SWCS_INTERNAL_LEVEL_HIGHT);
+//     }
 
-    exint_flag_clear(EXINT_LINE_4);
-  }
-}
+//     exint_flag_clear(EXINT_LINE_4);
+//   }
+// }
 
 /**
   * @brief  this function handles DMA1 Channel 2 interrupt (SPI RX Done).
@@ -180,8 +196,6 @@ void DMA1_Channel2_IRQHandler(void)
 {
   if(dma_interrupt_flag_get(DMA1_FDT2_FLAG) != RESET)
   {
-    spi_software_cs_internal_level_set(HM01B0_SPI_PORT, SPI_SWCS_INTERNAL_LEVEL_HIGHT);
-
     g_frame_ready = 1;
   
     dma_flag_clear(DMA1_FDT2_FLAG);
