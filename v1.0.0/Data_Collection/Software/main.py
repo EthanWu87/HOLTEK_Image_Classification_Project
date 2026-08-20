@@ -75,9 +75,9 @@ def main():
                         fps = 1.0 / time_diff if time_diff > 0 else 0.0
                         last_time = current_time
 
-                        window_title = f"HM01B0 True 1-bit Parallel - FPS: {fps:.2f}"
-                        cv2.imshow('HM01B0 1-Bit Parallel Grayscale', frame_zoomed)
-                        cv2.setWindowTitle('HM01B0 1-Bit Parallel Grayscale', window_title)
+                        window_title = f"HM01B0 8-bits Parallel - FPS: {fps:.2f}"
+                        cv2.imshow('HM01B0 8-Bits Parallel Grayscale', frame_zoomed)
+                        cv2.setWindowTitle('HM01B0 8-Bits Parallel Grayscale', window_title)
 
                         key = cv2.waitKey(1) & 0xFF
 

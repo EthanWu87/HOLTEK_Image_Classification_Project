@@ -1,10 +1,15 @@
 #include "hm01b0.h"
 
+/**
+  * @brief  initialize HM01B0 camera for registers
+  * @param  hi2c: pointer to the i2c handle structure.
+  * @retval none
+  */
 void hm01b0_init(i2c_handle_type* hi2c)
 {
   hm01b0_i2c_init(hi2c);
   
-  /* Initialization for QQVGA (160x120) */
+  /* initialization for QQVGA (160x120) */
   uint8_t readout_x_val           = 0x03;
   uint8_t readout_y_val           = 0x03;
   uint8_t binning_mode_val        = 0x03;
@@ -14,13 +19,13 @@ void hm01b0_init(i2c_handle_type* hi2c)
   uint8_t bit_control_val         = 0x22; 
 	uint8_t osc_clk_div             = 0x28;   // set LSB format amd turn on gated clk (pclk)
 	
-	/* Automatic exposure gain control */
+	/* automatic exposure gain control */
 	uint8_t ae_enable_val           = 0x01;
 	uint8_t ae_target_val           = 0x60;
 	uint8_t ae_max_intg_h_val       = 0x01;
 	uint8_t ae_max_intg_l_val       = 0x54;
 	
-	/* Group parameter */
+	/* group parameter */
 	uint8_t group_consume           = 0x00;
 	uint8_t group_hold              = 0x01;
 	
@@ -33,14 +38,14 @@ void hm01b0_init(i2c_handle_type* hi2c)
     printf("Reset failed!\n");
   }
 
-  /* Scan hm01b0 sensor ID */
+  /* scan hm01b0 sensor ID */
   uint16_t model_id = hm01b0_read_reg16(hi2c, 0x0000);
   if(model_id != 0x01b0)
   {
     printf("Invalid model id: 0x%04X\n", model_id);
   }
 
-  /* Write registers value*/
+  /* write registers value*/
   hm01b0_write_reg8(hi2c, 0x3059, bit_control_val);
   hm01b0_write_reg8(hi2c, 0x0383, readout_x_val);
   hm01b0_write_reg8(hi2c, 0x0387, readout_y_val);
@@ -67,6 +72,12 @@ void hm01b0_init(i2c_handle_type* hi2c)
   hm01b0_write_reg8(hi2c, 0x0100, 0x01);   // turn on pclk, href, vsync
 }
 
+/**
+  * @brief  reset HM01B0 camera
+  * @param  hi2c: pointer to the i2c handle structure.
+  * @retval 0: successful
+  *        -1: faild
+  */
 int hm01b0_reset(i2c_handle_type* hi2c)
 {
   hm01b0_write_reg8(hi2c, 0x0103, 0x01);
@@ -84,6 +95,11 @@ int hm01b0_reset(i2c_handle_type* hi2c)
   return -1;
 }
 
+/**
+  * @brief  initialize i2c interface
+  * @param  hi2c: pointer to the i2c handle structure.
+  * @retval none
+  */
 void hm01b0_i2c_init(i2c_handle_type* hi2c)
 {
   i2c_reset(hi2c->i2cx);
@@ -92,6 +108,7 @@ void hm01b0_i2c_init(i2c_handle_type* hi2c)
 
   if(hi2c->i2cx == HM01B0_I2C_PORT)
   {
+		/* clock enable */
     crm_periph_clock_enable(CRM_IOMUX_PERIPH_CLOCK, TRUE);
     crm_periph_clock_enable(HM01B0_I2C_CLK, TRUE);
     crm_periph_clock_enable(HM01B0_I2C_SCL_GPIO_CLK, TRUE);
@@ -108,7 +125,7 @@ void hm01b0_i2c_init(i2c_handle_type* hi2c)
     gpio_initstructure.gpio_pins = HM01B0_I2C_SDA_PIN;
     gpio_init(HM01B0_I2C_SDA_GPIO_PORT, &gpio_initstructure);
 
-    /* Reset SCL, SDA line */
+    /* reset SCL, SDA line */
     gpio_bits_set(HM01B0_I2C_SCL_GPIO_PORT, HM01B0_I2C_SCL_PIN);
     gpio_bits_set(HM01B0_I2C_SDA_GPIO_PORT, HM01B0_I2C_SDA_PIN);
 
@@ -121,6 +138,11 @@ void hm01b0_i2c_init(i2c_handle_type* hi2c)
   i2c_enable(hi2c->i2cx, TRUE);
 }
 
+/**
+  * @brief  initialize SPI and DMA
+  * @param  hi2c: pointer to the i2c handle structure.
+  * @retval none
+  */
 void hm01b0_spi_dma_init(void* buffer, uint32_t size)
 {
   gpio_init_type gpio_init_struct;
@@ -128,15 +150,14 @@ void hm01b0_spi_dma_init(void* buffer, uint32_t size)
   dma_init_type dma_init_struct;
   exint_init_type exint_init_struct;
 
-  /* Clock Enable */
+  /* clock enable */
   crm_periph_clock_enable(CRM_IOMUX_PERIPH_CLOCK, TRUE);
   crm_periph_clock_enable(HM01B0_SPI_GPIO_CLK, TRUE);
   crm_periph_clock_enable(HM01B0_VSYNC_GPIO_CLK, TRUE);
   crm_periph_clock_enable(HM01B0_SPI_CLK, TRUE);
   crm_periph_clock_enable(HM01B0_DMA_CLK, TRUE);
 
-  /* GPIO configuration */
-  /* PCLK (PA5) -> SPI1_SCK, D0 (PA7) -> SPI1_MOSI */
+  /* PCLK (PA5) -> SPI1_SCK,   D0 (PA7) -> SPI1_MOSI */
   gpio_init_struct.gpio_drive_strength = GPIO_DRIVE_STRENGTH_MODERATE;
   gpio_init_struct.gpio_out_type  = GPIO_OUTPUT_PUSH_PULL;
   gpio_init_struct.gpio_mode      = GPIO_MODE_MUX;
@@ -180,7 +201,7 @@ void hm01b0_spi_dma_init(void* buffer, uint32_t size)
   spi_init_struct.clock_polarity = SPI_CLOCK_POLARITY_HIGH; 
   spi_init_struct.clock_phase = SPI_CLOCK_PHASE_1EDGE;
   
-  /* Turn on cs software mode, but use HREF simulate hardware mode */
+  /* turn on cs software mode, but use HREF simulate hardware mode */
   spi_init_struct.cs_mode_selection = SPI_CS_SOFTWARE_MODE;
   spi_init(HM01B0_SPI_PORT, &spi_init_struct);
   

@@ -7,7 +7,7 @@
 
 extern int ei_main(void);
 
-volatile uint8_t g_frame_ready = 0;
+volatile uint8_t g_frame_ready = 0;   /* flag for a camera frame is ready or not */
 
 uint8_t hm01b0_frame_buffer[HM01B0_IMAGE_SIZE_BYTES];
 
@@ -15,8 +15,9 @@ i2c_handle_type hm01b0_hi2c;
 
 /**
   * @brief  config systick and enable interrupt.
-  * @param  none
-  * @retval none
+  * @param  ticks: number of clock cycles between interrupts
+  * @retval 1: configuration successful
+	*         0: configuration faild
   */
 static uint32_t systick_interrupt_config(uint32_t ticks)
 {
@@ -35,24 +36,29 @@ static uint32_t systick_interrupt_config(uint32_t ticks)
 
 int main(void)
 {
+	/* initialize MCU system clock configuration */
 	system_clock_config();
 
-	/* Config systick reload value and enable interrupt */
+	/* configure SysTick clock source to AHB clock */
 	systick_clock_source_config(SYSTICK_CLOCK_SOURCE_AHBCLK_NODIV);
 	systick_interrupt_config(MS_TICK);
 	
 	ht32_board_init();
 	
+	/* initialize UART serial console baudrate*/
 	uart_print_init(2250000);
 		
+	/* configure I2C interface */
 	i2c_handle_type hm01b0_hi2c;
 	hm01b0_hi2c.i2cx = HM01B0_I2C_PORT;
 	hm01b0_init(&hm01b0_hi2c);
 	printf("I2C Init Done\r\n");
 	
+	/* configure SPI and DMA to transfer camera frame data into the frame buffer array */
 	hm01b0_spi_dma_init(hm01b0_frame_buffer, HM01B0_IMAGE_SIZE_BYTES);
 	printf("SPI and DMA Init Done\r\n");
 	
+	/* launch EDGE EMPULSE main process */ 
 	ei_main();
 	
 	while(1)

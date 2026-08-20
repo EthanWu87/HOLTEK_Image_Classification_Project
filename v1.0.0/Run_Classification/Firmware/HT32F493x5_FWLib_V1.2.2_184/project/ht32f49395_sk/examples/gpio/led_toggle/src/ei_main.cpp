@@ -41,11 +41,6 @@ void read_hm01b0_data()
 	printf("IMG_E\r\n");
 }
 
-/**
-  * @brief  config systick and enable interrupt.
-  * @param  none
-  * @retval none
-  */
 int raw_feature_get_data(size_t offset, size_t length, float *out_ptr)
 {
 	uint8_t *src = &ei_img_crop_buffer[offset];
@@ -68,6 +63,7 @@ int ei_main(void)
 	{
 		ei_printf("Edge Impulse standalone inferencing (ht32f493x5)\n");
 
+		/* check the DSP input size */
 		if(sizeof(ei_img_crop_buffer) != EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE)
 		{
 			ei_printf("The size of your buffer is not correct. Expected %d items, but had %u\n",

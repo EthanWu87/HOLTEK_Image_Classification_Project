@@ -1,0 +1,16 @@
+--cpu=Cortex-M4.fp.sp
+".\objects\ht32f493x5_clock.o"
+".\objects\ht32f493x5_int.o"
+".\objects\main.o"
+".\objects\ht32f493x5_board.o"
+".\objects\ht32f493x5_gpio.o"
+".\objects\ht32f493x5_misc.o"
+".\objects\ht32f493x5_crm.o"
+".\objects\ht32f493x5_usart.o"
+".\objects\ht32f493x5_tmr.o"
+".\objects\system_ht32f493x5.o"
+".\objects\startup_ht32f493x5.o"
+--strict --scatter ".\objects\7_pwm_output.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\listings\7_pwm_output.map" -o .\objects\7_pwm_output.axf

@@ -1,0 +1,1070 @@
+Component: Arm Compiler for Embedded 6.24 Tool: armlink [5f371500]
+
+==============================================================================
+
+Section Cross References
+
+    ht32f493x5_clock.o(.text.system_clock_config) refers to ht32f493x5_crm.o(.text.crm_reset) for crm_reset
+    ht32f493x5_clock.o(.text.system_clock_config) refers to ht32f493x5_crm.o(.text.crm_clock_source_enable) for crm_clock_source_enable
+    ht32f493x5_clock.o(.text.system_clock_config) refers to ht32f493x5_crm.o(.text.crm_hext_stable_wait) for crm_hext_stable_wait
+    ht32f493x5_clock.o(.text.system_clock_config) refers to ht32f493x5_crm.o(.text.crm_pll_config) for crm_pll_config
+    ht32f493x5_clock.o(.text.system_clock_config) refers to ht32f493x5_crm.o(.text.crm_hext_clock_div_set) for crm_hext_clock_div_set
+    ht32f493x5_clock.o(.text.system_clock_config) refers to ht32f493x5_crm.o(.text.crm_flag_get) for crm_flag_get
+    ht32f493x5_clock.o(.text.system_clock_config) refers to ht32f493x5_crm.o(.text.crm_ahb_div_set) for crm_ahb_div_set
+    ht32f493x5_clock.o(.text.system_clock_config) refers to ht32f493x5_crm.o(.text.crm_apb2_div_set) for crm_apb2_div_set
+    ht32f493x5_clock.o(.text.system_clock_config) refers to ht32f493x5_crm.o(.text.crm_apb1_div_set) for crm_apb1_div_set
+    ht32f493x5_clock.o(.text.system_clock_config) refers to ht32f493x5_crm.o(.text.crm_auto_step_mode_enable) for crm_auto_step_mode_enable
+    ht32f493x5_clock.o(.text.system_clock_config) refers to ht32f493x5_crm.o(.text.crm_sysclk_switch) for crm_sysclk_switch
+    ht32f493x5_clock.o(.text.system_clock_config) refers to ht32f493x5_crm.o(.text.crm_sysclk_switch_status_get) for crm_sysclk_switch_status_get
+    ht32f493x5_clock.o(.text.system_clock_config) refers to system_ht32f493x5.o(.text.system_core_clock_update) for system_core_clock_update
+    ht32f493x5_clock.o(.ARM.exidx.text.system_clock_config) refers to ht32f493x5_clock.o(.text.system_clock_config) for [Anonymous Symbol]
+    ht32f493x5_int.o(.ARM.exidx.text.NMI_Handler) refers to ht32f493x5_int.o(.text.NMI_Handler) for [Anonymous Symbol]
+    ht32f493x5_int.o(.ARM.exidx.text.HardFault_Handler) refers to ht32f493x5_int.o(.text.HardFault_Handler) for [Anonymous Symbol]
+    ht32f493x5_int.o(.ARM.exidx.text.MemManage_Handler) refers to ht32f493x5_int.o(.text.MemManage_Handler) for [Anonymous Symbol]
+    ht32f493x5_int.o(.ARM.exidx.text.BusFault_Handler) refers to ht32f493x5_int.o(.text.BusFault_Handler) for [Anonymous Symbol]
+    ht32f493x5_int.o(.ARM.exidx.text.UsageFault_Handler) refers to ht32f493x5_int.o(.text.UsageFault_Handler) for [Anonymous Symbol]
+    ht32f493x5_int.o(.ARM.exidx.text.SVC_Handler) refers to ht32f493x5_int.o(.text.SVC_Handler) for [Anonymous Symbol]
+    ht32f493x5_int.o(.ARM.exidx.text.DebugMon_Handler) refers to ht32f493x5_int.o(.text.DebugMon_Handler) for [Anonymous Symbol]
+    ht32f493x5_int.o(.ARM.exidx.text.PendSV_Handler) refers to ht32f493x5_int.o(.text.PendSV_Handler) for [Anonymous Symbol]
+    ht32f493x5_int.o(.text.SysTick_Handler) refers to ht32f493x5_int.o(.bss.uwTick) for uwTick
+    ht32f493x5_int.o(.text.SysTick_Handler) refers to ht32f493x5_board.o(.text.ht32_led_toggle) for ht32_led_toggle
+    ht32f493x5_int.o(.ARM.exidx.text.SysTick_Handler) refers to ht32f493x5_int.o(.text.SysTick_Handler) for [Anonymous Symbol]
+    ht32f493x5_int.o(.text.SysTick_GetTick) refers to ht32f493x5_int.o(.bss.uwTick) for uwTick
+    ht32f493x5_int.o(.ARM.exidx.text.SysTick_GetTick) refers to ht32f493x5_int.o(.text.SysTick_GetTick) for [Anonymous Symbol]
+    ht32f493x5_int.o(.text.EXINT0_IRQHandler) refers to ht32f493x5_exint.o(.text.exint_interrupt_flag_get) for exint_interrupt_flag_get
+    ht32f493x5_int.o(.text.EXINT0_IRQHandler) refers to ht32f493x5_spi.o(.text.spi_enable) for spi_enable
+    ht32f493x5_int.o(.text.EXINT0_IRQHandler) refers to ht32f493x5_dma.o(.text.dma_channel_enable) for dma_channel_enable
+    ht32f493x5_int.o(.text.EXINT0_IRQHandler) refers to ht32f493x5_dma.o(.text.dma_data_number_set) for dma_data_number_set
+    ht32f493x5_int.o(.text.EXINT0_IRQHandler) refers to ht32f493x5_exint.o(.text.exint_flag_clear) for exint_flag_clear
+    ht32f493x5_int.o(.ARM.exidx.text.EXINT0_IRQHandler) refers to ht32f493x5_int.o(.text.EXINT0_IRQHandler) for [Anonymous Symbol]
+    ht32f493x5_int.o(.text.DMA1_Channel2_IRQHandler) refers to ht32f493x5_dma.o(.text.dma_interrupt_flag_get) for dma_interrupt_flag_get
+    ht32f493x5_int.o(.text.DMA1_Channel2_IRQHandler) refers to main.o(.bss.g_frame_ready) for g_frame_ready
+    ht32f493x5_int.o(.text.DMA1_Channel2_IRQHandler) refers to ht32f493x5_dma.o(.text.dma_flag_clear) for dma_flag_clear
+    ht32f493x5_int.o(.ARM.exidx.text.DMA1_Channel2_IRQHandler) refers to ht32f493x5_int.o(.text.DMA1_Channel2_IRQHandler) for [Anonymous Symbol]
+    main.o(.text.main) refers to main.o(.bss.hm01b0_hi2c) for hm01b0_hi2c
+    main.o(.text.main) refers to ht32f493x5_clock.o(.text.system_clock_config) for system_clock_config
+    main.o(.text.main) refers to ht32f493x5_board.o(.text.ht32_board_init) for ht32_board_init
+    main.o(.text.main) refers to ht32f493x5_board.o(.text.uart_print_init) for uart_print_init
+    main.o(.text.main) refers to puts.o(.text) for puts
+    main.o(.text.main) refers to hm01b0.o(.text.hm01b0_init) for hm01b0_init
+    main.o(.text.main) refers to main.o(.bss.hm01b0_frame_buffer) for hm01b0_frame_buffer
+    main.o(.text.main) refers to hm01b0.o(.text.hm01b0_spi_dma_init) for hm01b0_spi_dma_init
+    main.o(.text.main) refers to main.o(.bss.g_frame_ready) for g_frame_ready
+    main.o(.text.main) refers to main.o(.bss.edge_impulse_clean_buffer) for edge_impulse_clean_buffer
+    main.o(.text.main) refers to ht32f493x5_exint.o(.text.exint_flag_clear) for exint_flag_clear
+    main.o(.text.main) refers to ht32f493x5_misc.o(.text.nvic_irq_disable) for nvic_irq_disable
+    main.o(.text.main) refers to noretval__2printf.o(.text) for __2printf
+    main.o(.text.main) refers to ht32f493x5_board.o(.bss.__stdout) for __stdout
+    main.o(.text.main) refers to stdio_streams.o(.bss) for __stdout
+    main.o(.text.main) refers to fflush.o(.text) for fflush
+    main.o(.text.main) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    main.o(.text.main) refers to ht32f493x5_usart.o(.text.usart_flag_get) for usart_flag_get
+    main.o(.text.main) refers to ht32f493x5_usart.o(.text.usart_data_transmit) for usart_data_transmit
+    main.o(.text.main) refers to ht32f493x5_misc.o(.text.nvic_irq_enable) for nvic_irq_enable
+    main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
+    hm01b0.o(.text) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    hm01b0.o(.text) refers (Special) to _printf_pad.o(.text) for _printf_pre_padding
+    hm01b0.o(.text) refers (Special) to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    hm01b0.o(.text) refers (Special) to _printf_hex_int.o(.text) for _printf_longlong_hex
+    hm01b0.o(.text.hm01b0_init) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    hm01b0.o(.text.hm01b0_init) refers (Special) to _printf_pad.o(.text) for _printf_pre_padding
+    hm01b0.o(.text.hm01b0_init) refers (Special) to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    hm01b0.o(.text.hm01b0_init) refers (Special) to _printf_hex_int.o(.text) for _printf_longlong_hex
+    hm01b0.o(.text.hm01b0_init) refers to hm01b0.o(.text.hm01b0_i2c_init) for hm01b0_i2c_init
+    hm01b0.o(.text.hm01b0_init) refers to i2c_application.o(.text.i2c_master_transmit) for i2c_master_transmit
+    hm01b0.o(.text.hm01b0_init) refers to i2c_application.o(.text.i2c_memory_read) for i2c_memory_read
+    hm01b0.o(.text.hm01b0_init) refers to ht32f493x5_board.o(.text.delay_ms) for delay_ms
+    hm01b0.o(.text.hm01b0_init) refers to puts.o(.text) for puts
+    hm01b0.o(.text.hm01b0_init) refers to noretval__2printf.o(.text) for __2printf
+    hm01b0.o(.ARM.exidx.text.hm01b0_init) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    hm01b0.o(.ARM.exidx.text.hm01b0_init) refers (Special) to _printf_pad.o(.text) for _printf_pre_padding
+    hm01b0.o(.ARM.exidx.text.hm01b0_init) refers (Special) to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    hm01b0.o(.ARM.exidx.text.hm01b0_init) refers (Special) to _printf_hex_int.o(.text) for _printf_longlong_hex
+    hm01b0.o(.ARM.exidx.text.hm01b0_init) refers to hm01b0.o(.text.hm01b0_init) for [Anonymous Symbol]
+    hm01b0.o(.text.hm01b0_i2c_init) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    hm01b0.o(.text.hm01b0_i2c_init) refers (Special) to _printf_pad.o(.text) for _printf_pre_padding
+    hm01b0.o(.text.hm01b0_i2c_init) refers (Special) to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    hm01b0.o(.text.hm01b0_i2c_init) refers (Special) to _printf_hex_int.o(.text) for _printf_longlong_hex
+    hm01b0.o(.text.hm01b0_i2c_init) refers to ht32f493x5_i2c.o(.text.i2c_reset) for i2c_reset
+    hm01b0.o(.text.hm01b0_i2c_init) refers to ht32f493x5_crm.o(.text.crm_periph_clock_enable) for crm_periph_clock_enable
+    hm01b0.o(.text.hm01b0_i2c_init) refers to ht32f493x5_gpio.o(.text.gpio_init) for gpio_init
+    hm01b0.o(.text.hm01b0_i2c_init) refers to ht32f493x5_gpio.o(.text.gpio_bits_set) for gpio_bits_set
+    hm01b0.o(.text.hm01b0_i2c_init) refers to ht32f493x5_i2c.o(.text.i2c_init) for i2c_init
+    hm01b0.o(.text.hm01b0_i2c_init) refers to ht32f493x5_misc.o(.text.nvic_irq_enable) for nvic_irq_enable
+    hm01b0.o(.text.hm01b0_i2c_init) refers to ht32f493x5_i2c.o(.text.i2c_enable) for i2c_enable
+    hm01b0.o(.ARM.exidx.text.hm01b0_i2c_init) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    hm01b0.o(.ARM.exidx.text.hm01b0_i2c_init) refers (Special) to _printf_pad.o(.text) for _printf_pre_padding
+    hm01b0.o(.ARM.exidx.text.hm01b0_i2c_init) refers (Special) to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    hm01b0.o(.ARM.exidx.text.hm01b0_i2c_init) refers (Special) to _printf_hex_int.o(.text) for _printf_longlong_hex
+    hm01b0.o(.ARM.exidx.text.hm01b0_i2c_init) refers to hm01b0.o(.text.hm01b0_i2c_init) for [Anonymous Symbol]
+    hm01b0.o(.text.hm01b0_reset) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    hm01b0.o(.text.hm01b0_reset) refers (Special) to _printf_pad.o(.text) for _printf_pre_padding
+    hm01b0.o(.text.hm01b0_reset) refers (Special) to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    hm01b0.o(.text.hm01b0_reset) refers (Special) to _printf_hex_int.o(.text) for _printf_longlong_hex
+    hm01b0.o(.text.hm01b0_reset) refers to i2c_application.o(.text.i2c_master_transmit) for i2c_master_transmit
+    hm01b0.o(.text.hm01b0_reset) refers to i2c_application.o(.text.i2c_memory_read) for i2c_memory_read
+    hm01b0.o(.text.hm01b0_reset) refers to ht32f493x5_board.o(.text.delay_ms) for delay_ms
+    hm01b0.o(.ARM.exidx.text.hm01b0_reset) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    hm01b0.o(.ARM.exidx.text.hm01b0_reset) refers (Special) to _printf_pad.o(.text) for _printf_pre_padding
+    hm01b0.o(.ARM.exidx.text.hm01b0_reset) refers (Special) to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    hm01b0.o(.ARM.exidx.text.hm01b0_reset) refers (Special) to _printf_hex_int.o(.text) for _printf_longlong_hex
+    hm01b0.o(.ARM.exidx.text.hm01b0_reset) refers to hm01b0.o(.text.hm01b0_reset) for [Anonymous Symbol]
+    hm01b0.o(.text.hm01b0_read_reg16) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    hm01b0.o(.text.hm01b0_read_reg16) refers (Special) to _printf_pad.o(.text) for _printf_pre_padding
+    hm01b0.o(.text.hm01b0_read_reg16) refers (Special) to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    hm01b0.o(.text.hm01b0_read_reg16) refers (Special) to _printf_hex_int.o(.text) for _printf_longlong_hex
+    hm01b0.o(.text.hm01b0_read_reg16) refers to i2c_application.o(.text.i2c_memory_read) for i2c_memory_read
+    hm01b0.o(.ARM.exidx.text.hm01b0_read_reg16) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    hm01b0.o(.ARM.exidx.text.hm01b0_read_reg16) refers (Special) to _printf_pad.o(.text) for _printf_pre_padding
+    hm01b0.o(.ARM.exidx.text.hm01b0_read_reg16) refers (Special) to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    hm01b0.o(.ARM.exidx.text.hm01b0_read_reg16) refers (Special) to _printf_hex_int.o(.text) for _printf_longlong_hex
+    hm01b0.o(.ARM.exidx.text.hm01b0_read_reg16) refers to hm01b0.o(.text.hm01b0_read_reg16) for [Anonymous Symbol]
+    hm01b0.o(.text.hm01b0_write_reg8) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    hm01b0.o(.text.hm01b0_write_reg8) refers (Special) to _printf_pad.o(.text) for _printf_pre_padding
+    hm01b0.o(.text.hm01b0_write_reg8) refers (Special) to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    hm01b0.o(.text.hm01b0_write_reg8) refers (Special) to _printf_hex_int.o(.text) for _printf_longlong_hex
+    hm01b0.o(.text.hm01b0_write_reg8) refers to i2c_application.o(.text.i2c_master_transmit) for i2c_master_transmit
+    hm01b0.o(.ARM.exidx.text.hm01b0_write_reg8) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    hm01b0.o(.ARM.exidx.text.hm01b0_write_reg8) refers (Special) to _printf_pad.o(.text) for _printf_pre_padding
+    hm01b0.o(.ARM.exidx.text.hm01b0_write_reg8) refers (Special) to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    hm01b0.o(.ARM.exidx.text.hm01b0_write_reg8) refers (Special) to _printf_hex_int.o(.text) for _printf_longlong_hex
+    hm01b0.o(.ARM.exidx.text.hm01b0_write_reg8) refers to hm01b0.o(.text.hm01b0_write_reg8) for [Anonymous Symbol]
+    hm01b0.o(.text.hm01b0_write_reg16) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    hm01b0.o(.text.hm01b0_write_reg16) refers (Special) to _printf_pad.o(.text) for _printf_pre_padding
+    hm01b0.o(.text.hm01b0_write_reg16) refers (Special) to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    hm01b0.o(.text.hm01b0_write_reg16) refers (Special) to _printf_hex_int.o(.text) for _printf_longlong_hex
+    hm01b0.o(.text.hm01b0_write_reg16) refers to i2c_application.o(.text.i2c_master_transmit) for i2c_master_transmit
+    hm01b0.o(.ARM.exidx.text.hm01b0_write_reg16) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    hm01b0.o(.ARM.exidx.text.hm01b0_write_reg16) refers (Special) to _printf_pad.o(.text) for _printf_pre_padding
+    hm01b0.o(.ARM.exidx.text.hm01b0_write_reg16) refers (Special) to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    hm01b0.o(.ARM.exidx.text.hm01b0_write_reg16) refers (Special) to _printf_hex_int.o(.text) for _printf_longlong_hex
+    hm01b0.o(.ARM.exidx.text.hm01b0_write_reg16) refers to hm01b0.o(.text.hm01b0_write_reg16) for [Anonymous Symbol]
+    hm01b0.o(.text.hm01b0_read_reg8) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    hm01b0.o(.text.hm01b0_read_reg8) refers (Special) to _printf_pad.o(.text) for _printf_pre_padding
+    hm01b0.o(.text.hm01b0_read_reg8) refers (Special) to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    hm01b0.o(.text.hm01b0_read_reg8) refers (Special) to _printf_hex_int.o(.text) for _printf_longlong_hex
+    hm01b0.o(.text.hm01b0_read_reg8) refers to i2c_application.o(.text.i2c_memory_read) for i2c_memory_read
+    hm01b0.o(.ARM.exidx.text.hm01b0_read_reg8) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    hm01b0.o(.ARM.exidx.text.hm01b0_read_reg8) refers (Special) to _printf_pad.o(.text) for _printf_pre_padding
+    hm01b0.o(.ARM.exidx.text.hm01b0_read_reg8) refers (Special) to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    hm01b0.o(.ARM.exidx.text.hm01b0_read_reg8) refers (Special) to _printf_hex_int.o(.text) for _printf_longlong_hex
+    hm01b0.o(.ARM.exidx.text.hm01b0_read_reg8) refers to hm01b0.o(.text.hm01b0_read_reg8) for [Anonymous Symbol]
+    hm01b0.o(.text.hm01b0_spi_dma_init) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    hm01b0.o(.text.hm01b0_spi_dma_init) refers (Special) to _printf_pad.o(.text) for _printf_pre_padding
+    hm01b0.o(.text.hm01b0_spi_dma_init) refers (Special) to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    hm01b0.o(.text.hm01b0_spi_dma_init) refers (Special) to _printf_hex_int.o(.text) for _printf_longlong_hex
+    hm01b0.o(.text.hm01b0_spi_dma_init) refers to ht32f493x5_crm.o(.text.crm_periph_clock_enable) for crm_periph_clock_enable
+    hm01b0.o(.text.hm01b0_spi_dma_init) refers to ht32f493x5_gpio.o(.text.gpio_init) for gpio_init
+    hm01b0.o(.text.hm01b0_spi_dma_init) refers to ht32f493x5_gpio.o(.text.gpio_exint_line_config) for gpio_exint_line_config
+    hm01b0.o(.text.hm01b0_spi_dma_init) refers to ht32f493x5_exint.o(.text.exint_init) for exint_init
+    hm01b0.o(.text.hm01b0_spi_dma_init) refers to ht32f493x5_misc.o(.text.nvic_irq_enable) for nvic_irq_enable
+    hm01b0.o(.text.hm01b0_spi_dma_init) refers to ht32f493x5_spi.o(.text.spi_init) for spi_init
+    hm01b0.o(.text.hm01b0_spi_dma_init) refers to ht32f493x5_spi.o(.text.spi_software_cs_internal_level_set) for spi_software_cs_internal_level_set
+    hm01b0.o(.text.hm01b0_spi_dma_init) refers to ht32f493x5_spi.o(.text.spi_i2s_dma_receiver_enable) for spi_i2s_dma_receiver_enable
+    hm01b0.o(.text.hm01b0_spi_dma_init) refers to ht32f493x5_spi.o(.text.spi_enable) for spi_enable
+    hm01b0.o(.text.hm01b0_spi_dma_init) refers to ht32f493x5_dma.o(.text.dma_reset) for dma_reset
+    hm01b0.o(.text.hm01b0_spi_dma_init) refers to ht32f493x5_dma.o(.text.dma_init) for dma_init
+    hm01b0.o(.text.hm01b0_spi_dma_init) refers to ht32f493x5_dma.o(.text.dma_interrupt_enable) for dma_interrupt_enable
+    hm01b0.o(.ARM.exidx.text.hm01b0_spi_dma_init) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    hm01b0.o(.ARM.exidx.text.hm01b0_spi_dma_init) refers (Special) to _printf_pad.o(.text) for _printf_pre_padding
+    hm01b0.o(.ARM.exidx.text.hm01b0_spi_dma_init) refers (Special) to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    hm01b0.o(.ARM.exidx.text.hm01b0_spi_dma_init) refers (Special) to _printf_hex_int.o(.text) for _printf_longlong_hex
+    hm01b0.o(.ARM.exidx.text.hm01b0_spi_dma_init) refers to hm01b0.o(.text.hm01b0_spi_dma_init) for [Anonymous Symbol]
+    ht32f493x5_board.o(.text) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.text._sys_exit) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text._sys_exit) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text._sys_exit) refers to ht32f493x5_board.o(.text._sys_exit) for [Anonymous Symbol]
+    ht32f493x5_board.o(.text._ttywrch) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text._ttywrch) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text._ttywrch) refers to ht32f493x5_board.o(.text._ttywrch) for [Anonymous Symbol]
+    ht32f493x5_board.o(.text.fputc) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.text.fputc) refers to ht32f493x5_usart.o(.text.usart_flag_get) for usart_flag_get
+    ht32f493x5_board.o(.text.fputc) refers to ht32f493x5_usart.o(.text.usart_data_transmit) for usart_data_transmit
+    ht32f493x5_board.o(.ARM.exidx.text.fputc) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text.fputc) refers to ht32f493x5_board.o(.text.fputc) for [Anonymous Symbol]
+    ht32f493x5_board.o(.text.fgetc) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.text.fgetc) refers to ht32f493x5_usart.o(.text.usart_flag_get) for usart_flag_get
+    ht32f493x5_board.o(.text.fgetc) refers to ht32f493x5_usart.o(.text.usart_data_receive) for usart_data_receive
+    ht32f493x5_board.o(.ARM.exidx.text.fgetc) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text.fgetc) refers to ht32f493x5_board.o(.text.fgetc) for [Anonymous Symbol]
+    ht32f493x5_board.o(.text.uart_print_init) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.text.uart_print_init) refers to ht32f493x5_crm.o(.text.crm_periph_clock_enable) for crm_periph_clock_enable
+    ht32f493x5_board.o(.text.uart_print_init) refers to ht32f493x5_gpio.o(.text.gpio_default_para_init) for gpio_default_para_init
+    ht32f493x5_board.o(.text.uart_print_init) refers to ht32f493x5_gpio.o(.text.gpio_init) for gpio_init
+    ht32f493x5_board.o(.text.uart_print_init) refers to ht32f493x5_usart.o(.text.usart_init) for usart_init
+    ht32f493x5_board.o(.text.uart_print_init) refers to ht32f493x5_usart.o(.text.usart_transmitter_enable) for usart_transmitter_enable
+    ht32f493x5_board.o(.text.uart_print_init) refers to ht32f493x5_usart.o(.text.usart_receiver_enable) for usart_receiver_enable
+    ht32f493x5_board.o(.text.uart_print_init) refers to ht32f493x5_usart.o(.text.usart_enable) for usart_enable
+    ht32f493x5_board.o(.ARM.exidx.text.uart_print_init) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text.uart_print_init) refers to ht32f493x5_board.o(.text.uart_print_init) for [Anonymous Symbol]
+    ht32f493x5_board.o(.text.ht32_board_init) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.text.ht32_board_init) refers to ht32f493x5_misc.o(.text.systick_clock_source_config) for systick_clock_source_config
+    ht32f493x5_board.o(.text.ht32_board_init) refers to system_ht32f493x5.o(.data.system_core_clock) for system_core_clock
+    ht32f493x5_board.o(.text.ht32_board_init) refers to ht32f493x5_board.o(.bss.fac_us) for fac_us
+    ht32f493x5_board.o(.text.ht32_board_init) refers to ht32f493x5_board.o(.bss.fac_ms) for fac_ms
+    ht32f493x5_board.o(.text.ht32_board_init) refers to ht32f493x5_board.o(.data.led_gpio_crm_clk) for led_gpio_crm_clk
+    ht32f493x5_board.o(.text.ht32_board_init) refers to ht32f493x5_crm.o(.text.crm_periph_clock_enable) for crm_periph_clock_enable
+    ht32f493x5_board.o(.text.ht32_board_init) refers to ht32f493x5_gpio.o(.text.gpio_default_para_init) for gpio_default_para_init
+    ht32f493x5_board.o(.text.ht32_board_init) refers to ht32f493x5_board.o(.data.led_gpio_pin) for led_gpio_pin
+    ht32f493x5_board.o(.text.ht32_board_init) refers to ht32f493x5_board.o(.data.led_gpio_port) for led_gpio_port
+    ht32f493x5_board.o(.text.ht32_board_init) refers to ht32f493x5_gpio.o(.text.gpio_init) for gpio_init
+    ht32f493x5_board.o(.ARM.exidx.text.ht32_board_init) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text.ht32_board_init) refers to ht32f493x5_board.o(.text.ht32_board_init) for [Anonymous Symbol]
+    ht32f493x5_board.o(.text.delay_init) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.text.delay_init) refers to ht32f493x5_misc.o(.text.systick_clock_source_config) for systick_clock_source_config
+    ht32f493x5_board.o(.text.delay_init) refers to system_ht32f493x5.o(.data.system_core_clock) for system_core_clock
+    ht32f493x5_board.o(.text.delay_init) refers to ht32f493x5_board.o(.bss.fac_us) for fac_us
+    ht32f493x5_board.o(.text.delay_init) refers to ht32f493x5_board.o(.bss.fac_ms) for fac_ms
+    ht32f493x5_board.o(.ARM.exidx.text.delay_init) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text.delay_init) refers to ht32f493x5_board.o(.text.delay_init) for [Anonymous Symbol]
+    ht32f493x5_board.o(.text.ht32_led_init) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.text.ht32_led_init) refers to ht32f493x5_board.o(.data.led_gpio_crm_clk) for led_gpio_crm_clk
+    ht32f493x5_board.o(.text.ht32_led_init) refers to ht32f493x5_crm.o(.text.crm_periph_clock_enable) for crm_periph_clock_enable
+    ht32f493x5_board.o(.text.ht32_led_init) refers to ht32f493x5_gpio.o(.text.gpio_default_para_init) for gpio_default_para_init
+    ht32f493x5_board.o(.text.ht32_led_init) refers to ht32f493x5_board.o(.data.led_gpio_pin) for led_gpio_pin
+    ht32f493x5_board.o(.text.ht32_led_init) refers to ht32f493x5_board.o(.data.led_gpio_port) for led_gpio_port
+    ht32f493x5_board.o(.text.ht32_led_init) refers to ht32f493x5_gpio.o(.text.gpio_init) for gpio_init
+    ht32f493x5_board.o(.ARM.exidx.text.ht32_led_init) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text.ht32_led_init) refers to ht32f493x5_board.o(.text.ht32_led_init) for [Anonymous Symbol]
+    ht32f493x5_board.o(.text.ht32_led_off) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.text.ht32_led_off) refers to ht32f493x5_board.o(.data.led_gpio_pin) for led_gpio_pin
+    ht32f493x5_board.o(.text.ht32_led_off) refers to ht32f493x5_board.o(.data.led_gpio_port) for led_gpio_port
+    ht32f493x5_board.o(.ARM.exidx.text.ht32_led_off) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text.ht32_led_off) refers to ht32f493x5_board.o(.text.ht32_led_off) for [Anonymous Symbol]
+    ht32f493x5_board.o(.text.ht32_button_init) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.text.ht32_button_init) refers to ht32f493x5_crm.o(.text.crm_periph_clock_enable) for crm_periph_clock_enable
+    ht32f493x5_board.o(.text.ht32_button_init) refers to ht32f493x5_gpio.o(.text.gpio_default_para_init) for gpio_default_para_init
+    ht32f493x5_board.o(.text.ht32_button_init) refers to ht32f493x5_gpio.o(.text.gpio_init) for gpio_init
+    ht32f493x5_board.o(.ARM.exidx.text.ht32_button_init) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text.ht32_button_init) refers to ht32f493x5_board.o(.text.ht32_button_init) for [Anonymous Symbol]
+    ht32f493x5_board.o(.text.ht32_button_state) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.text.ht32_button_state) refers to ht32f493x5_gpio.o(.text.gpio_input_data_bit_read) for gpio_input_data_bit_read
+    ht32f493x5_board.o(.ARM.exidx.text.ht32_button_state) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text.ht32_button_state) refers to ht32f493x5_board.o(.text.ht32_button_state) for [Anonymous Symbol]
+    ht32f493x5_board.o(.text.ht32_button_press) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.text.ht32_button_press) refers to ht32f493x5_board.o(.bss.ht32_button_press.pressed) for ht32_button_press.pressed
+    ht32f493x5_board.o(.text.ht32_button_press) refers to ht32f493x5_gpio.o(.text.gpio_input_data_bit_read) for gpio_input_data_bit_read
+    ht32f493x5_board.o(.text.ht32_button_press) refers to ht32f493x5_board.o(.bss.fac_ms) for fac_ms
+    ht32f493x5_board.o(.ARM.exidx.text.ht32_button_press) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text.ht32_button_press) refers to ht32f493x5_board.o(.text.ht32_button_press) for [Anonymous Symbol]
+    ht32f493x5_board.o(.text.delay_ms) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.text.delay_ms) refers to ht32f493x5_board.o(.bss.fac_ms) for fac_ms
+    ht32f493x5_board.o(.ARM.exidx.text.delay_ms) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text.delay_ms) refers to ht32f493x5_board.o(.text.delay_ms) for [Anonymous Symbol]
+    ht32f493x5_board.o(.text.ht32_led_on) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.text.ht32_led_on) refers to ht32f493x5_board.o(.data.led_gpio_pin) for led_gpio_pin
+    ht32f493x5_board.o(.text.ht32_led_on) refers to ht32f493x5_board.o(.data.led_gpio_port) for led_gpio_port
+    ht32f493x5_board.o(.ARM.exidx.text.ht32_led_on) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text.ht32_led_on) refers to ht32f493x5_board.o(.text.ht32_led_on) for [Anonymous Symbol]
+    ht32f493x5_board.o(.text.ht32_led_toggle) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.text.ht32_led_toggle) refers to ht32f493x5_board.o(.data.led_gpio_pin) for led_gpio_pin
+    ht32f493x5_board.o(.text.ht32_led_toggle) refers to ht32f493x5_board.o(.data.led_gpio_port) for led_gpio_port
+    ht32f493x5_board.o(.ARM.exidx.text.ht32_led_toggle) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text.ht32_led_toggle) refers to ht32f493x5_board.o(.text.ht32_led_toggle) for [Anonymous Symbol]
+    ht32f493x5_board.o(.text.delay_us) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.text.delay_us) refers to ht32f493x5_board.o(.bss.fac_us) for fac_us
+    ht32f493x5_board.o(.ARM.exidx.text.delay_us) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text.delay_us) refers to ht32f493x5_board.o(.text.delay_us) for [Anonymous Symbol]
+    ht32f493x5_board.o(.text.delay_sec) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.text.delay_sec) refers to ht32f493x5_board.o(.bss.fac_ms) for fac_ms
+    ht32f493x5_board.o(.ARM.exidx.text.delay_sec) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.ARM.exidx.text.delay_sec) refers to ht32f493x5_board.o(.text.delay_sec) for [Anonymous Symbol]
+    ht32f493x5_board.o(.data.led_gpio_port) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.data.led_gpio_pin) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.data.led_gpio_crm_clk) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.bss.ht32_button_press.pressed) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.bss.fac_us) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.bss.fac_ms) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.bss.__stdout) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.bss.__stdin) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_board.o(.bss.__stderr) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_reset) refers to ht32f493x5_crm.o(.text.crm_reset) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_lext_bypass) refers to ht32f493x5_crm.o(.text.crm_lext_bypass) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_hext_bypass) refers to ht32f493x5_crm.o(.text.crm_hext_bypass) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_flag_get) refers to ht32f493x5_crm.o(.text.crm_flag_get) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_interrupt_flag_get) refers to ht32f493x5_crm.o(.text.crm_interrupt_flag_get) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_hext_stable_wait) refers to ht32f493x5_crm.o(.text.crm_hext_stable_wait) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_hick_clock_trimming_set) refers to ht32f493x5_crm.o(.text.crm_hick_clock_trimming_set) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_hick_clock_calibration_set) refers to ht32f493x5_crm.o(.text.crm_hick_clock_calibration_set) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_periph_clock_enable) refers to ht32f493x5_crm.o(.text.crm_periph_clock_enable) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_periph_reset) refers to ht32f493x5_crm.o(.text.crm_periph_reset) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_periph_sleep_mode_clock_enable) refers to ht32f493x5_crm.o(.text.crm_periph_sleep_mode_clock_enable) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_clock_source_enable) refers to ht32f493x5_crm.o(.text.crm_clock_source_enable) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_flag_clear) refers to ht32f493x5_crm.o(.text.crm_flag_clear) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_rtc_clock_select) refers to ht32f493x5_crm.o(.text.crm_rtc_clock_select) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_rtc_clock_enable) refers to ht32f493x5_crm.o(.text.crm_rtc_clock_enable) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_ahb_div_set) refers to ht32f493x5_crm.o(.text.crm_ahb_div_set) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_apb1_div_set) refers to ht32f493x5_crm.o(.text.crm_apb1_div_set) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_apb2_div_set) refers to ht32f493x5_crm.o(.text.crm_apb2_div_set) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_adc_clock_div_set) refers to ht32f493x5_crm.o(.text.crm_adc_clock_div_set) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_usb_clock_div_set) refers to ht32f493x5_crm.o(.text.crm_usb_clock_div_set) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_clock_failure_detection_enable) refers to ht32f493x5_crm.o(.text.crm_clock_failure_detection_enable) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_battery_powered_domain_reset) refers to ht32f493x5_crm.o(.text.crm_battery_powered_domain_reset) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_pll_config) refers to ht32f493x5_crm.o(.text.crm_pll_config) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_sysclk_switch) refers to ht32f493x5_crm.o(.text.crm_sysclk_switch) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_sysclk_switch_status_get) refers to ht32f493x5_crm.o(.text.crm_sysclk_switch_status_get) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.text.crm_clocks_freq_get) refers to ht32f493x5_crm.o(.rodata.cst8) for crm_clocks_freq_get.ahb_apb2_div_table
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_clocks_freq_get) refers to ht32f493x5_crm.o(.text.crm_clocks_freq_get) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_clock_out_set) refers to ht32f493x5_crm.o(.text.crm_clock_out_set) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_interrupt_enable) refers to ht32f493x5_crm.o(.text.crm_interrupt_enable) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_auto_step_mode_enable) refers to ht32f493x5_crm.o(.text.crm_auto_step_mode_enable) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_usb_interrupt_remapping_set) refers to ht32f493x5_crm.o(.text.crm_usb_interrupt_remapping_set) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_hick_divider_select) refers to ht32f493x5_crm.o(.text.crm_hick_divider_select) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_hick_sclk_frequency_select) refers to ht32f493x5_crm.o(.text.crm_hick_sclk_frequency_select) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_usb_clock_source_select) refers to ht32f493x5_crm.o(.text.crm_usb_clock_source_select) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_clkout_to_tmr10_enable) refers to ht32f493x5_crm.o(.text.crm_clkout_to_tmr10_enable) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_hext_clock_div_set) refers to ht32f493x5_crm.o(.text.crm_hext_clock_div_set) for [Anonymous Symbol]
+    ht32f493x5_crm.o(.ARM.exidx.text.crm_clkout_div_set) refers to ht32f493x5_crm.o(.text.crm_clkout_div_set) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.text.usart_reset) refers to ht32f493x5_crm.o(.text.crm_periph_reset) for crm_periph_reset
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_reset) refers to ht32f493x5_usart.o(.text.usart_reset) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.text.usart_init) refers to ht32f493x5_crm.o(.text.crm_clocks_freq_get) for crm_clocks_freq_get
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_init) refers to ht32f493x5_usart.o(.text.usart_init) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_parity_selection_config) refers to ht32f493x5_usart.o(.text.usart_parity_selection_config) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_enable) refers to ht32f493x5_usart.o(.text.usart_enable) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_transmitter_enable) refers to ht32f493x5_usart.o(.text.usart_transmitter_enable) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_receiver_enable) refers to ht32f493x5_usart.o(.text.usart_receiver_enable) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_clock_config) refers to ht32f493x5_usart.o(.text.usart_clock_config) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_clock_enable) refers to ht32f493x5_usart.o(.text.usart_clock_enable) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_interrupt_enable) refers to ht32f493x5_usart.o(.text.usart_interrupt_enable) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_dma_transmitter_enable) refers to ht32f493x5_usart.o(.text.usart_dma_transmitter_enable) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_dma_receiver_enable) refers to ht32f493x5_usart.o(.text.usart_dma_receiver_enable) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_wakeup_id_set) refers to ht32f493x5_usart.o(.text.usart_wakeup_id_set) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_wakeup_mode_set) refers to ht32f493x5_usart.o(.text.usart_wakeup_mode_set) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_receiver_mute_enable) refers to ht32f493x5_usart.o(.text.usart_receiver_mute_enable) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_break_bit_num_set) refers to ht32f493x5_usart.o(.text.usart_break_bit_num_set) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_lin_mode_enable) refers to ht32f493x5_usart.o(.text.usart_lin_mode_enable) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_data_transmit) refers to ht32f493x5_usart.o(.text.usart_data_transmit) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_data_receive) refers to ht32f493x5_usart.o(.text.usart_data_receive) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_break_send) refers to ht32f493x5_usart.o(.text.usart_break_send) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_smartcard_guard_time_set) refers to ht32f493x5_usart.o(.text.usart_smartcard_guard_time_set) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_irda_smartcard_division_set) refers to ht32f493x5_usart.o(.text.usart_irda_smartcard_division_set) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_smartcard_mode_enable) refers to ht32f493x5_usart.o(.text.usart_smartcard_mode_enable) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_smartcard_nack_set) refers to ht32f493x5_usart.o(.text.usart_smartcard_nack_set) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_single_line_halfduplex_select) refers to ht32f493x5_usart.o(.text.usart_single_line_halfduplex_select) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_irda_mode_enable) refers to ht32f493x5_usart.o(.text.usart_irda_mode_enable) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_irda_low_power_enable) refers to ht32f493x5_usart.o(.text.usart_irda_low_power_enable) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_hardware_flow_control_set) refers to ht32f493x5_usart.o(.text.usart_hardware_flow_control_set) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_flag_get) refers to ht32f493x5_usart.o(.text.usart_flag_get) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_interrupt_flag_get) refers to ht32f493x5_usart.o(.text.usart_interrupt_flag_get) for [Anonymous Symbol]
+    ht32f493x5_usart.o(.ARM.exidx.text.usart_flag_clear) refers to ht32f493x5_usart.o(.text.usart_flag_clear) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.text.gpio_reset) refers to ht32f493x5_crm.o(.text.crm_periph_reset) for crm_periph_reset
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_reset) refers to ht32f493x5_gpio.o(.text.gpio_reset) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.text.gpio_iomux_reset) refers to ht32f493x5_crm.o(.text.crm_periph_reset) for crm_periph_reset
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_iomux_reset) refers to ht32f493x5_gpio.o(.text.gpio_iomux_reset) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_init) refers to ht32f493x5_gpio.o(.text.gpio_init) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_default_para_init) refers to ht32f493x5_gpio.o(.text.gpio_default_para_init) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_input_data_bit_read) refers to ht32f493x5_gpio.o(.text.gpio_input_data_bit_read) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_input_data_read) refers to ht32f493x5_gpio.o(.text.gpio_input_data_read) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_output_data_bit_read) refers to ht32f493x5_gpio.o(.text.gpio_output_data_bit_read) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_output_data_read) refers to ht32f493x5_gpio.o(.text.gpio_output_data_read) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_bits_set) refers to ht32f493x5_gpio.o(.text.gpio_bits_set) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_bits_reset) refers to ht32f493x5_gpio.o(.text.gpio_bits_reset) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_bits_toggle) refers to ht32f493x5_gpio.o(.text.gpio_bits_toggle) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_bits_write) refers to ht32f493x5_gpio.o(.text.gpio_bits_write) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_port_write) refers to ht32f493x5_gpio.o(.text.gpio_port_write) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_pin_wp_config) refers to ht32f493x5_gpio.o(.text.gpio_pin_wp_config) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_pins_huge_driven_config) refers to ht32f493x5_gpio.o(.text.gpio_pins_huge_driven_config) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_event_output_config) refers to ht32f493x5_gpio.o(.text.gpio_event_output_config) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_event_output_enable) refers to ht32f493x5_gpio.o(.text.gpio_event_output_enable) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_pin_remap_config) refers to ht32f493x5_gpio.o(.text.gpio_pin_remap_config) for [Anonymous Symbol]
+    ht32f493x5_gpio.o(.ARM.exidx.text.gpio_exint_line_config) refers to ht32f493x5_gpio.o(.text.gpio_exint_line_config) for [Anonymous Symbol]
+    ht32f493x5_misc.o(.text.nvic_system_reset) refers to ht32f493x5_misc.o(.text.__NVIC_SystemReset) for __NVIC_SystemReset
+    ht32f493x5_misc.o(.ARM.exidx.text.nvic_system_reset) refers to ht32f493x5_misc.o(.text.nvic_system_reset) for [Anonymous Symbol]
+    ht32f493x5_misc.o(.ARM.exidx.text.__NVIC_SystemReset) refers to ht32f493x5_misc.o(.text.__NVIC_SystemReset) for [Anonymous Symbol]
+    ht32f493x5_misc.o(.ARM.exidx.text.nvic_irq_enable) refers to ht32f493x5_misc.o(.text.nvic_irq_enable) for [Anonymous Symbol]
+    ht32f493x5_misc.o(.ARM.exidx.text.nvic_irq_disable) refers to ht32f493x5_misc.o(.text.nvic_irq_disable) for [Anonymous Symbol]
+    ht32f493x5_misc.o(.ARM.exidx.text.nvic_priority_group_config) refers to ht32f493x5_misc.o(.text.nvic_priority_group_config) for [Anonymous Symbol]
+    ht32f493x5_misc.o(.ARM.exidx.text.nvic_vector_table_set) refers to ht32f493x5_misc.o(.text.nvic_vector_table_set) for [Anonymous Symbol]
+    ht32f493x5_misc.o(.ARM.exidx.text.nvic_lowpower_mode_config) refers to ht32f493x5_misc.o(.text.nvic_lowpower_mode_config) for [Anonymous Symbol]
+    ht32f493x5_misc.o(.ARM.exidx.text.systick_clock_source_config) refers to ht32f493x5_misc.o(.text.systick_clock_source_config) for [Anonymous Symbol]
+    ht32f493x5_dma.o(.ARM.exidx.text.dma_reset) refers to ht32f493x5_dma.o(.text.dma_reset) for [Anonymous Symbol]
+    ht32f493x5_dma.o(.ARM.exidx.text.dma_data_number_set) refers to ht32f493x5_dma.o(.text.dma_data_number_set) for [Anonymous Symbol]
+    ht32f493x5_dma.o(.ARM.exidx.text.dma_data_number_get) refers to ht32f493x5_dma.o(.text.dma_data_number_get) for [Anonymous Symbol]
+    ht32f493x5_dma.o(.ARM.exidx.text.dma_interrupt_enable) refers to ht32f493x5_dma.o(.text.dma_interrupt_enable) for [Anonymous Symbol]
+    ht32f493x5_dma.o(.ARM.exidx.text.dma_channel_enable) refers to ht32f493x5_dma.o(.text.dma_channel_enable) for [Anonymous Symbol]
+    ht32f493x5_dma.o(.ARM.exidx.text.dma_flexible_config) refers to ht32f493x5_dma.o(.text.dma_flexible_config) for [Anonymous Symbol]
+    ht32f493x5_dma.o(.ARM.exidx.text.dma_interrupt_flag_get) refers to ht32f493x5_dma.o(.text.dma_interrupt_flag_get) for [Anonymous Symbol]
+    ht32f493x5_dma.o(.ARM.exidx.text.dma_flag_get) refers to ht32f493x5_dma.o(.text.dma_flag_get) for [Anonymous Symbol]
+    ht32f493x5_dma.o(.ARM.exidx.text.dma_flag_clear) refers to ht32f493x5_dma.o(.text.dma_flag_clear) for [Anonymous Symbol]
+    ht32f493x5_dma.o(.ARM.exidx.text.dma_default_para_init) refers to ht32f493x5_dma.o(.text.dma_default_para_init) for [Anonymous Symbol]
+    ht32f493x5_dma.o(.ARM.exidx.text.dma_init) refers to ht32f493x5_dma.o(.text.dma_init) for [Anonymous Symbol]
+    ht32f493x5_exint.o(.ARM.exidx.text.exint_reset) refers to ht32f493x5_exint.o(.text.exint_reset) for [Anonymous Symbol]
+    ht32f493x5_exint.o(.ARM.exidx.text.exint_default_para_init) refers to ht32f493x5_exint.o(.text.exint_default_para_init) for [Anonymous Symbol]
+    ht32f493x5_exint.o(.ARM.exidx.text.exint_init) refers to ht32f493x5_exint.o(.text.exint_init) for [Anonymous Symbol]
+    ht32f493x5_exint.o(.ARM.exidx.text.exint_flag_clear) refers to ht32f493x5_exint.o(.text.exint_flag_clear) for [Anonymous Symbol]
+    ht32f493x5_exint.o(.ARM.exidx.text.exint_flag_get) refers to ht32f493x5_exint.o(.text.exint_flag_get) for [Anonymous Symbol]
+    ht32f493x5_exint.o(.ARM.exidx.text.exint_interrupt_flag_get) refers to ht32f493x5_exint.o(.text.exint_interrupt_flag_get) for [Anonymous Symbol]
+    ht32f493x5_exint.o(.ARM.exidx.text.exint_software_interrupt_event_generate) refers to ht32f493x5_exint.o(.text.exint_software_interrupt_event_generate) for [Anonymous Symbol]
+    ht32f493x5_exint.o(.ARM.exidx.text.exint_interrupt_enable) refers to ht32f493x5_exint.o(.text.exint_interrupt_enable) for [Anonymous Symbol]
+    ht32f493x5_exint.o(.ARM.exidx.text.exint_event_enable) refers to ht32f493x5_exint.o(.text.exint_event_enable) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.text.i2c_reset) refers to ht32f493x5_crm.o(.text.crm_periph_reset) for crm_periph_reset
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_reset) refers to ht32f493x5_i2c.o(.text.i2c_reset) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_software_reset) refers to ht32f493x5_i2c.o(.text.i2c_software_reset) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.text.i2c_init) refers to ht32f493x5_crm.o(.text.crm_clocks_freq_get) for crm_clocks_freq_get
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_init) refers to ht32f493x5_i2c.o(.text.i2c_init) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_own_address1_set) refers to ht32f493x5_i2c.o(.text.i2c_own_address1_set) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_own_address2_set) refers to ht32f493x5_i2c.o(.text.i2c_own_address2_set) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_own_address2_enable) refers to ht32f493x5_i2c.o(.text.i2c_own_address2_enable) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_smbus_enable) refers to ht32f493x5_i2c.o(.text.i2c_smbus_enable) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_enable) refers to ht32f493x5_i2c.o(.text.i2c_enable) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_fast_mode_duty_set) refers to ht32f493x5_i2c.o(.text.i2c_fast_mode_duty_set) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_clock_stretch_enable) refers to ht32f493x5_i2c.o(.text.i2c_clock_stretch_enable) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_ack_enable) refers to ht32f493x5_i2c.o(.text.i2c_ack_enable) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_master_receive_ack_set) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_pec_position_set) refers to ht32f493x5_i2c.o(.text.i2c_pec_position_set) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_general_call_enable) refers to ht32f493x5_i2c.o(.text.i2c_general_call_enable) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_arp_mode_enable) refers to ht32f493x5_i2c.o(.text.i2c_arp_mode_enable) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_smbus_mode_set) refers to ht32f493x5_i2c.o(.text.i2c_smbus_mode_set) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_smbus_alert_set) refers to ht32f493x5_i2c.o(.text.i2c_smbus_alert_set) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_pec_transmit_enable) refers to ht32f493x5_i2c.o(.text.i2c_pec_transmit_enable) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_pec_calculate_enable) refers to ht32f493x5_i2c.o(.text.i2c_pec_calculate_enable) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_pec_value_get) refers to ht32f493x5_i2c.o(.text.i2c_pec_value_get) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_dma_end_transfer_set) refers to ht32f493x5_i2c.o(.text.i2c_dma_end_transfer_set) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_dma_enable) refers to ht32f493x5_i2c.o(.text.i2c_dma_enable) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_interrupt_enable) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_start_generate) refers to ht32f493x5_i2c.o(.text.i2c_start_generate) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_stop_generate) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_7bit_address_send) refers to ht32f493x5_i2c.o(.text.i2c_7bit_address_send) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_data_send) refers to ht32f493x5_i2c.o(.text.i2c_data_send) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_data_receive) refers to ht32f493x5_i2c.o(.text.i2c_data_receive) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_flag_get) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_interrupt_flag_get) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_flag_get) for [Anonymous Symbol]
+    ht32f493x5_i2c.o(.ARM.exidx.text.i2c_flag_clear) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.text.spi_i2s_reset) refers to ht32f493x5_crm.o(.text.crm_periph_reset) for crm_periph_reset
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_i2s_reset) refers to ht32f493x5_spi.o(.text.spi_i2s_reset) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_default_para_init) refers to ht32f493x5_spi.o(.text.spi_default_para_init) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_init) refers to ht32f493x5_spi.o(.text.spi_init) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_crc_next_transmit) refers to ht32f493x5_spi.o(.text.spi_crc_next_transmit) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_crc_polynomial_set) refers to ht32f493x5_spi.o(.text.spi_crc_polynomial_set) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_crc_polynomial_get) refers to ht32f493x5_spi.o(.text.spi_crc_polynomial_get) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_crc_enable) refers to ht32f493x5_spi.o(.text.spi_crc_enable) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_crc_value_get) refers to ht32f493x5_spi.o(.text.spi_crc_value_get) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_hardware_cs_output_enable) refers to ht32f493x5_spi.o(.text.spi_hardware_cs_output_enable) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_software_cs_internal_level_set) refers to ht32f493x5_spi.o(.text.spi_software_cs_internal_level_set) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_frame_bit_num_set) refers to ht32f493x5_spi.o(.text.spi_frame_bit_num_set) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_half_duplex_direction_set) refers to ht32f493x5_spi.o(.text.spi_half_duplex_direction_set) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_enable) refers to ht32f493x5_spi.o(.text.spi_enable) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.i2s_default_para_init) refers to ht32f493x5_spi.o(.text.i2s_default_para_init) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.text.i2s_init) refers to ht32f493x5_crm.o(.text.crm_clocks_freq_get) for crm_clocks_freq_get
+    ht32f493x5_spi.o(.ARM.exidx.text.i2s_init) refers to ht32f493x5_spi.o(.text.i2s_init) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.i2s_enable) refers to ht32f493x5_spi.o(.text.i2s_enable) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_i2s_interrupt_enable) refers to ht32f493x5_spi.o(.text.spi_i2s_interrupt_enable) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_i2s_dma_transmitter_enable) refers to ht32f493x5_spi.o(.text.spi_i2s_dma_transmitter_enable) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_i2s_dma_receiver_enable) refers to ht32f493x5_spi.o(.text.spi_i2s_dma_receiver_enable) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_i2s_data_transmit) refers to ht32f493x5_spi.o(.text.spi_i2s_data_transmit) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_i2s_data_receive) refers to ht32f493x5_spi.o(.text.spi_i2s_data_receive) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_i2s_flag_get) refers to ht32f493x5_spi.o(.text.spi_i2s_flag_get) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_i2s_interrupt_flag_get) refers to ht32f493x5_spi.o(.text.spi_i2s_interrupt_flag_get) for [Anonymous Symbol]
+    ht32f493x5_spi.o(.ARM.exidx.text.spi_i2s_flag_clear) refers to ht32f493x5_spi.o(.text.spi_i2s_flag_clear) for [Anonymous Symbol]
+    i2c_application.o(.ARM.exidx.text.i2c_lowlevel_init) refers to i2c_application.o(.text.i2c_lowlevel_init) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_config) refers to ht32f493x5_i2c.o(.text.i2c_reset) for i2c_reset
+    i2c_application.o(.text.i2c_config) refers to i2c_application.o(.text.i2c_lowlevel_init) for i2c_lowlevel_init
+    i2c_application.o(.text.i2c_config) refers to ht32f493x5_i2c.o(.text.i2c_enable) for i2c_enable
+    i2c_application.o(.ARM.exidx.text.i2c_config) refers to i2c_application.o(.text.i2c_config) for [Anonymous Symbol]
+    i2c_application.o(.ARM.exidx.text.i2c_wait_end) refers to i2c_application.o(.text.i2c_wait_end) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_wait_flag) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_wait_flag) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_wait_flag) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.ARM.exidx.text.i2c_wait_flag) refers to i2c_application.o(.text.i2c_wait_flag) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_dma_config) refers to ht32f493x5_dma.o(.text.dma_channel_enable) for dma_channel_enable
+    i2c_application.o(.text.i2c_dma_config) refers to ht32f493x5_dma.o(.text.dma_interrupt_enable) for dma_interrupt_enable
+    i2c_application.o(.text.i2c_dma_config) refers to ht32f493x5_dma.o(.text.dma_init) for dma_init
+    i2c_application.o(.ARM.exidx.text.i2c_dma_config) refers to i2c_application.o(.text.i2c_dma_config) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_master_write_addr) refers to ht32f493x5_i2c.o(.text.i2c_start_generate) for i2c_start_generate
+    i2c_application.o(.text.i2c_master_write_addr) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_master_write_addr) refers to ht32f493x5_i2c.o(.text.i2c_7bit_address_send) for i2c_7bit_address_send
+    i2c_application.o(.text.i2c_master_write_addr) refers to ht32f493x5_i2c.o(.text.i2c_data_send) for i2c_data_send
+    i2c_application.o(.text.i2c_master_write_addr) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_master_write_addr) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.ARM.exidx.text.i2c_master_write_addr) refers to i2c_application.o(.text.i2c_master_write_addr) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_master_read_addr) refers to ht32f493x5_i2c.o(.text.i2c_ack_enable) for i2c_ack_enable
+    i2c_application.o(.text.i2c_master_read_addr) refers to ht32f493x5_i2c.o(.text.i2c_start_generate) for i2c_start_generate
+    i2c_application.o(.text.i2c_master_read_addr) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_master_read_addr) refers to ht32f493x5_i2c.o(.text.i2c_7bit_address_send) for i2c_7bit_address_send
+    i2c_application.o(.text.i2c_master_read_addr) refers to ht32f493x5_i2c.o(.text.i2c_data_send) for i2c_data_send
+    i2c_application.o(.text.i2c_master_read_addr) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_master_read_addr) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.ARM.exidx.text.i2c_master_read_addr) refers to i2c_application.o(.text.i2c_master_read_addr) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_master_transmit) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_master_transmit) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_master_transmit) refers to i2c_application.o(.text.i2c_master_write_addr) for i2c_master_write_addr
+    i2c_application.o(.text.i2c_master_transmit) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_master_transmit) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_master_transmit) refers to ht32f493x5_i2c.o(.text.i2c_data_send) for i2c_data_send
+    i2c_application.o(.ARM.exidx.text.i2c_master_transmit) refers to i2c_application.o(.text.i2c_master_transmit) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_slave_receive) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_slave_receive) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_slave_receive) refers to ht32f493x5_i2c.o(.text.i2c_ack_enable) for i2c_ack_enable
+    i2c_application.o(.text.i2c_slave_receive) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_slave_receive) refers to ht32f493x5_i2c.o(.text.i2c_data_receive) for i2c_data_receive
+    i2c_application.o(.text.i2c_slave_receive) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.ARM.exidx.text.i2c_slave_receive) refers to i2c_application.o(.text.i2c_slave_receive) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_master_receive) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_master_receive) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_master_receive) refers to ht32f493x5_i2c.o(.text.i2c_ack_enable) for i2c_ack_enable
+    i2c_application.o(.text.i2c_master_receive) refers to i2c_application.o(.text.i2c_master_read_addr) for i2c_master_read_addr
+    i2c_application.o(.text.i2c_master_receive) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_master_receive) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_master_receive) refers to ht32f493x5_i2c.o(.text.i2c_data_receive) for i2c_data_receive
+    i2c_application.o(.ARM.exidx.text.i2c_master_receive) refers to i2c_application.o(.text.i2c_master_receive) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_slave_transmit) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_slave_transmit) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_slave_transmit) refers to ht32f493x5_i2c.o(.text.i2c_ack_enable) for i2c_ack_enable
+    i2c_application.o(.text.i2c_slave_transmit) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_slave_transmit) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_slave_transmit) refers to ht32f493x5_i2c.o(.text.i2c_data_send) for i2c_data_send
+    i2c_application.o(.ARM.exidx.text.i2c_slave_transmit) refers to i2c_application.o(.text.i2c_slave_transmit) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_master_transmit_int) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_master_transmit_int) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_master_transmit_int) refers to i2c_application.o(.text.i2c_master_write_addr) for i2c_master_write_addr
+    i2c_application.o(.text.i2c_master_transmit_int) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_master_transmit_int) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_master_transmit_int) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.ARM.exidx.text.i2c_master_transmit_int) refers to i2c_application.o(.text.i2c_master_transmit_int) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_slave_receive_int) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_slave_receive_int) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_slave_receive_int) refers to ht32f493x5_i2c.o(.text.i2c_ack_enable) for i2c_ack_enable
+    i2c_application.o(.text.i2c_slave_receive_int) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.ARM.exidx.text.i2c_slave_receive_int) refers to i2c_application.o(.text.i2c_slave_receive_int) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_master_receive_int) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_master_receive_int) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_master_receive_int) refers to ht32f493x5_i2c.o(.text.i2c_ack_enable) for i2c_ack_enable
+    i2c_application.o(.text.i2c_master_receive_int) refers to i2c_application.o(.text.i2c_master_read_addr) for i2c_master_read_addr
+    i2c_application.o(.text.i2c_master_receive_int) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_master_receive_int) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_master_receive_int) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.ARM.exidx.text.i2c_master_receive_int) refers to i2c_application.o(.text.i2c_master_receive_int) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_slave_transmit_int) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_slave_transmit_int) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_slave_transmit_int) refers to ht32f493x5_i2c.o(.text.i2c_ack_enable) for i2c_ack_enable
+    i2c_application.o(.text.i2c_slave_transmit_int) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.ARM.exidx.text.i2c_slave_transmit_int) refers to i2c_application.o(.text.i2c_slave_transmit_int) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_master_transmit_dma) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_master_transmit_dma) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_master_transmit_dma) refers to ht32f493x5_i2c.o(.text.i2c_dma_enable) for i2c_dma_enable
+    i2c_application.o(.text.i2c_master_transmit_dma) refers to ht32f493x5_dma.o(.text.dma_channel_enable) for dma_channel_enable
+    i2c_application.o(.text.i2c_master_transmit_dma) refers to ht32f493x5_dma.o(.text.dma_interrupt_enable) for dma_interrupt_enable
+    i2c_application.o(.text.i2c_master_transmit_dma) refers to ht32f493x5_dma.o(.text.dma_init) for dma_init
+    i2c_application.o(.text.i2c_master_transmit_dma) refers to i2c_application.o(.text.i2c_master_write_addr) for i2c_master_write_addr
+    i2c_application.o(.text.i2c_master_transmit_dma) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_master_transmit_dma) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.ARM.exidx.text.i2c_master_transmit_dma) refers to i2c_application.o(.text.i2c_master_transmit_dma) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_slave_receive_dma) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_slave_receive_dma) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_slave_receive_dma) refers to ht32f493x5_i2c.o(.text.i2c_ack_enable) for i2c_ack_enable
+    i2c_application.o(.text.i2c_slave_receive_dma) refers to ht32f493x5_i2c.o(.text.i2c_dma_enable) for i2c_dma_enable
+    i2c_application.o(.text.i2c_slave_receive_dma) refers to ht32f493x5_dma.o(.text.dma_channel_enable) for dma_channel_enable
+    i2c_application.o(.text.i2c_slave_receive_dma) refers to ht32f493x5_dma.o(.text.dma_interrupt_enable) for dma_interrupt_enable
+    i2c_application.o(.text.i2c_slave_receive_dma) refers to ht32f493x5_dma.o(.text.dma_init) for dma_init
+    i2c_application.o(.text.i2c_slave_receive_dma) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.ARM.exidx.text.i2c_slave_receive_dma) refers to i2c_application.o(.text.i2c_slave_receive_dma) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_master_receive_dma) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_master_receive_dma) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_master_receive_dma) refers to ht32f493x5_i2c.o(.text.i2c_ack_enable) for i2c_ack_enable
+    i2c_application.o(.text.i2c_master_receive_dma) refers to ht32f493x5_i2c.o(.text.i2c_dma_enable) for i2c_dma_enable
+    i2c_application.o(.text.i2c_master_receive_dma) refers to ht32f493x5_dma.o(.text.dma_channel_enable) for dma_channel_enable
+    i2c_application.o(.text.i2c_master_receive_dma) refers to ht32f493x5_dma.o(.text.dma_interrupt_enable) for dma_interrupt_enable
+    i2c_application.o(.text.i2c_master_receive_dma) refers to ht32f493x5_dma.o(.text.dma_init) for dma_init
+    i2c_application.o(.text.i2c_master_receive_dma) refers to i2c_application.o(.text.i2c_master_read_addr) for i2c_master_read_addr
+    i2c_application.o(.text.i2c_master_receive_dma) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_master_receive_dma) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_master_receive_dma) refers to ht32f493x5_i2c.o(.text.i2c_dma_end_transfer_set) for i2c_dma_end_transfer_set
+    i2c_application.o(.ARM.exidx.text.i2c_master_receive_dma) refers to i2c_application.o(.text.i2c_master_receive_dma) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_slave_transmit_dma) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_slave_transmit_dma) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_slave_transmit_dma) refers to ht32f493x5_i2c.o(.text.i2c_ack_enable) for i2c_ack_enable
+    i2c_application.o(.text.i2c_slave_transmit_dma) refers to ht32f493x5_i2c.o(.text.i2c_dma_enable) for i2c_dma_enable
+    i2c_application.o(.text.i2c_slave_transmit_dma) refers to ht32f493x5_dma.o(.text.dma_channel_enable) for dma_channel_enable
+    i2c_application.o(.text.i2c_slave_transmit_dma) refers to ht32f493x5_dma.o(.text.dma_interrupt_enable) for dma_interrupt_enable
+    i2c_application.o(.text.i2c_slave_transmit_dma) refers to ht32f493x5_dma.o(.text.dma_init) for dma_init
+    i2c_application.o(.text.i2c_slave_transmit_dma) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.ARM.exidx.text.i2c_slave_transmit_dma) refers to i2c_application.o(.text.i2c_slave_transmit_dma) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_memory_address_send) refers to ht32f493x5_i2c.o(.text.i2c_data_send) for i2c_data_send
+    i2c_application.o(.text.i2c_memory_address_send) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_memory_address_send) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_memory_address_send) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.ARM.exidx.text.i2c_memory_address_send) refers to i2c_application.o(.text.i2c_memory_address_send) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_memory_write) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_memory_write) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_memory_write) refers to i2c_application.o(.text.i2c_master_write_addr) for i2c_master_write_addr
+    i2c_application.o(.text.i2c_memory_write) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_memory_write) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_memory_write) refers to i2c_application.o(.text.i2c_memory_address_send) for i2c_memory_address_send
+    i2c_application.o(.text.i2c_memory_write) refers to ht32f493x5_i2c.o(.text.i2c_data_send) for i2c_data_send
+    i2c_application.o(.text.i2c_memory_write) refers to i2c_application.o(.text.i2c_wait_flag) for i2c_wait_flag
+    i2c_application.o(.ARM.exidx.text.i2c_memory_write) refers to i2c_application.o(.text.i2c_memory_write) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_memory_read) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_memory_read) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_memory_read) refers to ht32f493x5_i2c.o(.text.i2c_ack_enable) for i2c_ack_enable
+    i2c_application.o(.text.i2c_memory_read) refers to i2c_application.o(.text.i2c_master_write_addr) for i2c_master_write_addr
+    i2c_application.o(.text.i2c_memory_read) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_memory_read) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_memory_read) refers to i2c_application.o(.text.i2c_memory_address_send) for i2c_memory_address_send
+    i2c_application.o(.text.i2c_memory_read) refers to i2c_application.o(.text.i2c_wait_flag) for i2c_wait_flag
+    i2c_application.o(.text.i2c_memory_read) refers to i2c_application.o(.text.i2c_master_read_addr) for i2c_master_read_addr
+    i2c_application.o(.text.i2c_memory_read) refers to ht32f493x5_i2c.o(.text.i2c_data_receive) for i2c_data_receive
+    i2c_application.o(.ARM.exidx.text.i2c_memory_read) refers to i2c_application.o(.text.i2c_memory_read) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_memory_write_int) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_memory_write_int) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_memory_write_int) refers to i2c_application.o(.text.i2c_master_write_addr) for i2c_master_write_addr
+    i2c_application.o(.text.i2c_memory_write_int) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_memory_write_int) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_memory_write_int) refers to i2c_application.o(.text.i2c_memory_address_send) for i2c_memory_address_send
+    i2c_application.o(.text.i2c_memory_write_int) refers to i2c_application.o(.text.i2c_wait_flag) for i2c_wait_flag
+    i2c_application.o(.text.i2c_memory_write_int) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.ARM.exidx.text.i2c_memory_write_int) refers to i2c_application.o(.text.i2c_memory_write_int) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_memory_read_int) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_memory_read_int) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_memory_read_int) refers to i2c_application.o(.text.i2c_master_write_addr) for i2c_master_write_addr
+    i2c_application.o(.text.i2c_memory_read_int) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_memory_read_int) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_memory_read_int) refers to i2c_application.o(.text.i2c_memory_address_send) for i2c_memory_address_send
+    i2c_application.o(.text.i2c_memory_read_int) refers to i2c_application.o(.text.i2c_wait_flag) for i2c_wait_flag
+    i2c_application.o(.text.i2c_memory_read_int) refers to i2c_application.o(.text.i2c_master_read_addr) for i2c_master_read_addr
+    i2c_application.o(.text.i2c_memory_read_int) refers to ht32f493x5_i2c.o(.text.i2c_ack_enable) for i2c_ack_enable
+    i2c_application.o(.text.i2c_memory_read_int) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.ARM.exidx.text.i2c_memory_read_int) refers to i2c_application.o(.text.i2c_memory_read_int) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_memory_write_dma) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_memory_write_dma) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_memory_write_dma) refers to ht32f493x5_i2c.o(.text.i2c_dma_enable) for i2c_dma_enable
+    i2c_application.o(.text.i2c_memory_write_dma) refers to ht32f493x5_dma.o(.text.dma_channel_enable) for dma_channel_enable
+    i2c_application.o(.text.i2c_memory_write_dma) refers to ht32f493x5_dma.o(.text.dma_interrupt_enable) for dma_interrupt_enable
+    i2c_application.o(.text.i2c_memory_write_dma) refers to ht32f493x5_dma.o(.text.dma_init) for dma_init
+    i2c_application.o(.text.i2c_memory_write_dma) refers to i2c_application.o(.text.i2c_master_write_addr) for i2c_master_write_addr
+    i2c_application.o(.text.i2c_memory_write_dma) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_memory_write_dma) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_memory_write_dma) refers to i2c_application.o(.text.i2c_memory_address_send) for i2c_memory_address_send
+    i2c_application.o(.text.i2c_memory_write_dma) refers to i2c_application.o(.text.i2c_wait_flag) for i2c_wait_flag
+    i2c_application.o(.ARM.exidx.text.i2c_memory_write_dma) refers to i2c_application.o(.text.i2c_memory_write_dma) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_memory_read_dma) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_memory_read_dma) refers to ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set) for i2c_master_receive_ack_set
+    i2c_application.o(.text.i2c_memory_read_dma) refers to ht32f493x5_i2c.o(.text.i2c_ack_enable) for i2c_ack_enable
+    i2c_application.o(.text.i2c_memory_read_dma) refers to ht32f493x5_i2c.o(.text.i2c_dma_enable) for i2c_dma_enable
+    i2c_application.o(.text.i2c_memory_read_dma) refers to ht32f493x5_dma.o(.text.dma_channel_enable) for dma_channel_enable
+    i2c_application.o(.text.i2c_memory_read_dma) refers to ht32f493x5_dma.o(.text.dma_interrupt_enable) for dma_interrupt_enable
+    i2c_application.o(.text.i2c_memory_read_dma) refers to ht32f493x5_dma.o(.text.dma_init) for dma_init
+    i2c_application.o(.text.i2c_memory_read_dma) refers to i2c_application.o(.text.i2c_master_write_addr) for i2c_master_write_addr
+    i2c_application.o(.text.i2c_memory_read_dma) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_memory_read_dma) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_memory_read_dma) refers to i2c_application.o(.text.i2c_memory_address_send) for i2c_memory_address_send
+    i2c_application.o(.text.i2c_memory_read_dma) refers to i2c_application.o(.text.i2c_wait_flag) for i2c_wait_flag
+    i2c_application.o(.text.i2c_memory_read_dma) refers to i2c_application.o(.text.i2c_master_read_addr) for i2c_master_read_addr
+    i2c_application.o(.text.i2c_memory_read_dma) refers to ht32f493x5_i2c.o(.text.i2c_dma_end_transfer_set) for i2c_dma_end_transfer_set
+    i2c_application.o(.ARM.exidx.text.i2c_memory_read_dma) refers to i2c_application.o(.text.i2c_memory_read_dma) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_master_tx_isr_int) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_master_tx_isr_int) refers to ht32f493x5_i2c.o(.text.i2c_data_send) for i2c_data_send
+    i2c_application.o(.text.i2c_master_tx_isr_int) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.text.i2c_master_tx_isr_int) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.ARM.exidx.text.i2c_master_tx_isr_int) refers to i2c_application.o(.text.i2c_master_tx_isr_int) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_master_rx_isr_int) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_master_rx_isr_int) refers to ht32f493x5_i2c.o(.text.i2c_ack_enable) for i2c_ack_enable
+    i2c_application.o(.text.i2c_master_rx_isr_int) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_master_rx_isr_int) refers to ht32f493x5_i2c.o(.text.i2c_data_receive) for i2c_data_receive
+    i2c_application.o(.text.i2c_master_rx_isr_int) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.ARM.exidx.text.i2c_master_rx_isr_int) refers to i2c_application.o(.text.i2c_master_rx_isr_int) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_slave_tx_isr_int) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_slave_tx_isr_int) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_slave_tx_isr_int) refers to ht32f493x5_i2c.o(.text.i2c_data_send) for i2c_data_send
+    i2c_application.o(.text.i2c_slave_tx_isr_int) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.ARM.exidx.text.i2c_slave_tx_isr_int) refers to i2c_application.o(.text.i2c_slave_tx_isr_int) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_slave_rx_isr_int) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_slave_rx_isr_int) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_slave_rx_isr_int) refers to ht32f493x5_i2c.o(.text.i2c_data_receive) for i2c_data_receive
+    i2c_application.o(.text.i2c_slave_rx_isr_int) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.ARM.exidx.text.i2c_slave_rx_isr_int) refers to i2c_application.o(.text.i2c_slave_rx_isr_int) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_master_tx_isr_dma) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_master_tx_isr_dma) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_master_tx_isr_dma) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.ARM.exidx.text.i2c_master_tx_isr_dma) refers to i2c_application.o(.text.i2c_master_tx_isr_dma) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_slave_tx_rx_isr_dma) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_slave_tx_rx_isr_dma) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_slave_tx_rx_isr_dma) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.text.i2c_slave_tx_rx_isr_dma) refers to ht32f493x5_i2c.o(.text.i2c_ack_enable) for i2c_ack_enable
+    i2c_application.o(.ARM.exidx.text.i2c_slave_tx_rx_isr_dma) refers to i2c_application.o(.text.i2c_slave_tx_rx_isr_dma) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_evt_irq_handler) refers to i2c_application.o(.text.i2c_slave_tx_rx_isr_dma) for i2c_slave_tx_rx_isr_dma
+    i2c_application.o(.text.i2c_evt_irq_handler) refers to i2c_application.o(.text.i2c_master_rx_isr_int) for i2c_master_rx_isr_int
+    i2c_application.o(.text.i2c_evt_irq_handler) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_evt_irq_handler) refers to ht32f493x5_i2c.o(.text.i2c_data_send) for i2c_data_send
+    i2c_application.o(.text.i2c_evt_irq_handler) refers to i2c_application.o(.text.i2c_slave_tx_isr_int) for i2c_slave_tx_isr_int
+    i2c_application.o(.text.i2c_evt_irq_handler) refers to i2c_application.o(.text.i2c_slave_rx_isr_int) for i2c_slave_rx_isr_int
+    i2c_application.o(.text.i2c_evt_irq_handler) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_evt_irq_handler) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.ARM.exidx.text.i2c_evt_irq_handler) refers to i2c_application.o(.text.i2c_evt_irq_handler) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_dma_tx_irq_handler) refers to ht32f493x5_dma.o(.text.dma_flag_get) for dma_flag_get
+    i2c_application.o(.text.i2c_dma_tx_irq_handler) refers to ht32f493x5_dma.o(.text.dma_interrupt_enable) for dma_interrupt_enable
+    i2c_application.o(.text.i2c_dma_tx_irq_handler) refers to ht32f493x5_dma.o(.text.dma_flag_clear) for dma_flag_clear
+    i2c_application.o(.text.i2c_dma_tx_irq_handler) refers to ht32f493x5_i2c.o(.text.i2c_dma_enable) for i2c_dma_enable
+    i2c_application.o(.text.i2c_dma_tx_irq_handler) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.ARM.exidx.text.i2c_dma_tx_irq_handler) refers to i2c_application.o(.text.i2c_dma_tx_irq_handler) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_dma_rx_irq_handler) refers to ht32f493x5_dma.o(.text.dma_flag_get) for dma_flag_get
+    i2c_application.o(.text.i2c_dma_rx_irq_handler) refers to ht32f493x5_dma.o(.text.dma_interrupt_enable) for dma_interrupt_enable
+    i2c_application.o(.text.i2c_dma_rx_irq_handler) refers to ht32f493x5_dma.o(.text.dma_flag_clear) for dma_flag_clear
+    i2c_application.o(.text.i2c_dma_rx_irq_handler) refers to ht32f493x5_i2c.o(.text.i2c_dma_enable) for i2c_dma_enable
+    i2c_application.o(.text.i2c_dma_rx_irq_handler) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_dma_rx_irq_handler) refers to ht32f493x5_i2c.o(.text.i2c_stop_generate) for i2c_stop_generate
+    i2c_application.o(.text.i2c_dma_rx_irq_handler) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.ARM.exidx.text.i2c_dma_rx_irq_handler) refers to i2c_application.o(.text.i2c_dma_rx_irq_handler) for [Anonymous Symbol]
+    i2c_application.o(.text.i2c_err_irq_handler) refers to ht32f493x5_i2c.o(.text.i2c_flag_get) for i2c_flag_get
+    i2c_application.o(.text.i2c_err_irq_handler) refers to ht32f493x5_i2c.o(.text.i2c_flag_clear) for i2c_flag_clear
+    i2c_application.o(.text.i2c_err_irq_handler) refers to ht32f493x5_i2c.o(.text.i2c_ack_enable) for i2c_ack_enable
+    i2c_application.o(.text.i2c_err_irq_handler) refers to ht32f493x5_i2c.o(.text.i2c_interrupt_enable) for i2c_interrupt_enable
+    i2c_application.o(.ARM.exidx.text.i2c_err_irq_handler) refers to i2c_application.o(.text.i2c_err_irq_handler) for [Anonymous Symbol]
+    system_ht32f493x5.o(.ARM.exidx.text.SystemInit) refers to system_ht32f493x5.o(.text.SystemInit) for [Anonymous Symbol]
+    system_ht32f493x5.o(.text.system_core_clock_update) refers to ht32f493x5_crm.o(.text.crm_sysclk_switch_status_get) for crm_sysclk_switch_status_get
+    system_ht32f493x5.o(.text.system_core_clock_update) refers to system_ht32f493x5.o(.data.system_core_clock) for system_core_clock
+    system_ht32f493x5.o(.ARM.exidx.text.system_core_clock_update) refers to system_ht32f493x5.o(.text.system_core_clock_update) for [Anonymous Symbol]
+    startup_ht32f493x5.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_ht32f493x5.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_ht32f493x5.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_ht32f493x5.o(RESET) refers to startup_ht32f493x5.o(STACK) for __initial_sp
+    startup_ht32f493x5.o(RESET) refers to startup_ht32f493x5.o(.text) for Reset_Handler
+    startup_ht32f493x5.o(RESET) refers to ht32f493x5_int.o(.text.NMI_Handler) for NMI_Handler
+    startup_ht32f493x5.o(RESET) refers to ht32f493x5_int.o(.text.HardFault_Handler) for HardFault_Handler
+    startup_ht32f493x5.o(RESET) refers to ht32f493x5_int.o(.text.MemManage_Handler) for MemManage_Handler
+    startup_ht32f493x5.o(RESET) refers to ht32f493x5_int.o(.text.BusFault_Handler) for BusFault_Handler
+    startup_ht32f493x5.o(RESET) refers to ht32f493x5_int.o(.text.UsageFault_Handler) for UsageFault_Handler
+    startup_ht32f493x5.o(RESET) refers to ht32f493x5_int.o(.text.SVC_Handler) for SVC_Handler
+    startup_ht32f493x5.o(RESET) refers to ht32f493x5_int.o(.text.DebugMon_Handler) for DebugMon_Handler
+    startup_ht32f493x5.o(RESET) refers to ht32f493x5_int.o(.text.PendSV_Handler) for PendSV_Handler
+    startup_ht32f493x5.o(RESET) refers to ht32f493x5_int.o(.text.SysTick_Handler) for SysTick_Handler
+    startup_ht32f493x5.o(RESET) refers to ht32f493x5_int.o(.text.EXINT0_IRQHandler) for EXINT0_IRQHandler
+    startup_ht32f493x5.o(RESET) refers to ht32f493x5_int.o(.text.DMA1_Channel2_IRQHandler) for DMA1_Channel2_IRQHandler
+    startup_ht32f493x5.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_ht32f493x5.o(.text) refers to system_ht32f493x5.o(.text.SystemInit) for SystemInit
+    startup_ht32f493x5.o(.text) refers to __main.o(!!!main) for __main
+    startup_ht32f493x5.o(.text) refers to startup_ht32f493x5.o(HEAP) for Heap_Mem
+    startup_ht32f493x5.o(.text) refers to startup_ht32f493x5.o(STACK) for Stack_Mem
+    use_no_semi_2.o(.text) refers (Special) to use_no_semi.o(.text) for __use_no_semihosting_swi
+    __2printf.o(.text) refers to _printf_char_file.o(.text) for _printf_char_file
+    __2printf.o(.text) refers to ht32f493x5_board.o(.bss.__stdout) for __stdout
+    __2printf.o(.text) refers to stdio_streams.o(.bss) for __stdout
+    noretval__2printf.o(.text) refers to _printf_char_file.o(.text) for _printf_char_file
+    noretval__2printf.o(.text) refers to ht32f493x5_board.o(.bss.__stdout) for __stdout
+    noretval__2printf.o(.text) refers to stdio_streams.o(.bss) for __stdout
+    __printf.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    _printf_hex_ll.o(.text) refers to _printf_intcommon.o(.text) for _printf_int_common
+    _printf_hex_ll.o(.text) refers to _printf_hex_ll.o(.constdata) for .constdata
+    _printf_hex_int.o(.text) refers to _printf_intcommon.o(.text) for _printf_int_common
+    _printf_hex_int.o(.text) refers to _printf_hex_int.o(.constdata) for .constdata
+    _printf_hex_int_ll.o(.text) refers to _printf_intcommon.o(.text) for _printf_int_common
+    _printf_hex_int_ll.o(.text) refers to _printf_hex_int_ll.o(.constdata) for .constdata
+    _printf_hex_ptr.o(.text) refers to _printf_intcommon.o(.text) for _printf_int_common
+    _printf_hex_ptr.o(.text) refers to _printf_hex_ptr.o(.constdata) for .constdata
+    _printf_hex_int_ptr.o(.text) refers to _printf_intcommon.o(.text) for _printf_int_common
+    _printf_hex_int_ptr.o(.text) refers to _printf_hex_int_ptr.o(.constdata) for .constdata
+    _printf_hex_ll_ptr.o(.text) refers to _printf_intcommon.o(.text) for _printf_int_common
+    _printf_hex_ll_ptr.o(.text) refers to _printf_hex_ll_ptr.o(.constdata) for .constdata
+    _printf_hex_int_ll_ptr.o(.text) refers to _printf_intcommon.o(.text) for _printf_int_common
+    _printf_hex_int_ll_ptr.o(.text) refers to _printf_hex_int_ll_ptr.o(.constdata) for .constdata
+    __printf_flags.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags.o(.text) refers to __printf_flags.o(.constdata) for .constdata
+    __printf_ss.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_ss.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_ss.o(.text) refers to __printf_flags_ss.o(.constdata) for .constdata
+    __printf_wp.o(.text) refers to __printf_wp.o(i._is_digit) for _is_digit
+    __printf_wp.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_wp.o(.text) refers to __printf_wp.o(i._is_digit) for _is_digit
+    __printf_flags_wp.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_wp.o(.text) refers to __printf_flags_wp.o(.constdata) for .constdata
+    __printf_ss_wp.o(.text) refers to __printf_wp.o(i._is_digit) for _is_digit
+    __printf_ss_wp.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_ss_wp.o(.text) refers to __printf_wp.o(i._is_digit) for _is_digit
+    __printf_flags_ss_wp.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_ss_wp.o(.text) refers to __printf_flags_ss_wp.o(.constdata) for .constdata
+    _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) refers (Weak) to _printf_hex_int.o(.text) for _printf_int_hex
+    _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) refers (Special) to _printf_percent_end.o(.ARM.Collect$$_printf_percent$$00000017) for _printf_percent_end
+    fflush.o(.text) refers to stdio.o(.text) for _fflush
+    fflush.o(.text) refers to fseek.o(.text) for _fseek
+    fflush.o(.text) refers to ht32f493x5_board.o(.bss.__stdin) for __stdin
+    fflush.o(.text) refers to stdio_streams.o(.bss) for __stdin
+    puts.o(.text) refers to ht32f493x5_board.o(.text.fputc) for fputc
+    puts.o(.text) refers to ht32f493x5_board.o(.bss.__stdout) for __stdout
+    puts.o(.text) refers to stdio_streams.o(.bss) for __stdout
+    fflush_locked.o(.text) refers to stdio.o(.text) for _fflush
+    fflush_locked.o(.text) refers to fseek.o(.text) for _fseek
+    fflush_locked.o(.text) refers to fflush.o(.text) for _do_fflush
+    fflush_locked.o(.text) refers to streamlock.o(.data) for _stream_list_lock
+    fflush_locked.o(.text) refers to ht32f493x5_board.o(.bss.__stdin) for __stdin
+    fflush_locked.o(.text) refers to stdio_streams.o(.bss) for __stdin
+    rt_memcpy_v6.o(.text) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000C) for __rt_entry_postli_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for __rt_entry_sh
+    _printf_intcommon.o(.text) refers (Weak) to _printf_pad.o(.text) for _printf_pre_padding
+    _printf_intcommon.o(.text) refers (Weak) to _printf_pad.o(.text) for _printf_pre_padding
+    _printf_intcommon.o(.text) refers (Weak) to _printf_pad.o(.text) for _printf_post_padding
+    _printf_char_file.o(.text) refers to _printf_char_common.o(.text) for _printf_char_common
+    _printf_char_file.o(.text) refers to ferror.o(.text) for ferror
+    _printf_char_file.o(.text) refers to ht32f493x5_board.o(.text.fputc) for fputc
+    fseek.o(.text) refers to sys_io.o(.text) for _sys_istty
+    fseek.o(.text) refers to ftell.o(.text) for _ftell_internal
+    fseek.o(.text) refers to stdio.o(.text) for _seterr
+    stdio.o(.text) refers to sys_io.o(.text) for _sys_seek
+    streamlock.o(.data) refers (Special) to initio.o(.text) for _initio
+    sys_io.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_io.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    sys_io.o(.text) refers to strlen.o(.text) for strlen
+    sys_io_hlt.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_io_hlt.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    sys_io_hlt.o(.text) refers to strlen.o(.text) for strlen
+    __rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to main.o(.text.main) for main
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    __rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    __rtentry4.o(.ARM.exidx) refers to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    _printf_char_common.o(.text) refers to __printf_flags_wp.o(.text) for __printf
+    ftell.o(.text) refers to rt_errno_addr_intlibspace.o(.text) for __aeabi_errno_addr
+    initio.o(.text) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000026) for __rt_lib_init_stdio_2
+    initio.o(.text) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000003) for __rt_lib_shutdown_stdio_2
+    initio.o(.text) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    initio.o(.text) refers to fopen.o(.text) for freopen
+    initio.o(.text) refers to defsig_rtred_outer.o(.text) for __rt_SIGRTRED
+    initio.o(.text) refers to setvbuf.o(.text) for setvbuf
+    initio.o(.text) refers to fclose.o(.text) for _fclose_internal
+    initio.o(.text) refers to h1_free.o(.text) for free
+    initio.o(.text) refers to ht32f493x5_board.o(.bss.__stdin) for __stdin
+    initio.o(.text) refers to stdio_streams.o(.bss) for __stdin
+    initio.o(.text) refers to ht32f493x5_board.o(.bss.__stdout) for __stdout
+    initio.o(.text) refers to stdio_streams.o(.bss) for __stdout
+    initio.o(.text) refers to ht32f493x5_board.o(.bss.__stderr) for __stderr
+    initio.o(.text) refers to stdio_streams.o(.bss) for __stderr
+    initio.o(.text) refers to stdio_streams.o(.data) for __aeabi_stdin
+    initio.o(.text) refers to stdio_streams.o(.data) for __aeabi_stdout
+    initio.o(.text) refers to stdio_streams.o(.data) for __aeabi_stderr
+    initio.o(.text) refers to sys_io_names.o(.constdata) for __stdin_name
+    initio.o(.text) refers to sys_io_names.o(.constdata) for __stdout_name
+    initio.o(.text) refers to sys_io_names.o(.constdata) for __stderr_name
+    initio_locked.o(.text) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000026) for __rt_lib_init_stdio_2
+    initio_locked.o(.text) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000003) for __rt_lib_shutdown_stdio_2
+    initio_locked.o(.text) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    initio_locked.o(.text) refers to fopen.o(.text) for freopen
+    initio_locked.o(.text) refers to defsig_rtred_outer.o(.text) for __rt_SIGRTRED
+    initio_locked.o(.text) refers to setvbuf.o(.text) for setvbuf
+    initio_locked.o(.text) refers to fclose.o(.text) for _fclose_internal
+    initio_locked.o(.text) refers to h1_free.o(.text) for free
+    initio_locked.o(.text) refers to ht32f493x5_board.o(.bss.__stdin) for __stdin
+    initio_locked.o(.text) refers to stdio_streams.o(.bss) for __stdin
+    initio_locked.o(.text) refers to ht32f493x5_board.o(.bss.__stdout) for __stdout
+    initio_locked.o(.text) refers to stdio_streams.o(.bss) for __stdout
+    initio_locked.o(.text) refers to ht32f493x5_board.o(.bss.__stderr) for __stderr
+    initio_locked.o(.text) refers to stdio_streams.o(.bss) for __stderr
+    initio_locked.o(.text) refers to stdio_streams.o(.data) for __aeabi_stdin
+    initio_locked.o(.text) refers to stdio_streams.o(.data) for __aeabi_stdout
+    initio_locked.o(.text) refers to stdio_streams.o(.data) for __aeabi_stderr
+    initio_locked.o(.text) refers to streamlock.o(.data) for _stream_list_lock
+    initio_locked.o(.text) refers to sys_io_names.o(.constdata) for __stdin_name
+    initio_locked.o(.text) refers to sys_io_names.o(.constdata) for __stdout_name
+    initio_locked.o(.text) refers to sys_io_names.o(.constdata) for __stderr_name
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to startup_ht32f493x5.o(.text) for __user_initial_stackheap
+    rt_errno_addr.o(.text) refers to rt_errno_addr.o(.bss) for __aeabi_errno_addr_data
+    rt_errno_addr_intlibspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    free.o(.text) refers (Special) to hguard.o(.text) for __heap$guard
+    free.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    free.o(.text) refers to heapstubs.o(.text) for __Heap_Free
+    h1_free.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    h1_free_threads.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2.o(i._FDIterate) refers to heap2.o(.conststring) for .conststring
+    heap2.o(i.__Heap_ProvideMemory$realtime) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2.o(i.__Heap_ProvideMemory$realtime) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2.o(i.__Heap_Stats$realtime) refers to heap2.o(i._Heap2_StatsIterate) for _Heap2_StatsIterate
+    heap2.o(i.__Heap_Valid$realtime) refers to heap2.o(i._FDIterate) for _FDIterate
+    heap2.o(i.__Heap_Valid$realtime) refers to heap2.o(.conststring) for .conststring
+    heap2.o(i.free$realtime) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2.o(i.free$realtime) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2.o(i.free$realtime) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2.o(i.malloc$realtime) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2.o(i.malloc$realtime) refers to fdtree.o(i._FDTree_FindFirst) for _FDTree_FindFirst
+    heap2.o(i.malloc$realtime) refers to init_alloc.o(.text) for __Heap_Full
+    heap2.o(i.malloc$realtime) refers to fdtree.o(i._FDTree_RemoveNode) for _FDTree_RemoveNode
+    heap2.o(i.malloc$realtime) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2.o(i.posix_memalign$realtime) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2.o(i.posix_memalign$realtime) refers to fdtree.o(i._FDTree_FindFirst) for _FDTree_FindFirst
+    heap2.o(i.posix_memalign$realtime) refers to init_alloc.o(.text) for __Heap_Full
+    heap2.o(i.posix_memalign$realtime) refers to fdtree.o(i._FDTree_RemoveNode) for _FDTree_RemoveNode
+    heap2.o(i.posix_memalign$realtime) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2.o(i.realloc$realtime) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2.o(i.realloc$realtime) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2.o(i.realloc$realtime) refers to h1_free.o(.text) for free
+    heap2.o(i.realloc$realtime) refers to h1_alloc.o(.text) for malloc
+    heap2.o(i.realloc$realtime) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2.o(i.realloc$realtime) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    heap2_threads.o(i._FDIterate) refers to heap2_threads.o(.conststring) for .conststring
+    heap2_threads.o(i.__Heap_Initialize$realtime$concurrent) refers to mutex_dummy.o(.text) for _mutex_initialize
+    heap2_threads.o(i.__Heap_ProvideMemory$realtime$concurrent) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2_threads.o(i.__Heap_ProvideMemory$realtime$concurrent) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2_threads.o(i.__Heap_Stats$realtime$concurrent) refers to heap2_threads.o(i._Heap2_StatsIterate) for _Heap2_StatsIterate
+    heap2_threads.o(i.__Heap_Valid$realtime$concurrent) refers to heap2_threads.o(i._FDIterate) for _FDIterate
+    heap2_threads.o(i.__Heap_Valid$realtime$concurrent) refers to heap2_threads.o(.conststring) for .conststring
+    heap2_threads.o(i.free$realtime$concurrent) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2_threads.o(i.free$realtime$concurrent) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2_threads.o(i.free$realtime$concurrent) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2_threads.o(i.malloc$realtime$concurrent) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2_threads.o(i.malloc$realtime$concurrent) refers to fdtree.o(i._FDTree_FindFirst) for _FDTree_FindFirst
+    heap2_threads.o(i.malloc$realtime$concurrent) refers to init_alloc.o(.text) for __Heap_Full
+    heap2_threads.o(i.malloc$realtime$concurrent) refers to fdtree.o(i._FDTree_RemoveNode) for _FDTree_RemoveNode
+    heap2_threads.o(i.malloc$realtime$concurrent) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2_threads.o(i.posix_memalign$realtime$concurrent) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2_threads.o(i.posix_memalign$realtime$concurrent) refers to fdtree.o(i._FDTree_FindFirst) for _FDTree_FindFirst
+    heap2_threads.o(i.posix_memalign$realtime$concurrent) refers to init_alloc.o(.text) for __Heap_Full
+    heap2_threads.o(i.posix_memalign$realtime$concurrent) refers to fdtree.o(i._FDTree_RemoveNode) for _FDTree_RemoveNode
+    heap2_threads.o(i.posix_memalign$realtime$concurrent) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2_threads.o(i.realloc$realtime$concurrent) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2_threads.o(i.realloc$realtime$concurrent) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2_threads.o(i.realloc$realtime$concurrent) refers to h1_free.o(.text) for free
+    heap2_threads.o(i.realloc$realtime$concurrent) refers to h1_alloc.o(.text) for malloc
+    heap2_threads.o(i.realloc$realtime$concurrent) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2_threads.o(i.realloc$realtime$concurrent) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    fopen.o(.text) refers to fclose.o(.text) for _fclose_internal
+    fopen.o(.text) refers to sys_io.o(.text) for _sys_open
+    fopen.o(.text) refers to fseek.o(.text) for _fseek
+    fopen.o(.text) refers to h1_alloc.o(.text) for malloc
+    fopen.o(.text) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    fopen.o(.text) refers to ht32f493x5_board.o(.bss.__stdin) for __stdin
+    fopen.o(.text) refers to stdio_streams.o(.bss) for __stdin
+    stdio_streams.o(.bss) refers (Special) to initio.o(.text) for _initio
+    stdio_streams.o(.bss) refers (Special) to initio.o(.text) for _initio
+    stdio_streams.o(.bss) refers (Special) to initio.o(.text) for _initio
+    stdio_streams.o(.data) refers (Special) to initio.o(.text) for _initio
+    stdio_streams.o(.data) refers (Special) to initio.o(.text) for _initio
+    stdio_streams.o(.data) refers (Special) to initio.o(.text) for _initio
+    fclose.o(.text) refers to stdio.o(.text) for _fflush
+    fclose.o(.text) refers to sys_io.o(.text) for _sys_close
+    fclose.o(.text) refers to h1_free.o(.text) for free
+    fclose.o(.text) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    fopen_locked.o(.text) refers to fclose.o(.text) for _fclose_internal
+    fopen_locked.o(.text) refers to sys_io.o(.text) for _sys_open
+    fopen_locked.o(.text) refers to fseek.o(.text) for _fseek
+    fopen_locked.o(.text) refers to h1_alloc.o(.text) for malloc
+    fopen_locked.o(.text) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    fopen_locked.o(.text) refers to streamlock.o(.data) for _stream_list_lock
+    fopen_locked.o(.text) refers to ht32f493x5_board.o(.bss.__stdin) for __stdin
+    fopen_locked.o(.text) refers to stdio_streams.o(.bss) for __stdin
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    defsig_rtred_outer.o(.text) refers to defsig_rtred_inner.o(.text) for __rt_SIGRTRED_inner
+    defsig_rtred_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtred_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000034) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000032) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000001) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000025) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000006) for __rt_lib_init_preinit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000010) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000004) for __rt_lib_init_relocate_pie_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000035) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000027) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000E) for __rt_lib_init_user_alloc_1
+    libinit2.o(.ARM.Collect$$libinit$$00000001) refers to fpinit.o(x$fpl$fpinit) for _fp_init
+    libinit2.o(.ARM.Collect$$libinit$$00000007) refers (Weak) to init_alloc.o(.text) for _init_alloc
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$00000011) for .ARM.Collect$$libinit$$00000011
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$00000011) for .ARM.Collect$$libinit$$00000011
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$00000011) for .ARM.Collect$$libinit$$00000011
+    libinit2.o(.ARM.Collect$$libinit$$00000018) refers to libinit2.o(.ARM.Collect$$libinit$$00000011) for .ARM.Collect$$libinit$$00000011
+    libinit2.o(.ARM.Collect$$libinit$$0000001A) refers to libinit2.o(.ARM.Collect$$libinit$$00000011) for .ARM.Collect$$libinit$$00000011
+    libinit2.o(.ARM.Collect$$libinit$$00000026) refers (Weak) to initio.o(.text) for _initio
+    libinit2.o(.ARM.Collect$$libinit$$00000028) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000029) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    libshutdown2.o(.ARM.Collect$$libshutdown$$00000003) refers (Weak) to initio.o(.text) for _terminateio
+    libshutdown2.o(.ARM.Collect$$libshutdown$$0000000D) refers (Weak) to term_alloc.o(.text) for _terminate_alloc
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to ht32f493x5_board.o(.text._sys_exit) for _sys_exit
+    rt_heap_descriptor.o(.text) refers to rt_heap_descriptor.o(.bss) for __rt_heap_descriptor_data
+    rt_heap_descriptor_intlibspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    init_alloc.o(.text) refers (Special) to hguard.o(.text) for __heap$guard
+    init_alloc.o(.text) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000007) for __rt_lib_init_heap_2
+    init_alloc.o(.text) refers (Special) to maybetermalloc1.o(.text) for _maybe_terminate_alloc
+    init_alloc.o(.text) refers to h1_extend.o(.text) for __Heap_ProvideMemory
+    init_alloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    init_alloc.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    init_alloc.o(.text) refers to h1_init.o(.text) for __Heap_Initialize
+    malloc.o(.text) refers (Special) to hguard.o(.text) for __heap$guard
+    malloc.o(.text) refers (Special) to init_alloc.o(.text) for _init_alloc
+    malloc.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    malloc.o(.text) refers to heapstubs.o(.text) for __Heap_Alloc
+    h1_alloc.o(.text) refers (Special) to h1_init.o(.text) for __Heap_Initialize
+    h1_alloc.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    h1_alloc.o(.text) refers to init_alloc.o(.text) for __Heap_Full
+    h1_alloc_threads.o(.text) refers (Special) to h1_init.o(.text) for __Heap_Initialize
+    h1_alloc_threads.o(.text) refers to init_alloc.o(.text) for __Heap_Full
+    h1_alloc_threads.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    defsig_exit.o(.text) refers to ht32f493x5_board.o(.text._sys_exit) for _sys_exit
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    argv_veneer.o(.emb_text) refers to no_argv.o(.text) for __ARM_get_argv
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to ht32f493x5_board.o(.text._sys_exit) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    maybetermalloc2.o(.text) refers (Special) to term_alloc.o(.text) for _terminate_alloc
+    h1_extend.o(.text) refers to h1_free.o(.text) for free
+    h1_init_threads.o(.text) refers to mutex_dummy.o(.text) for _mutex_initialize
+    h1_extend_threads.o(.text) refers to h1_free_threads.o(.text) for free_internal$concurrent
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to ht32f493x5_board.o(.text._ttywrch) for _ttywrch
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    heapauxa.o(.text) refers to heapauxa.o(.data) for .data
+    _get_argv.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv.o(.text) refers to h1_alloc.o(.text) for malloc
+    _get_argv.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    sys_command_hlt.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command_hlt.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    term_alloc.o(.text) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E) for __rt_lib_shutdown_heap_2
+    term_alloc.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    term_alloc.o(.text) refers to h1_final.o(.text) for __Heap_Finalize
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig.o(CL$$defsig) refers to defsig_rtred_inner.o(.text) for __rt_SIGRTRED_inner
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000002) for __rt_lib_shutdown_cpp_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000007) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000010) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000004) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C) for __rt_lib_shutdown_user_alloc_1
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+
