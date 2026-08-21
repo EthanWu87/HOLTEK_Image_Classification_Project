@@ -1,18 +1,18 @@
 objects/filteringfunctions.o: \
  C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Source/FilteringFunctions/FilteringFunctions.c \
  C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_init_q31.c \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/filtering_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/arm_math_types.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/filtering_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/arm_math_types.h \
  ../../../../../../libraries/cmsis/cm4/core_support/cmsis_compiler.h \
  ../../../../../../libraries/cmsis/cm4/core_support/cmsis_gcc.h \
  C:/Program\ Files\ (x86)/Arm\ GNU\ Toolchain\ arm-none-eabi/14.2\ rel1/arm-none-eabi/include/c++/14.2.1/math.h \
- ../../../../../../libraries/cmsis/cm4/core_support/arm_math_memory.h \
- ../../../../../../libraries/cmsis/cm4/core_support/arm_math_types.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/none.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/utils.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/support_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/fast_math_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/basic_math_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/arm_math_memory.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/arm_math_types.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/none.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/utils.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/support_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/fast_math_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/basic_math_functions.h \
  C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_q31.c \
  C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Source/FilteringFunctions/arm_biquad_cascade_df1_f32.c \
  C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Source/FilteringFunctions/arm_biquad_cascade_df1_fast_q15.c \
@@ -111,8 +111,8 @@ objects/filteringfunctions.o: \
  C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Source/FilteringFunctions/arm_lms_norm_f32.c \
  C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Source/FilteringFunctions/arm_lms_norm_init_f32.c \
  C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Source/FilteringFunctions/arm_lms_norm_init_q15.c \
- ../../../../../../libraries/cmsis/cm4/core_support/arm_common_tables.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/fast_math_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/arm_common_tables.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/fast_math_functions.h \
  C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Source/FilteringFunctions/arm_lms_norm_init_q31.c \
  C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Source/FilteringFunctions/arm_lms_norm_q15.c \
  C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Source/FilteringFunctions/arm_lms_norm_q31.c \

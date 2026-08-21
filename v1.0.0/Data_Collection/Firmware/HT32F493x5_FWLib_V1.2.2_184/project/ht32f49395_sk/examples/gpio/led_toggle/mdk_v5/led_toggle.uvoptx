@@ -347,8 +347,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\libraries\drivers\src\ht32f493x5_spi.c</PathWithFileName>
-      <FilenameWithoutPath>ht32f493x5_spi.c</FilenameWithoutPath>
+      <PathWithFileName>..\..\..\..\..\..\middlewares\i2c_application_library\i2c_application.c</PathWithFileName>
+      <FilenameWithoutPath>i2c_application.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -359,8 +359,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\middlewares\i2c_application_library\i2c_application.c</PathWithFileName>
-      <FilenameWithoutPath>i2c_application.c</FilenameWithoutPath>
+      <PathWithFileName>..\..\..\..\..\..\libraries\drivers\src\ht32f493x5_tmr.c</PathWithFileName>
+      <FilenameWithoutPath>ht32f493x5_tmr.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

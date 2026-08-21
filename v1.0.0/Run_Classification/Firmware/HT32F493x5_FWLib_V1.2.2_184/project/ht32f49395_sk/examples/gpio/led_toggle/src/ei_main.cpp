@@ -13,31 +13,34 @@
 #define EI_BUFFER_SIZE 9216
 
 extern uint8_t hm01b0_frame_buffer[HM01B0_IMAGE_SIZE_BYTES];
-extern volatile uint8_t g_frame_ready;
 
-uint8_t ei_img_crop_buffer[EI_BUFFER_SIZE];   // crop img form 160*120 to 96*96 (center crop) 
+static uint8_t ei_img_crop_buffer[EI_BUFFER_SIZE];   // crop img form 160*120 to 96*96 (center crop) 
 
 void read_hm01b0_data()
 {
-	uint8_t width_offset  = HM01B0_IMAGE_WIDTH_DUMMY / 2;
-	uint8_t height_offset = HM01B0_IMAGE_HEIGHT_DUMMY / 2;
-	uint8_t start_col     = ((HM01B0_IMGAE_WIDTH_EFFECTIVE - EI_TARGET_WIDTH) / 2) + width_offset;
-	uint8_t start_row     = ((HM01B0_IMGAE_HEIGHT_EFFECTIVE - EI_TARGET_HEIGHT) / 2) + height_offset;
+	int width_offset, height_offset, start_col, start_row;
+
+	width_offset  = HM01B0_IMAGE_WIDTH_DUMMY / 2;
+	height_offset = HM01B0_IMAGE_HEIGHT_DUMMY / 2;
 	
-	printf("IMG_S");   // image start header 
-  for(int r = 0; r < EI_TARGET_HEIGHT; r++)
-  {
-		uint8_t *src_ptr = &hm01b0_frame_buffer[(start_row + r) * HM01B0_IMAGE_WIDTH_ACTIVE + start_col];
+	start_col = ((HM01B0_IMAGE_WIDTH_EFFECTIVE - EI_TARGET_WIDTH) / 2) + width_offset;
+	start_row = ((HM01B0_IMAGE_HEIGHT_EFFECTIVE - EI_TARGET_HEIGHT) / 2) + height_offset;
+
+	printf("IMG_S");
+	for(int r = 0; r < EI_TARGET_HEIGHT; r++)
+	{
+		uint8_t *src_ptr  = &g_hm01b0.frame_buffer[((start_row + r) * HM01B0_IMAGE_WIDTH_ACTIVE) + start_col];
 		uint8_t *dest_ptr = &ei_img_crop_buffer[r * EI_TARGET_WIDTH];
-		
+
 		memcpy(dest_ptr, src_ptr, EI_TARGET_WIDTH);
-		
-		for(int c = 0; c < EI_TARGET_WIDTH; c++)
+
+		/* Send one 96-pixel row */
+		for(int c = 0; c < (int)EI_TARGET_WIDTH; c++)
 		{
 			while(usart_flag_get(USART1, USART_TDBE_FLAG) == RESET);
 			usart_data_transmit(USART1, dest_ptr[c]);
 		}
-  }
+	}
 	printf("IMG_E\r\n");
 }
 
@@ -75,11 +78,12 @@ int ei_main(void)
 		{
 			ei_printf("\nStarting inferencing\r\n");
 
-			if(g_frame_ready)
+			if(g_hm01b0.frame_ready)
 			{
+				exint_flag_clear(HM01B0_VSYNC_EXINT_LINE);
 				nvic_irq_disable(HM01B0_VSYNC_IRQn);
-				g_frame_ready = 0;
 
+				g_hm01b0.frame_ready = 0;
 				read_hm01b0_data();
 
 				exint_flag_clear(HM01B0_VSYNC_EXINT_LINE);

@@ -62,42 +62,44 @@ objects/ei_main.o: ../src/ei_main.cpp ../src/ei_main.h \
  C:/Users/user/AppData/Local/Arm/Packs/EdgeImpulse/EI-SDK/1.95.2/edgeimpulse/edge-impulse-sdk/porting/ei_logging.h \
  C:/Users/user/AppData/Local/Arm/Packs/EdgeImpulse/EI-SDK/1.95.2/edgeimpulse/edge-impulse-sdk/porting/ei_classifier_porting.h \
  C:/Users/user/AppData/Local/Arm/Packs/EdgeImpulse/EI-SDK/1.95.2/edgeimpulse/edge-impulse-sdk/dsp/dsp_engines/ei_arm_cmsis_dsp.h \
- ../../../../../../libraries/cmsis/cm4/core_support/arm_const_structs.h \
- ../../../../../../libraries/cmsis/cm4/core_support/arm_math_types.h \
- ../../../../../../libraries/cmsis/cm4/core_support/arm_common_tables.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/fast_math_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/arm_math_types.h \
- ../../../../../../libraries/cmsis/cm4/core_support/arm_math_memory.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/none.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/utils.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/basic_math_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/transform_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/complex_math_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/fast_math_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/arm_math.h \
- ../../../../../../libraries/cmsis/cm4/core_support/arm_math_memory.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/none.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/utils.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/basic_math_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/interpolation_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/bayes_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/statistics_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/matrix_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/complex_math_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/statistics_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/controller_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/support_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/distance_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/svm_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/svm_defines.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/filtering_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/support_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/quaternion_math_functions.h \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/transform_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/arm_const_structs.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/arm_math_types.h \
+ ../../../../../../libraries/cmsis/cm4/core_support/cmsis_compiler.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/arm_common_tables.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/fast_math_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/arm_math_types.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/arm_math_memory.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/none.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/utils.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/basic_math_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/transform_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/complex_math_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/fast_math_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/arm_math.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/arm_math_memory.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/none.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/utils.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/basic_math_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/interpolation_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/bayes_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/statistics_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/matrix_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/complex_math_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/statistics_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/controller_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/support_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/distance_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/matrix_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/svm_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/svm_defines.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/filtering_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/support_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/quaternion_math_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/window_functions.h \
+ C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include/dsp/transform_functions.h \
  C:/Users/user/AppData/Local/Arm/Packs/EdgeImpulse/EI-SDK/1.95.2/edgeimpulse/edge-impulse-sdk/dsp/memory.hpp \
  C:/Users/user/AppData/Local/Arm/Packs/EdgeImpulse/EI-SDK/1.95.2/edgeimpulse/edge-impulse-sdk/dsp/returntypes.hpp \
  C:/Users/user/AppData/Local/Arm/Packs/EdgeImpulse/EI-SDK/1.95.2/edgeimpulse/edge-impulse-sdk/dsp/dsp_engines/ei_cmsis_numpy.hpp \
- ../../../../../../libraries/cmsis/cm4/core_support/dsp/matrix_functions.h \
  C:/Users/user/AppData/Local/Arm/Packs/EdgeImpulse/EI-SDK/1.95.2/edgeimpulse/edge-impulse-sdk/tensorflow/lite/c/common.h \
  C:/Users/user/AppData/Local/Arm/Packs/EdgeImpulse/EI-SDK/1.95.2/edgeimpulse/edge-impulse-sdk/tensorflow/lite/core/c/common.h \
  C:/Users/user/AppData/Local/Arm/Packs/EdgeImpulse/EI-SDK/1.95.2/edgeimpulse/edge-impulse-sdk/tensorflow/lite/core/c/c_api_types.h \

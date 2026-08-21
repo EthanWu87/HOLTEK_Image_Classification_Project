@@ -149,59 +149,63 @@ uint32_t SysTick_GetTick(void)
 	return uwTick;   
 }
 
-/**
-  * @brief  this function handles VSYNC interrupt on EXINT LINE 0 (PB0).
-  */
-void EXINT0_IRQHandler(void)
+/* =========================================================
+ * VSYNC interrupt
+ * PA2 / EXINT2 / rising edge
+ *
+ * Full-image behavior:
+ *   - reset HREF debug counter
+ *   - stop DMA
+ *   - reload full frame = 164 * 122 = 20008 bytes
+ *   - start DMA
+ *
+ * Because HM01B0 gated PCLK is enabled, DMA requests only
+ * occur when PCLK capture events are present.
+ * ========================================================= */
+void EXINT2_IRQHandler(void)
 {
   if(exint_interrupt_flag_get(HM01B0_VSYNC_EXINT_LINE) != RESET)
   {
-		spi_enable(HM01B0_SPI_PORT, FALSE); 
-		dma_channel_enable(HM01B0_DMA_CHANNEL, FALSE);
-		
+    dma_channel_enable(HM01B0_DMA_CHANNEL,FALSE);
+
     dma_data_number_set(HM01B0_DMA_CHANNEL, HM01B0_IMAGE_SIZE_BYTES);
 
-		spi_enable(HM01B0_SPI_PORT, TRUE);
     dma_channel_enable(HM01B0_DMA_CHANNEL, TRUE);
-        
+
     exint_flag_clear(HM01B0_VSYNC_EXINT_LINE);
   }
 }
 
-/**
-  * @brief  this function handles HREF interrupt on EXINT LINE 4 (PA4).
-  *         It simulates "Hardware Trigger" by toggling SPI Software NSS.
-  */
-// void EXINT4_IRQHandler(void)
-// {
-//   if(exint_interrupt_flag_get(EXINT_LINE_4) != RESET)
-//   {
-//     if(gpio_input_data_bit_read(HM01B0_HREF_PORT, HM01B0_HREF_PIN) != RESET)
-//     {
-//       spi_software_cs_internal_level_set(HM01B0_SPI_PORT, SPI_SWCS_INTERNAL_LEVEL_LOW);
-//     }
-//     else
-//     {
-//       spi_software_cs_internal_level_set(HM01B0_SPI_PORT, SPI_SWCS_INTERNAL_LEVEL_HIGHT);
-//     }
-
-//     exint_flag_clear(EXINT_LINE_4);
-//   }
-// }
-
-/**
-  * @brief  this function handles DMA1 Channel 2 interrupt (SPI RX Done).
-  */
-void DMA1_Channel2_IRQHandler(void)
+/* =========================================================
+ * HREF interrupt
+ * PA4 / EXINT4 / rising edge
+ *
+ * Does nothing, because HM01B0 gated PCLK is enabled.
+ * ========================================================= */
+void EXINT4_IRQHandler(void)
 {
-  if(dma_interrupt_flag_get(DMA1_FDT2_FLAG) != RESET)
+  if(exint_interrupt_flag_get(HM01B0_HREF_EXINT_LINE) != RESET)
   {
-    g_frame_ready = 1;
-  
-    dma_flag_clear(DMA1_FDT2_FLAG);
+		exint_flag_clear(HM01B0_HREF_EXINT_LINE);
   }
 }
 
+/* =========================================================
+ * DMA1 Channel2 full-data-transfer interrupt
+ * ========================================================= */
+void DMA1_Channel2_IRQHandler(void)
+{
+  if(dma_interrupt_flag_get(HM01B0_DMA_FDT_FLAG) != RESET)
+  {
+
+    /* Stop DMA immediately after full frame */
+    dma_channel_enable(HM01B0_DMA_CHANNEL, FALSE);
+
+    g_hm01b0.frame_ready = 1;
+
+    dma_flag_clear(HM01B0_DMA_FDT_FLAG);
+  }
+}
 /**
   * @}
   */

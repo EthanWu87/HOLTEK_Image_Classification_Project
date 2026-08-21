@@ -455,14 +455,14 @@
               <FilePath>..\..\..\..\..\..\libraries\drivers\src\ht32f493x5_i2c.c</FilePath>
             </File>
             <File>
-              <FileName>ht32f493x5_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\libraries\drivers\src\ht32f493x5_spi.c</FilePath>
-            </File>
-            <File>
               <FileName>i2c_application.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\..\..\middlewares\i2c_application_library\i2c_application.c</FilePath>
+            </File>
+            <File>
+              <FileName>ht32f493x5_tmr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\..\libraries\drivers\src\ht32f493x5_tmr.c</FilePath>
             </File>
           </Files>
         </Group>
