@@ -60,14 +60,10 @@
                                          GPIO_PINS_4 | GPIO_PINS_5 | GPIO_PINS_6 | GPIO_PINS_7)
 #define HM01B0_DATA_GPIO_CLK            CRM_GPIOC_PERIPH_CLOCK
 
-/* Control GPIO */
-#define HM01B0_CTRL_PORT_A              GPIOA
-#define HM01B0_CTRL_CLK_A               CRM_GPIOA_PERIPH_CLOCK
-#define HM01B0_CTRL_PORT_B              GPIOB
-#define HM01B0_CTRL_CLK_B               CRM_GPIOB_PERIPH_CLOCK
-
 /* VSYNC(PA2) */
 #define HM01B0_VSYNC_PIN                GPIO_PINS_2
+#define HM01B0_VSYNC_PORT               GPIOA
+#define HM01B0_VSYNC_CLK                CRM_GPIOA_PERIPH_CLOCK
 #define HM01B0_VSYNC_PORT_SRC           GPIO_PORT_SOURCE_GPIOA
 #define HM01B0_VSYNC_PIN_SRC            GPIO_PINS_SOURCE2
 #define HM01B0_VSYNC_EXINT_LINE         EXINT_LINE_2
@@ -75,6 +71,8 @@
 
 /* HREF(PA4) */
 #define HM01B0_HREF_PIN                 GPIO_PINS_4
+#define HM01B0_HREF_PORT                GPIOA
+#define HM01B0_HREF_CLK                 CRM_GPIOA_PERIPH_CLOCK
 #define HM01B0_HREF_PORT_SRC            GPIO_PORT_SOURCE_GPIOA
 #define HM01B0_HREF_PIN_SRC             GPIO_PINS_SOURCE4
 #define HM01B0_HREF_EXINT_LINE          EXINT_LINE_4
@@ -109,41 +107,40 @@
 
 typedef struct
 {
-	i2c_handle_type hi2c;
+  i2c_handle_type hi2c;
 
-	uint8_t *frame_buffer;
-	uint32_t frame_buffer_size;
+  uint8_t *frame_buffer;
+  uint32_t frame_buffer_size;
 
-	/* Runtime state */
-	volatile uint8_t frame_ready;
-	uint16_t model_id;
+  /* Runtime state */
+  volatile uint8_t frame_ready;
+  uint16_t model_id;
 
-	/* Sensor configuration */
-	uint8_t  readout_x;
-	uint8_t  readout_y;
-	uint8_t  binning_mode;
-	uint8_t  qvga_win_en;
+  /* Sensor configuration */
+  uint8_t  readout_x;
+  uint8_t  readout_y;
+  uint8_t  binning_mode;
+  uint8_t  qvga_win_en;
 
-	uint16_t frame_length_lines;
-	uint16_t line_length_pclk;
+  uint16_t frame_length_lines;
+  uint16_t line_length_pclk;
 
-	uint8_t  bit_control;
-	uint8_t  osc_clk_div;
+  uint8_t  bit_control;
+  uint8_t  osc_clk_div;
 
-	uint8_t  ae_enable;
-	uint8_t  ae_target;
-	uint16_t ae_max_integration;
+  uint8_t  ae_enable;
+  uint8_t  ae_min_mean;
+  uint8_t  ae_target;
+  uint16_t ae_max_integration;
 
-	uint8_t  group_hold;
-	uint8_t  group_consume;
+  uint8_t  group_hold;
+  uint8_t  group_consume;
 
-	uint8_t  osc_mode_en;
-	uint8_t  test_pattern;
+  uint8_t  osc_mode_en;
+  uint8_t  test_pattern;
 } hm01b0_t;
 
 extern hm01b0_t g_hm01b0;
-
-void hm01b0_default_config(hm01b0_t *camera);
 
 int  hm01b0_init(hm01b0_t *camera, uint8_t *buffer, uint32_t size);
 void hm01b0_mclk_init(void);
