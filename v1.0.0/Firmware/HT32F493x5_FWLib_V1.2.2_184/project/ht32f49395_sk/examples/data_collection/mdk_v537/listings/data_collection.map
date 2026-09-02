@@ -1017,7 +1017,7 @@ Removing Unused input sections from the image.
     Removing ht32f493x5_board.o(.ARM.exidx.text.delay_init), (8 bytes).
     Removing ht32f493x5_board.o(.text.ht32_led_init), (78 bytes).
     Removing ht32f493x5_board.o(.ARM.exidx.text.ht32_led_init), (8 bytes).
-    Removing ht32f493x5_board.o(.text.ht32_led_off), (38 bytes).
+    Removing ht32f493x5_board.o(.text.ht32_led_off), (34 bytes).
     Removing ht32f493x5_board.o(.ARM.exidx.text.ht32_led_off), (8 bytes).
     Removing ht32f493x5_board.o(.text.ht32_button_init), (56 bytes).
     Removing ht32f493x5_board.o(.ARM.exidx.text.ht32_button_init), (8 bytes).
@@ -1026,7 +1026,7 @@ Removing Unused input sections from the image.
     Removing ht32f493x5_board.o(.text.ht32_button_press), (138 bytes).
     Removing ht32f493x5_board.o(.ARM.exidx.text.ht32_button_press), (8 bytes).
     Removing ht32f493x5_board.o(.ARM.exidx.text.delay_ms), (8 bytes).
-    Removing ht32f493x5_board.o(.text.ht32_led_on), (38 bytes).
+    Removing ht32f493x5_board.o(.text.ht32_led_on), (34 bytes).
     Removing ht32f493x5_board.o(.ARM.exidx.text.ht32_led_on), (8 bytes).
     Removing ht32f493x5_board.o(.ARM.exidx.text.ht32_led_toggle), (8 bytes).
     Removing ht32f493x5_board.o(.text.delay_us), (60 bytes).
@@ -1453,7 +1453,7 @@ Removing Unused input sections from the image.
     Removing system_ht32f493x5.o(.ARM.exidx.text.SystemInit), (8 bytes).
     Removing system_ht32f493x5.o(.ARM.exidx.text.system_core_clock_update), (8 bytes).
 
-483 unused section(s) (total 15197 bytes) removed from the image.
+483 unused section(s) (total 15189 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1686,73 +1686,73 @@ Image Symbol Table
     [Anonymous Symbol]                       0x0800158c   Section        0  hm01b0.o(.text.hm01b0_mclk_init)
     [Anonymous Symbol]                       0x08001648   Section        0  hm01b0.o(.text.hm01b0_parallel_init)
     [Anonymous Symbol]                       0x08001804   Section        0  ht32f493x5_board.o(.text.ht32_board_init)
-    [Anonymous Symbol]                       0x08001918   Section        0  ht32f493x5_board.o(.text.ht32_led_toggle)
-    [Anonymous Symbol]                       0x08001944   Section        0  ht32f493x5_i2c.o(.text.i2c_7bit_address_send)
-    [Anonymous Symbol]                       0x08001954   Section        0  ht32f493x5_i2c.o(.text.i2c_ack_enable)
-    [Anonymous Symbol]                       0x08001968   Section        0  ht32f493x5_i2c.o(.text.i2c_data_receive)
-    [Anonymous Symbol]                       0x08001970   Section        0  ht32f493x5_i2c.o(.text.i2c_data_send)
-    [Anonymous Symbol]                       0x08001974   Section        0  ht32f493x5_i2c.o(.text.i2c_enable)
-    [Anonymous Symbol]                       0x08001980   Section        0  ht32f493x5_i2c.o(.text.i2c_flag_clear)
-    [Anonymous Symbol]                       0x080019a8   Section        0  ht32f493x5_i2c.o(.text.i2c_flag_get)
-    [Anonymous Symbol]                       0x080019d8   Section        0  ht32f493x5_i2c.o(.text.i2c_init)
-    [Anonymous Symbol]                       0x08001b00   Section        0  i2c_application.o(.text.i2c_master_read_addr)
-    [Anonymous Symbol]                       0x08001c58   Section        0  ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set)
-    [Anonymous Symbol]                       0x08001c6c   Section        0  i2c_application.o(.text.i2c_master_transmit)
-    [Anonymous Symbol]                       0x08001d74   Section        0  i2c_application.o(.text.i2c_master_write_addr)
-    [Anonymous Symbol]                       0x08001e74   Section        0  i2c_application.o(.text.i2c_memory_address_send)
-    [Anonymous Symbol]                       0x08001ee0   Section        0  i2c_application.o(.text.i2c_memory_read)
-    [Anonymous Symbol]                       0x08002160   Section        0  ht32f493x5_i2c.o(.text.i2c_reset)
-    [Anonymous Symbol]                       0x080021ac   Section        0  ht32f493x5_i2c.o(.text.i2c_start_generate)
-    [Anonymous Symbol]                       0x080021b8   Section        0  ht32f493x5_i2c.o(.text.i2c_stop_generate)
-    [Anonymous Symbol]                       0x080021c4   Section        0  i2c_application.o(.text.i2c_wait_flag)
-    [Anonymous Symbol]                       0x08002258   Section        0  main.o(.text.main)
-    [Anonymous Symbol]                       0x080023c0   Section        0  ht32f493x5_misc.o(.text.nvic_irq_disable)
-    [Anonymous Symbol]                       0x080023ec   Section        0  ht32f493x5_misc.o(.text.nvic_irq_enable)
-    [Anonymous Symbol]                       0x08002464   Section        0  ht32f493x5_clock.o(.text.system_clock_config)
-    [Anonymous Symbol]                       0x080024d4   Section        0  system_ht32f493x5.o(.text.system_core_clock_update)
-    system_core_clock_update.sys_ahb_div_table 0x0800257c   Number         0  system_ht32f493x5.o(.text.system_core_clock_update)
-    [Anonymous Symbol]                       0x0800258c   Section        0  ht32f493x5_misc.o(.text.systick_clock_source_config)
-    [Anonymous Symbol]                       0x080025a4   Section        0  ht32f493x5_tmr.o(.text.tmr_base_init)
-    [Anonymous Symbol]                       0x080025b4   Section        0  ht32f493x5_tmr.o(.text.tmr_channel_value_set)
-    [Anonymous Symbol]                       0x080025d8   Section        0  ht32f493x5_tmr.o(.text.tmr_cnt_dir_set)
-    [Anonymous Symbol]                       0x080025ec   Section        0  ht32f493x5_tmr.o(.text.tmr_counter_enable)
-    [Anonymous Symbol]                       0x080025f8   Section        0  ht32f493x5_tmr.o(.text.tmr_dma_request_enable)
-    [Anonymous Symbol]                       0x08002614   Section        0  ht32f493x5_tmr.o(.text.tmr_input_channel_init)
-    [Anonymous Symbol]                       0x080027e0   Section        0  ht32f493x5_tmr.o(.text.tmr_input_default_para_init)
-    [Anonymous Symbol]                       0x080027e8   Section        0  ht32f493x5_tmr.o(.text.tmr_output_channel_config)
-    [Anonymous Symbol]                       0x080028f0   Section        0  ht32f493x5_tmr.o(.text.tmr_output_default_para_init)
-    [Anonymous Symbol]                       0x080028fc   Section        0  ht32f493x5_tmr.o(.text.tmr_output_enable)
-    [Anonymous Symbol]                       0x08002910   Section        0  ht32f493x5_board.o(.text.uart_print_init)
-    [Anonymous Symbol]                       0x080029a4   Section        0  ht32f493x5_usart.o(.text.usart_data_transmit)
-    [Anonymous Symbol]                       0x080029ac   Section        0  ht32f493x5_usart.o(.text.usart_enable)
-    [Anonymous Symbol]                       0x080029c0   Section        0  ht32f493x5_usart.o(.text.usart_flag_get)
-    [Anonymous Symbol]                       0x080029cc   Section        0  ht32f493x5_usart.o(.text.usart_init)
-    [Anonymous Symbol]                       0x08002a7c   Section        0  ht32f493x5_usart.o(.text.usart_receiver_enable)
-    [Anonymous Symbol]                       0x08002a90   Section        0  ht32f493x5_usart.o(.text.usart_transmitter_enable)
-    i._is_digit                              0x08002aa2   Section        0  __printf_wp.o(i._is_digit)
-    $v0                                      0x08002ab0   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$fpinit                             0x08002ab0   Section       26  fpinit.o(x$fpl$fpinit)
-    uc_hextab                                0x08002aca   Data          20  _printf_hex_int.o(.constdata)
-    .constdata                               0x08002aca   Section       40  _printf_hex_int.o(.constdata)
-    lc_hextab                                0x08002ade   Data          20  _printf_hex_int.o(.constdata)
-    maptable                                 0x08002af2   Data          17  __printf_flags_wp.o(.constdata)
-    .constdata                               0x08002af2   Section       17  __printf_flags_wp.o(.constdata)
-    crm_clocks_freq_get.ahb_apb2_div_table   0x08002b03   Data           8  ht32f493x5_crm.o(.rodata.cst8)
-    [Anonymous Symbol]                       0x08002b03   Section        0  ht32f493x5_crm.o(.rodata.cst8)
-    .bss                                     0x20000028   Section       96  libspace.o(.bss)
-    edge_impulse_clean_buffer                0x200000dc   Data        9216  main.o(.bss.edge_impulse_clean_buffer)
-    [Anonymous Symbol]                       0x200000dc   Section        0  main.o(.bss.edge_impulse_clean_buffer)
-    fac_ms                                   0x200024dc   Data           4  ht32f493x5_board.o(.bss.fac_ms)
-    [Anonymous Symbol]                       0x200024dc   Section        0  ht32f493x5_board.o(.bss.fac_ms)
-    fac_us                                   0x200024e0   Data           4  ht32f493x5_board.o(.bss.fac_us)
-    [Anonymous Symbol]                       0x200024e0   Section        0  ht32f493x5_board.o(.bss.fac_us)
-    hm01b0_frame_buffer                      0x2000253c   Data       20008  main.o(.bss.hm01b0_frame_buffer)
-    [Anonymous Symbol]                       0x2000253c   Section        0  main.o(.bss.hm01b0_frame_buffer)
-    Heap_Mem                                 0x20007368   Data         512  startup_ht32f493x5.o(HEAP)
-    HEAP                                     0x20007368   Section      512  startup_ht32f493x5.o(HEAP)
-    Stack_Mem                                0x20007568   Data        1024  startup_ht32f493x5.o(STACK)
-    STACK                                    0x20007568   Section     1024  startup_ht32f493x5.o(STACK)
-    __initial_sp                             0x20007968   Data           0  startup_ht32f493x5.o(STACK)
+    [Anonymous Symbol]                       0x080018c0   Section        0  ht32f493x5_board.o(.text.ht32_led_toggle)
+    [Anonymous Symbol]                       0x080018e8   Section        0  ht32f493x5_i2c.o(.text.i2c_7bit_address_send)
+    [Anonymous Symbol]                       0x080018f8   Section        0  ht32f493x5_i2c.o(.text.i2c_ack_enable)
+    [Anonymous Symbol]                       0x0800190c   Section        0  ht32f493x5_i2c.o(.text.i2c_data_receive)
+    [Anonymous Symbol]                       0x08001914   Section        0  ht32f493x5_i2c.o(.text.i2c_data_send)
+    [Anonymous Symbol]                       0x08001918   Section        0  ht32f493x5_i2c.o(.text.i2c_enable)
+    [Anonymous Symbol]                       0x08001924   Section        0  ht32f493x5_i2c.o(.text.i2c_flag_clear)
+    [Anonymous Symbol]                       0x0800194c   Section        0  ht32f493x5_i2c.o(.text.i2c_flag_get)
+    [Anonymous Symbol]                       0x0800197c   Section        0  ht32f493x5_i2c.o(.text.i2c_init)
+    [Anonymous Symbol]                       0x08001aa4   Section        0  i2c_application.o(.text.i2c_master_read_addr)
+    [Anonymous Symbol]                       0x08001bfc   Section        0  ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set)
+    [Anonymous Symbol]                       0x08001c10   Section        0  i2c_application.o(.text.i2c_master_transmit)
+    [Anonymous Symbol]                       0x08001d18   Section        0  i2c_application.o(.text.i2c_master_write_addr)
+    [Anonymous Symbol]                       0x08001e18   Section        0  i2c_application.o(.text.i2c_memory_address_send)
+    [Anonymous Symbol]                       0x08001e84   Section        0  i2c_application.o(.text.i2c_memory_read)
+    [Anonymous Symbol]                       0x08002104   Section        0  ht32f493x5_i2c.o(.text.i2c_reset)
+    [Anonymous Symbol]                       0x08002150   Section        0  ht32f493x5_i2c.o(.text.i2c_start_generate)
+    [Anonymous Symbol]                       0x0800215c   Section        0  ht32f493x5_i2c.o(.text.i2c_stop_generate)
+    [Anonymous Symbol]                       0x08002168   Section        0  i2c_application.o(.text.i2c_wait_flag)
+    [Anonymous Symbol]                       0x080021fc   Section        0  main.o(.text.main)
+    [Anonymous Symbol]                       0x08002364   Section        0  ht32f493x5_misc.o(.text.nvic_irq_disable)
+    [Anonymous Symbol]                       0x08002390   Section        0  ht32f493x5_misc.o(.text.nvic_irq_enable)
+    [Anonymous Symbol]                       0x08002408   Section        0  ht32f493x5_clock.o(.text.system_clock_config)
+    [Anonymous Symbol]                       0x08002478   Section        0  system_ht32f493x5.o(.text.system_core_clock_update)
+    system_core_clock_update.sys_ahb_div_table 0x08002520   Number         0  system_ht32f493x5.o(.text.system_core_clock_update)
+    [Anonymous Symbol]                       0x08002530   Section        0  ht32f493x5_misc.o(.text.systick_clock_source_config)
+    [Anonymous Symbol]                       0x08002548   Section        0  ht32f493x5_tmr.o(.text.tmr_base_init)
+    [Anonymous Symbol]                       0x08002558   Section        0  ht32f493x5_tmr.o(.text.tmr_channel_value_set)
+    [Anonymous Symbol]                       0x0800257c   Section        0  ht32f493x5_tmr.o(.text.tmr_cnt_dir_set)
+    [Anonymous Symbol]                       0x08002590   Section        0  ht32f493x5_tmr.o(.text.tmr_counter_enable)
+    [Anonymous Symbol]                       0x0800259c   Section        0  ht32f493x5_tmr.o(.text.tmr_dma_request_enable)
+    [Anonymous Symbol]                       0x080025b8   Section        0  ht32f493x5_tmr.o(.text.tmr_input_channel_init)
+    [Anonymous Symbol]                       0x08002784   Section        0  ht32f493x5_tmr.o(.text.tmr_input_default_para_init)
+    [Anonymous Symbol]                       0x0800278c   Section        0  ht32f493x5_tmr.o(.text.tmr_output_channel_config)
+    [Anonymous Symbol]                       0x08002894   Section        0  ht32f493x5_tmr.o(.text.tmr_output_default_para_init)
+    [Anonymous Symbol]                       0x080028a0   Section        0  ht32f493x5_tmr.o(.text.tmr_output_enable)
+    [Anonymous Symbol]                       0x080028b4   Section        0  ht32f493x5_board.o(.text.uart_print_init)
+    [Anonymous Symbol]                       0x08002948   Section        0  ht32f493x5_usart.o(.text.usart_data_transmit)
+    [Anonymous Symbol]                       0x08002950   Section        0  ht32f493x5_usart.o(.text.usart_enable)
+    [Anonymous Symbol]                       0x08002964   Section        0  ht32f493x5_usart.o(.text.usart_flag_get)
+    [Anonymous Symbol]                       0x08002970   Section        0  ht32f493x5_usart.o(.text.usart_init)
+    [Anonymous Symbol]                       0x08002a20   Section        0  ht32f493x5_usart.o(.text.usart_receiver_enable)
+    [Anonymous Symbol]                       0x08002a34   Section        0  ht32f493x5_usart.o(.text.usart_transmitter_enable)
+    i._is_digit                              0x08002a46   Section        0  __printf_wp.o(i._is_digit)
+    $v0                                      0x08002a54   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fpinit                             0x08002a54   Section       26  fpinit.o(x$fpl$fpinit)
+    uc_hextab                                0x08002a6e   Data          20  _printf_hex_int.o(.constdata)
+    .constdata                               0x08002a6e   Section       40  _printf_hex_int.o(.constdata)
+    lc_hextab                                0x08002a82   Data          20  _printf_hex_int.o(.constdata)
+    maptable                                 0x08002a96   Data          17  __printf_flags_wp.o(.constdata)
+    .constdata                               0x08002a96   Section       17  __printf_flags_wp.o(.constdata)
+    crm_clocks_freq_get.ahb_apb2_div_table   0x08002aa7   Data           8  ht32f493x5_crm.o(.rodata.cst8)
+    [Anonymous Symbol]                       0x08002aa7   Section        0  ht32f493x5_crm.o(.rodata.cst8)
+    .bss                                     0x20000010   Section       96  libspace.o(.bss)
+    edge_impulse_clean_buffer                0x200000c4   Data        9216  main.o(.bss.edge_impulse_clean_buffer)
+    [Anonymous Symbol]                       0x200000c4   Section        0  main.o(.bss.edge_impulse_clean_buffer)
+    fac_ms                                   0x200024c4   Data           4  ht32f493x5_board.o(.bss.fac_ms)
+    [Anonymous Symbol]                       0x200024c4   Section        0  ht32f493x5_board.o(.bss.fac_ms)
+    fac_us                                   0x200024c8   Data           4  ht32f493x5_board.o(.bss.fac_us)
+    [Anonymous Symbol]                       0x200024c8   Section        0  ht32f493x5_board.o(.bss.fac_us)
+    hm01b0_frame_buffer                      0x20002524   Data       20008  main.o(.bss.hm01b0_frame_buffer)
+    [Anonymous Symbol]                       0x20002524   Section        0  main.o(.bss.hm01b0_frame_buffer)
+    Heap_Mem                                 0x20007350   Data         512  startup_ht32f493x5.o(HEAP)
+    HEAP                                     0x20007350   Section      512  startup_ht32f493x5.o(HEAP)
+    Stack_Mem                                0x20007550   Data        1024  startup_ht32f493x5.o(STACK)
+    STACK                                    0x20007550   Section     1024  startup_ht32f493x5.o(STACK)
+    __initial_sp                             0x20007950   Data           0  startup_ht32f493x5.o(STACK)
 
     Global Symbols
 
@@ -2009,64 +2009,64 @@ Image Symbol Table
     hm01b0_init                              0x080011e1   Thumb Code   880  hm01b0.o(.text.hm01b0_init)
     hm01b0_mclk_init                         0x0800158d   Thumb Code   186  hm01b0.o(.text.hm01b0_mclk_init)
     hm01b0_parallel_init                     0x08001649   Thumb Code   444  hm01b0.o(.text.hm01b0_parallel_init)
-    ht32_board_init                          0x08001805   Thumb Code   276  ht32f493x5_board.o(.text.ht32_board_init)
-    ht32_led_toggle                          0x08001919   Thumb Code    42  ht32f493x5_board.o(.text.ht32_led_toggle)
-    i2c_7bit_address_send                    0x08001945   Thumb Code    16  ht32f493x5_i2c.o(.text.i2c_7bit_address_send)
-    i2c_ack_enable                           0x08001955   Thumb Code    18  ht32f493x5_i2c.o(.text.i2c_ack_enable)
-    i2c_data_receive                         0x08001969   Thumb Code     6  ht32f493x5_i2c.o(.text.i2c_data_receive)
-    i2c_data_send                            0x08001971   Thumb Code     4  ht32f493x5_i2c.o(.text.i2c_data_send)
-    i2c_enable                               0x08001975   Thumb Code    10  ht32f493x5_i2c.o(.text.i2c_enable)
-    i2c_flag_clear                           0x08001981   Thumb Code    38  ht32f493x5_i2c.o(.text.i2c_flag_clear)
-    i2c_flag_get                             0x080019a9   Thumb Code    46  ht32f493x5_i2c.o(.text.i2c_flag_get)
-    i2c_init                                 0x080019d9   Thumb Code   294  ht32f493x5_i2c.o(.text.i2c_init)
-    i2c_master_read_addr                     0x08001b01   Thumb Code   342  i2c_application.o(.text.i2c_master_read_addr)
-    i2c_master_receive_ack_set               0x08001c59   Thumb Code    18  ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set)
-    i2c_master_transmit                      0x08001c6d   Thumb Code   264  i2c_application.o(.text.i2c_master_transmit)
-    i2c_master_write_addr                    0x08001d75   Thumb Code   254  i2c_application.o(.text.i2c_master_write_addr)
-    i2c_memory_address_send                  0x08001e75   Thumb Code   108  i2c_application.o(.text.i2c_memory_address_send)
-    i2c_memory_read                          0x08001ee1   Thumb Code   638  i2c_application.o(.text.i2c_memory_read)
-    i2c_reset                                0x08002161   Thumb Code    76  ht32f493x5_i2c.o(.text.i2c_reset)
-    i2c_start_generate                       0x080021ad   Thumb Code    10  ht32f493x5_i2c.o(.text.i2c_start_generate)
-    i2c_stop_generate                        0x080021b9   Thumb Code    10  ht32f493x5_i2c.o(.text.i2c_stop_generate)
-    i2c_wait_flag                            0x080021c5   Thumb Code   148  i2c_application.o(.text.i2c_wait_flag)
-    main                                     0x08002259   Thumb Code   232  main.o(.text.main)
-    nvic_irq_disable                         0x080023c1   Thumb Code    42  ht32f493x5_misc.o(.text.nvic_irq_disable)
-    nvic_irq_enable                          0x080023ed   Thumb Code   118  ht32f493x5_misc.o(.text.nvic_irq_enable)
-    system_clock_config                      0x08002465   Thumb Code   110  ht32f493x5_clock.o(.text.system_clock_config)
-    system_core_clock_update                 0x080024d5   Thumb Code   168  system_ht32f493x5.o(.text.system_core_clock_update)
-    systick_clock_source_config              0x0800258d   Thumb Code    24  ht32f493x5_misc.o(.text.systick_clock_source_config)
-    tmr_base_init                            0x080025a5   Thumb Code    14  ht32f493x5_tmr.o(.text.tmr_base_init)
-    tmr_channel_value_set                    0x080025b5   Thumb Code    34  ht32f493x5_tmr.o(.text.tmr_channel_value_set)
-    tmr_cnt_dir_set                          0x080025d9   Thumb Code    18  ht32f493x5_tmr.o(.text.tmr_cnt_dir_set)
-    tmr_counter_enable                       0x080025ed   Thumb Code    10  ht32f493x5_tmr.o(.text.tmr_counter_enable)
-    tmr_dma_request_enable                   0x080025f9   Thumb Code    26  ht32f493x5_tmr.o(.text.tmr_dma_request_enable)
-    tmr_input_channel_init                   0x08002615   Thumb Code   460  ht32f493x5_tmr.o(.text.tmr_input_channel_init)
-    tmr_input_default_para_init              0x080027e1   Thumb Code     8  ht32f493x5_tmr.o(.text.tmr_input_default_para_init)
-    tmr_output_channel_config                0x080027e9   Thumb Code   264  ht32f493x5_tmr.o(.text.tmr_output_channel_config)
-    tmr_output_default_para_init             0x080028f1   Thumb Code    10  ht32f493x5_tmr.o(.text.tmr_output_default_para_init)
-    tmr_output_enable                        0x080028fd   Thumb Code    18  ht32f493x5_tmr.o(.text.tmr_output_enable)
-    uart_print_init                          0x08002911   Thumb Code   146  ht32f493x5_board.o(.text.uart_print_init)
-    usart_data_transmit                      0x080029a5   Thumb Code     8  ht32f493x5_usart.o(.text.usart_data_transmit)
-    usart_enable                             0x080029ad   Thumb Code    18  ht32f493x5_usart.o(.text.usart_enable)
-    usart_flag_get                           0x080029c1   Thumb Code    10  ht32f493x5_usart.o(.text.usart_flag_get)
-    usart_init                               0x080029cd   Thumb Code   176  ht32f493x5_usart.o(.text.usart_init)
-    usart_receiver_enable                    0x08002a7d   Thumb Code    18  ht32f493x5_usart.o(.text.usart_receiver_enable)
-    usart_transmitter_enable                 0x08002a91   Thumb Code    18  ht32f493x5_usart.o(.text.usart_transmitter_enable)
-    _is_digit                                0x08002aa3   Thumb Code    14  __printf_wp.o(i._is_digit)
-    _fp_init                                 0x08002ab1   Thumb Code    26  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x08002ac9   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x08002ac9   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    Region$$Table$$Base                      0x08002b0c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08002b2c   Number         0  anon$$obj.o(Region$$Table)
-    led_gpio_crm_clk                         0x20000000   Data          12  ht32f493x5_board.o(.data.led_gpio_crm_clk)
-    led_gpio_pin                             0x2000000c   Data           6  ht32f493x5_board.o(.data.led_gpio_pin)
-    led_gpio_port                            0x20000014   Data          12  ht32f493x5_board.o(.data.led_gpio_port)
-    system_core_clock                        0x20000020   Data           4  system_ht32f493x5.o(.data.system_core_clock)
-    __libspace_start                         0x20000028   Data          96  libspace.o(.bss)
-    __stdout                                 0x20000088   Data          84  ht32f493x5_board.o(.bss.__stdout)
-    __temporary_stack_top$libspace           0x20000088   Data           0  libspace.o(.bss)
-    g_hm01b0                                 0x200024e4   Data          88  main.o(.bss.g_hm01b0)
-    uwTick                                   0x20007364   Data           4  ht32f493x5_int.o(.bss.uwTick)
+    ht32_board_init                          0x08001805   Thumb Code   186  ht32f493x5_board.o(.text.ht32_board_init)
+    ht32_led_toggle                          0x080018c1   Thumb Code    38  ht32f493x5_board.o(.text.ht32_led_toggle)
+    i2c_7bit_address_send                    0x080018e9   Thumb Code    16  ht32f493x5_i2c.o(.text.i2c_7bit_address_send)
+    i2c_ack_enable                           0x080018f9   Thumb Code    18  ht32f493x5_i2c.o(.text.i2c_ack_enable)
+    i2c_data_receive                         0x0800190d   Thumb Code     6  ht32f493x5_i2c.o(.text.i2c_data_receive)
+    i2c_data_send                            0x08001915   Thumb Code     4  ht32f493x5_i2c.o(.text.i2c_data_send)
+    i2c_enable                               0x08001919   Thumb Code    10  ht32f493x5_i2c.o(.text.i2c_enable)
+    i2c_flag_clear                           0x08001925   Thumb Code    38  ht32f493x5_i2c.o(.text.i2c_flag_clear)
+    i2c_flag_get                             0x0800194d   Thumb Code    46  ht32f493x5_i2c.o(.text.i2c_flag_get)
+    i2c_init                                 0x0800197d   Thumb Code   294  ht32f493x5_i2c.o(.text.i2c_init)
+    i2c_master_read_addr                     0x08001aa5   Thumb Code   342  i2c_application.o(.text.i2c_master_read_addr)
+    i2c_master_receive_ack_set               0x08001bfd   Thumb Code    18  ht32f493x5_i2c.o(.text.i2c_master_receive_ack_set)
+    i2c_master_transmit                      0x08001c11   Thumb Code   264  i2c_application.o(.text.i2c_master_transmit)
+    i2c_master_write_addr                    0x08001d19   Thumb Code   254  i2c_application.o(.text.i2c_master_write_addr)
+    i2c_memory_address_send                  0x08001e19   Thumb Code   108  i2c_application.o(.text.i2c_memory_address_send)
+    i2c_memory_read                          0x08001e85   Thumb Code   638  i2c_application.o(.text.i2c_memory_read)
+    i2c_reset                                0x08002105   Thumb Code    76  ht32f493x5_i2c.o(.text.i2c_reset)
+    i2c_start_generate                       0x08002151   Thumb Code    10  ht32f493x5_i2c.o(.text.i2c_start_generate)
+    i2c_stop_generate                        0x0800215d   Thumb Code    10  ht32f493x5_i2c.o(.text.i2c_stop_generate)
+    i2c_wait_flag                            0x08002169   Thumb Code   148  i2c_application.o(.text.i2c_wait_flag)
+    main                                     0x080021fd   Thumb Code   232  main.o(.text.main)
+    nvic_irq_disable                         0x08002365   Thumb Code    42  ht32f493x5_misc.o(.text.nvic_irq_disable)
+    nvic_irq_enable                          0x08002391   Thumb Code   118  ht32f493x5_misc.o(.text.nvic_irq_enable)
+    system_clock_config                      0x08002409   Thumb Code   110  ht32f493x5_clock.o(.text.system_clock_config)
+    system_core_clock_update                 0x08002479   Thumb Code   168  system_ht32f493x5.o(.text.system_core_clock_update)
+    systick_clock_source_config              0x08002531   Thumb Code    24  ht32f493x5_misc.o(.text.systick_clock_source_config)
+    tmr_base_init                            0x08002549   Thumb Code    14  ht32f493x5_tmr.o(.text.tmr_base_init)
+    tmr_channel_value_set                    0x08002559   Thumb Code    34  ht32f493x5_tmr.o(.text.tmr_channel_value_set)
+    tmr_cnt_dir_set                          0x0800257d   Thumb Code    18  ht32f493x5_tmr.o(.text.tmr_cnt_dir_set)
+    tmr_counter_enable                       0x08002591   Thumb Code    10  ht32f493x5_tmr.o(.text.tmr_counter_enable)
+    tmr_dma_request_enable                   0x0800259d   Thumb Code    26  ht32f493x5_tmr.o(.text.tmr_dma_request_enable)
+    tmr_input_channel_init                   0x080025b9   Thumb Code   460  ht32f493x5_tmr.o(.text.tmr_input_channel_init)
+    tmr_input_default_para_init              0x08002785   Thumb Code     8  ht32f493x5_tmr.o(.text.tmr_input_default_para_init)
+    tmr_output_channel_config                0x0800278d   Thumb Code   264  ht32f493x5_tmr.o(.text.tmr_output_channel_config)
+    tmr_output_default_para_init             0x08002895   Thumb Code    10  ht32f493x5_tmr.o(.text.tmr_output_default_para_init)
+    tmr_output_enable                        0x080028a1   Thumb Code    18  ht32f493x5_tmr.o(.text.tmr_output_enable)
+    uart_print_init                          0x080028b5   Thumb Code   146  ht32f493x5_board.o(.text.uart_print_init)
+    usart_data_transmit                      0x08002949   Thumb Code     8  ht32f493x5_usart.o(.text.usart_data_transmit)
+    usart_enable                             0x08002951   Thumb Code    18  ht32f493x5_usart.o(.text.usart_enable)
+    usart_flag_get                           0x08002965   Thumb Code    10  ht32f493x5_usart.o(.text.usart_flag_get)
+    usart_init                               0x08002971   Thumb Code   176  ht32f493x5_usart.o(.text.usart_init)
+    usart_receiver_enable                    0x08002a21   Thumb Code    18  ht32f493x5_usart.o(.text.usart_receiver_enable)
+    usart_transmitter_enable                 0x08002a35   Thumb Code    18  ht32f493x5_usart.o(.text.usart_transmitter_enable)
+    _is_digit                                0x08002a47   Thumb Code    14  __printf_wp.o(i._is_digit)
+    _fp_init                                 0x08002a55   Thumb Code    26  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x08002a6d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x08002a6d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    Region$$Table$$Base                      0x08002ab0   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08002ad0   Number         0  anon$$obj.o(Region$$Table)
+    led_gpio_crm_clk                         0x20000000   Data           4  ht32f493x5_board.o(.data.led_gpio_crm_clk)
+    led_gpio_pin                             0x20000004   Data           2  ht32f493x5_board.o(.data.led_gpio_pin)
+    led_gpio_port                            0x20000008   Data           4  ht32f493x5_board.o(.data.led_gpio_port)
+    system_core_clock                        0x2000000c   Data           4  system_ht32f493x5.o(.data.system_core_clock)
+    __libspace_start                         0x20000010   Data          96  libspace.o(.bss)
+    __stdout                                 0x20000070   Data          84  ht32f493x5_board.o(.bss.__stdout)
+    __temporary_stack_top$libspace           0x20000070   Data           0  libspace.o(.bss)
+    g_hm01b0                                 0x200024cc   Data          88  main.o(.bss.g_hm01b0)
+    uwTick                                   0x2000734c   Data           4  ht32f493x5_int.o(.bss.uwTick)
 
 
 
@@ -2076,9 +2076,9 @@ Memory Map of the image
 
   Image Entry point : 0x0800017d
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00002b58, Max: 0x00100000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00002ae0, Max: 0x00100000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00002b2c, Max: 0x00100000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00002ad0, Max: 0x00100000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2238,105 +2238,105 @@ Memory Map of the image
     0x0800158c   0x0800158c   0x000000ba   Code   RO           59    .text.hm01b0_mclk_init  hm01b0.o
     0x08001646   0x08001646   0x00000002   PAD
     0x08001648   0x08001648   0x000001bc   Code   RO           61    .text.hm01b0_parallel_init  hm01b0.o
-    0x08001804   0x08001804   0x00000114   Code   RO           93    .text.ht32_board_init  ht32f493x5_board.o
-    0x08001918   0x08001918   0x0000002a   Code   RO          111    .text.ht32_led_toggle  ht32f493x5_board.o
-    0x08001942   0x08001942   0x00000002   PAD
-    0x08001944   0x08001944   0x00000010   Code   RO          549    .text.i2c_7bit_address_send  ht32f493x5_i2c.o
-    0x08001954   0x08001954   0x00000012   Code   RO          519    .text.i2c_ack_enable  ht32f493x5_i2c.o
-    0x08001966   0x08001966   0x00000002   PAD
-    0x08001968   0x08001968   0x00000006   Code   RO          553    .text.i2c_data_receive  ht32f493x5_i2c.o
-    0x0800196e   0x0800196e   0x00000002   PAD
-    0x08001970   0x08001970   0x00000004   Code   RO          551    .text.i2c_data_send  ht32f493x5_i2c.o
-    0x08001974   0x08001974   0x0000000a   Code   RO          513    .text.i2c_enable    ht32f493x5_i2c.o
-    0x0800197e   0x0800197e   0x00000002   PAD
-    0x08001980   0x08001980   0x00000026   Code   RO          559    .text.i2c_flag_clear  ht32f493x5_i2c.o
-    0x080019a6   0x080019a6   0x00000002   PAD
-    0x080019a8   0x080019a8   0x0000002e   Code   RO          555    .text.i2c_flag_get  ht32f493x5_i2c.o
-    0x080019d6   0x080019d6   0x00000002   PAD
-    0x080019d8   0x080019d8   0x00000126   Code   RO          503    .text.i2c_init      ht32f493x5_i2c.o
-    0x08001afe   0x08001afe   0x00000002   PAD
-    0x08001b00   0x08001b00   0x00000156   Code   RO          611    .text.i2c_master_read_addr  i2c_application.o
-    0x08001c56   0x08001c56   0x00000002   PAD
-    0x08001c58   0x08001c58   0x00000012   Code   RO          521    .text.i2c_master_receive_ack_set  ht32f493x5_i2c.o
-    0x08001c6a   0x08001c6a   0x00000002   PAD
-    0x08001c6c   0x08001c6c   0x00000108   Code   RO          613    .text.i2c_master_transmit  i2c_application.o
-    0x08001d74   0x08001d74   0x000000fe   Code   RO          609    .text.i2c_master_write_addr  i2c_application.o
-    0x08001e72   0x08001e72   0x00000002   PAD
-    0x08001e74   0x08001e74   0x0000006c   Code   RO          637    .text.i2c_memory_address_send  i2c_application.o
-    0x08001ee0   0x08001ee0   0x0000027e   Code   RO          641    .text.i2c_memory_read  i2c_application.o
-    0x0800215e   0x0800215e   0x00000002   PAD
-    0x08002160   0x08002160   0x0000004c   Code   RO          499    .text.i2c_reset     ht32f493x5_i2c.o
-    0x080021ac   0x080021ac   0x0000000a   Code   RO          545    .text.i2c_start_generate  ht32f493x5_i2c.o
-    0x080021b6   0x080021b6   0x00000002   PAD
-    0x080021b8   0x080021b8   0x0000000a   Code   RO          547    .text.i2c_stop_generate  ht32f493x5_i2c.o
-    0x080021c2   0x080021c2   0x00000002   PAD
-    0x080021c4   0x080021c4   0x00000094   Code   RO          605    .text.i2c_wait_flag  i2c_application.o
-    0x08002258   0x08002258   0x00000168   Code   RO           44    .text.main          main.o
-    0x080023c0   0x080023c0   0x0000002a   Code   RO          335    .text.nvic_irq_disable  ht32f493x5_misc.o
-    0x080023ea   0x080023ea   0x00000002   PAD
-    0x080023ec   0x080023ec   0x00000076   Code   RO          333    .text.nvic_irq_enable  ht32f493x5_misc.o
-    0x08002462   0x08002462   0x00000002   PAD
-    0x08002464   0x08002464   0x0000006e   Code   RO            2    .text.system_clock_config  ht32f493x5_clock.o
-    0x080024d2   0x080024d2   0x00000002   PAD
-    0x080024d4   0x080024d4   0x000000b8   Code   RO          681    .text.system_core_clock_update  system_ht32f493x5.o
-    0x0800258c   0x0800258c   0x00000018   Code   RO          343    .text.systick_clock_source_config  ht32f493x5_misc.o
-    0x080025a4   0x080025a4   0x0000000e   Code   RO          389    .text.tmr_base_init  ht32f493x5_tmr.o
-    0x080025b2   0x080025b2   0x00000002   PAD
-    0x080025b4   0x080025b4   0x00000022   Code   RO          413    .text.tmr_channel_value_set  ht32f493x5_tmr.o
-    0x080025d6   0x080025d6   0x00000002   PAD
-    0x080025d8   0x080025d8   0x00000012   Code   RO          393    .text.tmr_cnt_dir_set  ht32f493x5_tmr.o
-    0x080025ea   0x080025ea   0x00000002   PAD
-    0x080025ec   0x080025ec   0x0000000a   Code   RO          381    .text.tmr_counter_enable  ht32f493x5_tmr.o
-    0x080025f6   0x080025f6   0x00000002   PAD
-    0x080025f8   0x080025f8   0x0000001a   Code   RO          459    .text.tmr_dma_request_enable  ht32f493x5_tmr.o
-    0x08002612   0x08002612   0x00000002   PAD
-    0x08002614   0x08002614   0x000001cc   Code   RO          433    .text.tmr_input_channel_init  ht32f493x5_tmr.o
-    0x080027e0   0x080027e0   0x00000008   Code   RO          385    .text.tmr_input_default_para_init  ht32f493x5_tmr.o
-    0x080027e8   0x080027e8   0x00000108   Code   RO          405    .text.tmr_output_channel_config  ht32f493x5_tmr.o
-    0x080028f0   0x080028f0   0x0000000a   Code   RO          383    .text.tmr_output_default_para_init  ht32f493x5_tmr.o
-    0x080028fa   0x080028fa   0x00000002   PAD
-    0x080028fc   0x080028fc   0x00000012   Code   RO          471    .text.tmr_output_enable  ht32f493x5_tmr.o
-    0x0800290e   0x0800290e   0x00000002   PAD
-    0x08002910   0x08002910   0x00000092   Code   RO           91    .text.uart_print_init  ht32f493x5_board.o
-    0x080029a2   0x080029a2   0x00000002   PAD
-    0x080029a4   0x080029a4   0x00000008   Code   RO          247    .text.usart_data_transmit  ht32f493x5_usart.o
-    0x080029ac   0x080029ac   0x00000012   Code   RO          221    .text.usart_enable  ht32f493x5_usart.o
-    0x080029be   0x080029be   0x00000002   PAD
-    0x080029c0   0x080029c0   0x0000000a   Code   RO          269    .text.usart_flag_get  ht32f493x5_usart.o
-    0x080029ca   0x080029ca   0x00000002   PAD
-    0x080029cc   0x080029cc   0x000000b0   Code   RO          217    .text.usart_init    ht32f493x5_usart.o
-    0x08002a7c   0x08002a7c   0x00000012   Code   RO          225    .text.usart_receiver_enable  ht32f493x5_usart.o
-    0x08002a8e   0x08002a8e   0x00000002   PAD
-    0x08002a90   0x08002a90   0x00000012   Code   RO          223    .text.usart_transmitter_enable  ht32f493x5_usart.o
-    0x08002aa2   0x08002aa2   0x0000000e   Code   RO          743    i._is_digit         c_w.l(__printf_wp.o)
-    0x08002ab0   0x08002ab0   0x0000001a   Code   RO          869    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x08002aca   0x08002aca   0x00000028   Data   RO          716    .constdata          c_w.l(_printf_hex_int.o)
-    0x08002af2   0x08002af2   0x00000011   Data   RO          746    .constdata          c_w.l(__printf_flags_wp.o)
-    0x08002b03   0x08002b03   0x00000008   Data   RO          206    .rodata.cst8        ht32f493x5_crm.o
-    0x08002b0b   0x08002b0b   0x00000001   PAD
-    0x08002b0c   0x08002b0c   0x00000020   Data   RO          934    Region$$Table       anon$$obj.o
+    0x08001804   0x08001804   0x000000ba   Code   RO           93    .text.ht32_board_init  ht32f493x5_board.o
+    0x080018be   0x080018be   0x00000002   PAD
+    0x080018c0   0x080018c0   0x00000026   Code   RO          111    .text.ht32_led_toggle  ht32f493x5_board.o
+    0x080018e6   0x080018e6   0x00000002   PAD
+    0x080018e8   0x080018e8   0x00000010   Code   RO          549    .text.i2c_7bit_address_send  ht32f493x5_i2c.o
+    0x080018f8   0x080018f8   0x00000012   Code   RO          519    .text.i2c_ack_enable  ht32f493x5_i2c.o
+    0x0800190a   0x0800190a   0x00000002   PAD
+    0x0800190c   0x0800190c   0x00000006   Code   RO          553    .text.i2c_data_receive  ht32f493x5_i2c.o
+    0x08001912   0x08001912   0x00000002   PAD
+    0x08001914   0x08001914   0x00000004   Code   RO          551    .text.i2c_data_send  ht32f493x5_i2c.o
+    0x08001918   0x08001918   0x0000000a   Code   RO          513    .text.i2c_enable    ht32f493x5_i2c.o
+    0x08001922   0x08001922   0x00000002   PAD
+    0x08001924   0x08001924   0x00000026   Code   RO          559    .text.i2c_flag_clear  ht32f493x5_i2c.o
+    0x0800194a   0x0800194a   0x00000002   PAD
+    0x0800194c   0x0800194c   0x0000002e   Code   RO          555    .text.i2c_flag_get  ht32f493x5_i2c.o
+    0x0800197a   0x0800197a   0x00000002   PAD
+    0x0800197c   0x0800197c   0x00000126   Code   RO          503    .text.i2c_init      ht32f493x5_i2c.o
+    0x08001aa2   0x08001aa2   0x00000002   PAD
+    0x08001aa4   0x08001aa4   0x00000156   Code   RO          611    .text.i2c_master_read_addr  i2c_application.o
+    0x08001bfa   0x08001bfa   0x00000002   PAD
+    0x08001bfc   0x08001bfc   0x00000012   Code   RO          521    .text.i2c_master_receive_ack_set  ht32f493x5_i2c.o
+    0x08001c0e   0x08001c0e   0x00000002   PAD
+    0x08001c10   0x08001c10   0x00000108   Code   RO          613    .text.i2c_master_transmit  i2c_application.o
+    0x08001d18   0x08001d18   0x000000fe   Code   RO          609    .text.i2c_master_write_addr  i2c_application.o
+    0x08001e16   0x08001e16   0x00000002   PAD
+    0x08001e18   0x08001e18   0x0000006c   Code   RO          637    .text.i2c_memory_address_send  i2c_application.o
+    0x08001e84   0x08001e84   0x0000027e   Code   RO          641    .text.i2c_memory_read  i2c_application.o
+    0x08002102   0x08002102   0x00000002   PAD
+    0x08002104   0x08002104   0x0000004c   Code   RO          499    .text.i2c_reset     ht32f493x5_i2c.o
+    0x08002150   0x08002150   0x0000000a   Code   RO          545    .text.i2c_start_generate  ht32f493x5_i2c.o
+    0x0800215a   0x0800215a   0x00000002   PAD
+    0x0800215c   0x0800215c   0x0000000a   Code   RO          547    .text.i2c_stop_generate  ht32f493x5_i2c.o
+    0x08002166   0x08002166   0x00000002   PAD
+    0x08002168   0x08002168   0x00000094   Code   RO          605    .text.i2c_wait_flag  i2c_application.o
+    0x080021fc   0x080021fc   0x00000168   Code   RO           44    .text.main          main.o
+    0x08002364   0x08002364   0x0000002a   Code   RO          335    .text.nvic_irq_disable  ht32f493x5_misc.o
+    0x0800238e   0x0800238e   0x00000002   PAD
+    0x08002390   0x08002390   0x00000076   Code   RO          333    .text.nvic_irq_enable  ht32f493x5_misc.o
+    0x08002406   0x08002406   0x00000002   PAD
+    0x08002408   0x08002408   0x0000006e   Code   RO            2    .text.system_clock_config  ht32f493x5_clock.o
+    0x08002476   0x08002476   0x00000002   PAD
+    0x08002478   0x08002478   0x000000b8   Code   RO          681    .text.system_core_clock_update  system_ht32f493x5.o
+    0x08002530   0x08002530   0x00000018   Code   RO          343    .text.systick_clock_source_config  ht32f493x5_misc.o
+    0x08002548   0x08002548   0x0000000e   Code   RO          389    .text.tmr_base_init  ht32f493x5_tmr.o
+    0x08002556   0x08002556   0x00000002   PAD
+    0x08002558   0x08002558   0x00000022   Code   RO          413    .text.tmr_channel_value_set  ht32f493x5_tmr.o
+    0x0800257a   0x0800257a   0x00000002   PAD
+    0x0800257c   0x0800257c   0x00000012   Code   RO          393    .text.tmr_cnt_dir_set  ht32f493x5_tmr.o
+    0x0800258e   0x0800258e   0x00000002   PAD
+    0x08002590   0x08002590   0x0000000a   Code   RO          381    .text.tmr_counter_enable  ht32f493x5_tmr.o
+    0x0800259a   0x0800259a   0x00000002   PAD
+    0x0800259c   0x0800259c   0x0000001a   Code   RO          459    .text.tmr_dma_request_enable  ht32f493x5_tmr.o
+    0x080025b6   0x080025b6   0x00000002   PAD
+    0x080025b8   0x080025b8   0x000001cc   Code   RO          433    .text.tmr_input_channel_init  ht32f493x5_tmr.o
+    0x08002784   0x08002784   0x00000008   Code   RO          385    .text.tmr_input_default_para_init  ht32f493x5_tmr.o
+    0x0800278c   0x0800278c   0x00000108   Code   RO          405    .text.tmr_output_channel_config  ht32f493x5_tmr.o
+    0x08002894   0x08002894   0x0000000a   Code   RO          383    .text.tmr_output_default_para_init  ht32f493x5_tmr.o
+    0x0800289e   0x0800289e   0x00000002   PAD
+    0x080028a0   0x080028a0   0x00000012   Code   RO          471    .text.tmr_output_enable  ht32f493x5_tmr.o
+    0x080028b2   0x080028b2   0x00000002   PAD
+    0x080028b4   0x080028b4   0x00000092   Code   RO           91    .text.uart_print_init  ht32f493x5_board.o
+    0x08002946   0x08002946   0x00000002   PAD
+    0x08002948   0x08002948   0x00000008   Code   RO          247    .text.usart_data_transmit  ht32f493x5_usart.o
+    0x08002950   0x08002950   0x00000012   Code   RO          221    .text.usart_enable  ht32f493x5_usart.o
+    0x08002962   0x08002962   0x00000002   PAD
+    0x08002964   0x08002964   0x0000000a   Code   RO          269    .text.usart_flag_get  ht32f493x5_usart.o
+    0x0800296e   0x0800296e   0x00000002   PAD
+    0x08002970   0x08002970   0x000000b0   Code   RO          217    .text.usart_init    ht32f493x5_usart.o
+    0x08002a20   0x08002a20   0x00000012   Code   RO          225    .text.usart_receiver_enable  ht32f493x5_usart.o
+    0x08002a32   0x08002a32   0x00000002   PAD
+    0x08002a34   0x08002a34   0x00000012   Code   RO          223    .text.usart_transmitter_enable  ht32f493x5_usart.o
+    0x08002a46   0x08002a46   0x0000000e   Code   RO          743    i._is_digit         c_w.l(__printf_wp.o)
+    0x08002a54   0x08002a54   0x0000001a   Code   RO          869    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x08002a6e   0x08002a6e   0x00000028   Data   RO          716    .constdata          c_w.l(_printf_hex_int.o)
+    0x08002a96   0x08002a96   0x00000011   Data   RO          746    .constdata          c_w.l(__printf_flags_wp.o)
+    0x08002aa7   0x08002aa7   0x00000008   Data   RO          206    .rodata.cst8        ht32f493x5_crm.o
+    0x08002aaf   0x08002aaf   0x00000001   PAD
+    0x08002ab0   0x08002ab0   0x00000020   Data   RO          934    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08002b30, Size: 0x00007968, Max: 0x00038000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08002ad0, Size: 0x00007950, Max: 0x00038000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08002b30   0x0000000c   Data   RW          119    .data.led_gpio_crm_clk  ht32f493x5_board.o
-    0x2000000c   0x08002b3c   0x00000006   Data   RW          118    .data.led_gpio_pin  ht32f493x5_board.o
-    0x20000012   0x08002b42   0x00000002   PAD
-    0x20000014   0x08002b44   0x0000000c   Data   RW          117    .data.led_gpio_port  ht32f493x5_board.o
-    0x20000020   0x08002b50   0x00000004   Data   RW          683    .data.system_core_clock  system_ht32f493x5.o
-    0x20000024   0x08002b54   0x00000004   PAD
-    0x20000028        -       0x00000060   Zero   RW          809    .bss                c_w.l(libspace.o)
-    0x20000088        -       0x00000054   Zero   RW          123    .bss.__stdout       ht32f493x5_board.o
-    0x200000dc        -       0x00002400   Zero   RW           48    .bss.edge_impulse_clean_buffer  main.o
-    0x200024dc        -       0x00000004   Zero   RW          122    .bss.fac_ms         ht32f493x5_board.o
-    0x200024e0        -       0x00000004   Zero   RW          121    .bss.fac_us         ht32f493x5_board.o
-    0x200024e4        -       0x00000058   Zero   RW           46    .bss.g_hm01b0       main.o
-    0x2000253c        -       0x00004e28   Zero   RW           47    .bss.hm01b0_frame_buffer  main.o
-    0x20007364        -       0x00000004   Zero   RW           36    .bss.uwTick         ht32f493x5_int.o
-    0x20007368        -       0x00000200   Zero   RW          692    HEAP                startup_ht32f493x5.o
-    0x20007568        -       0x00000400   Zero   RW          691    STACK               startup_ht32f493x5.o
+    0x20000000   0x08002ad0   0x00000004   Data   RW          119    .data.led_gpio_crm_clk  ht32f493x5_board.o
+    0x20000004   0x08002ad4   0x00000002   Data   RW          118    .data.led_gpio_pin  ht32f493x5_board.o
+    0x20000006   0x08002ad6   0x00000002   PAD
+    0x20000008   0x08002ad8   0x00000004   Data   RW          117    .data.led_gpio_port  ht32f493x5_board.o
+    0x2000000c   0x08002adc   0x00000004   Data   RW          683    .data.system_core_clock  system_ht32f493x5.o
+    0x20000010        -       0x00000060   Zero   RW          809    .bss                c_w.l(libspace.o)
+    0x20000070        -       0x00000054   Zero   RW          123    .bss.__stdout       ht32f493x5_board.o
+    0x200000c4        -       0x00002400   Zero   RW           48    .bss.edge_impulse_clean_buffer  main.o
+    0x200024c4        -       0x00000004   Zero   RW          122    .bss.fac_ms         ht32f493x5_board.o
+    0x200024c8        -       0x00000004   Zero   RW          121    .bss.fac_us         ht32f493x5_board.o
+    0x200024cc        -       0x00000058   Zero   RW           46    .bss.g_hm01b0       main.o
+    0x20002524        -       0x00004e28   Zero   RW           47    .bss.hm01b0_frame_buffer  main.o
+    0x2000734c        -       0x00000004   Zero   RW           36    .bss.uwTick         ht32f493x5_int.o
+    0x20007350        -       0x00000200   Zero   RW          692    HEAP                startup_ht32f493x5.o
+    0x20007550        -       0x00000400   Zero   RW          691    STACK               startup_ht32f493x5.o
 
 
 ==============================================================================
@@ -2347,14 +2347,14 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
       1800         60          0          0          0      31283   hm01b0.o
-       616          0          0         30         92      14409   ht32f493x5_board.o
+       522          0          0         10         92      13938   ht32f493x5_board.o
        110          0          0          0          0       3362   ht32f493x5_clock.o
        896         34          8          0          0      22600   ht32f493x5_crm.o
        456          8          0          0          0       9114   ht32f493x5_dma.o
        160          0          0          0          0       3879   ht32f493x5_exint.o
        432          4          0          0          0      15312   ht32f493x5_gpio.o
        546          0          0          0          0      11489   ht32f493x5_i2c.o
-       196          0          0          0          4       3077   ht32f493x5_int.o
+       196          0          0          0          4       3055   ht32f493x5_int.o
        184          0          0          0          0       7407   ht32f493x5_misc.o
        862         24          0          0          0      29924   ht32f493x5_tmr.o
        248          0          0          0          0      11981   ht32f493x5_usart.o
@@ -2364,9 +2364,9 @@ Image component sizes
        276         16          0          4          0       8073   system_ht32f493x5.o
 
     ----------------------------------------------------------------------
-      9074        300        421         36      30948     216647   Object Totals
+      8982        300        421         16      30944     216154   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-       114          0          1          2          4          0   (incl. Padding)
+       116          0          1          2          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -2430,15 +2430,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     10574        338        478         36      31044     217387   Grand Totals
-     10574        338        478         36      31044     217387   ELF Image Totals
-     10574        338        478         36          0          0   ROM Totals
+     10482        338        478         16      31040     216894   Grand Totals
+     10482        338        478         16      31040     216894   ELF Image Totals
+     10482        338        478         16          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                11052 (  10.79kB)
-    Total RW  Size (RW Data + ZI Data)             31080 (  30.35kB)
-    Total ROM Size (Code + RO Data + RW Data)      11088 (  10.83kB)
+    Total RO  Size (Code + RO Data)                10960 (  10.70kB)
+    Total RW  Size (RW Data + ZI Data)             31056 (  30.33kB)
+    Total ROM Size (Code + RO Data + RW Data)      10976 (  10.72kB)
 
 ==============================================================================
 

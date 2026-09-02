@@ -140,7 +140,7 @@ void SysTick_Handler(void)
 	/* toggle led */
   if((uwTick % 200) == 0)
   {
-    ht32_led_toggle(LED2);
+    ht32_led_toggle(LED3);
   }
 }
 
