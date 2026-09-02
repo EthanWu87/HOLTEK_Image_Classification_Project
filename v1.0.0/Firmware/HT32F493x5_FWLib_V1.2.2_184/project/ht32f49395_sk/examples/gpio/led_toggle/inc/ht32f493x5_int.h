@@ -35,7 +35,7 @@ extern "C" {
 
 /* includes ------------------------------------------------------------------*/
 #include "ht32f493x5.h"
-	
+
 /* exported types ------------------------------------------------------------*/
 /* exported constants --------------------------------------------------------*/
 /* exported macro ------------------------------------------------------------*/
@@ -50,7 +50,6 @@ void SVC_Handler(void);
 void DebugMon_Handler(void);
 void PendSV_Handler(void);
 void SysTick_Handler(void);
-uint32_t SysTick_GetTick(void);
 
 #ifdef __cplusplus
 }

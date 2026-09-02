@@ -164,11 +164,91 @@ int main(void)
 
   i2c_config(&hi2cx);
 
-	uint8_t data = 0x55;
-	
   while(1)
   {
-		i2c_master_transmit(&hi2cx, 0x24, &data, sizeof(data), I2C_TIMEOUT);
+
+#if defined (MASTER_BOARD)
+
+    /* wait for key USER_BUTTON press before starting the communication */
+    while(ht32_button_press() != USER_BUTTON)
+    {
+    }
+
+    /* start the request reception process */
+    if((i2c_status = i2c_master_transmit_int(&hi2cx, I2Cx_ADDRESS, tx_buf, BUF_SIZE, I2C_TIMEOUT)) != I2C_OK)
+    {
+      error_handler(i2c_status);
+    }
+
+    /* wait for the communication to end */
+    if(i2c_wait_end(&hi2cx, I2C_TIMEOUT) != I2C_OK)
+    {
+      error_handler(i2c_status);
+    }
+
+    delay_ms(10);
+
+    /* start the request reception process */
+    if((i2c_status = i2c_master_receive_int(&hi2cx, I2Cx_ADDRESS, rx_buf, BUF_SIZE, I2C_TIMEOUT)) != I2C_OK)
+    {
+      error_handler(i2c_status);
+    }
+
+    /* wait for the communication to end */
+    if(i2c_wait_end(&hi2cx, I2C_TIMEOUT) != I2C_OK)
+    {
+      error_handler(i2c_status);
+    }
+
+    if(buffer_compare(tx_buf, rx_buf, BUF_SIZE) == 0)
+    {
+      ht32_led_on(LED3);
+    }
+    else
+    {
+      error_handler(i2c_status);
+    }
+
+#else
+
+    /* wait for key USER_BUTTON press before starting the communication */
+    while(ht32_button_press() != USER_BUTTON)
+    {
+    }
+
+    /* start the transmission process */
+    if((i2c_status = i2c_slave_receive_int(&hi2cx, rx_buf, BUF_SIZE, I2C_TIMEOUT)) != I2C_OK)
+    {
+      error_handler(i2c_status);
+    }
+
+    /* wait for the communication to end */
+    if(i2c_wait_end(&hi2cx, I2C_TIMEOUT) != I2C_OK)
+    {
+      error_handler(i2c_status);
+    }
+
+    if((i2c_status = i2c_slave_transmit_int(&hi2cx, tx_buf, BUF_SIZE, I2C_TIMEOUT)) != I2C_OK)
+    {
+      error_handler(i2c_status);
+    }
+
+    /* wait for the communication to end */
+    if(i2c_wait_end(&hi2cx, I2C_TIMEOUT) != I2C_OK)
+    {
+      error_handler(i2c_status);
+    }
+
+    if(buffer_compare(tx_buf, rx_buf, BUF_SIZE) == 0)
+    {
+      ht32_led_on(LED3);
+    }
+    else
+    {
+      error_handler(i2c_status);
+    }
+#endif
+
   }
 }
 

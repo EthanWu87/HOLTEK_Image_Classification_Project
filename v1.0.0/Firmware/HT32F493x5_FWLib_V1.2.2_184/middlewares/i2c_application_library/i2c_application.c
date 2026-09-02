@@ -118,9 +118,6 @@ void i2c_config(i2c_handle_type* hi2c)
   /* i2c peripheral initialization */
   i2c_lowlevel_init(hi2c);
 
-  /* 3. i2c peripheral enable */
-  i2c_enable(hi2c->i2cx, TRUE);
-
   /* i2c peripheral enable */
   i2c_enable(hi2c->i2cx, TRUE);
 }
