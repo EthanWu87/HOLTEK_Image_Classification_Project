@@ -3,7 +3,7 @@ import numpy as np
 import cv2
 import time
 
-SERIAL_PORT = 'COM5'
+SERIAL_PORT = 'COM6'
 BAUD_RATE = 2250000
 
 WIDTH = 96

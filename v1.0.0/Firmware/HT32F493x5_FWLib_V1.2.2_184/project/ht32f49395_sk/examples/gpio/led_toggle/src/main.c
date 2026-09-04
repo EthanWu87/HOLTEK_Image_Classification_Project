@@ -50,11 +50,7 @@ int main(void)
 
   while(1)
   {
-    ht32_led_toggle(LED2);
-    delay_ms(200);
     ht32_led_toggle(LED3);
-    delay_ms(200);
-    ht32_led_toggle(LED4);
     delay_ms(200);
   }
 }
